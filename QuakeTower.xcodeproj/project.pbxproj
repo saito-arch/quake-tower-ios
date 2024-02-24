@@ -1,0 +1,606 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5B89E1292B8999E900D9E6E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E1282B8999E900D9E6E8 /* AppDelegate.swift */; };
+		5B89E12B2B8999E900D9E6E8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E12A2B8999E900D9E6E8 /* SceneDelegate.swift */; };
+		5B89E12D2B8999E900D9E6E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E12C2B8999E900D9E6E8 /* ViewController.swift */; };
+		5B89E1302B8999E900D9E6E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B89E12E2B8999E900D9E6E8 /* Main.storyboard */; };
+		5B89E1322B8999E900D9E6E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B89E1312B8999E900D9E6E8 /* Assets.xcassets */; };
+		5B89E1352B8999E900D9E6E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B89E1332B8999E900D9E6E8 /* LaunchScreen.storyboard */; };
+		5B89E1402B8999E900D9E6E8 /* QuakeTowerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E13F2B8999E900D9E6E8 /* QuakeTowerTests.swift */; };
+		5B89E14A2B8999E900D9E6E8 /* QuakeTowerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E1492B8999E900D9E6E8 /* QuakeTowerUITests.swift */; };
+		5B89E14C2B8999E900D9E6E8 /* QuakeTowerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E14B2B8999E900D9E6E8 /* QuakeTowerUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5B89E13C2B8999E900D9E6E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B89E11D2B8999E800D9E6E8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5B89E1242B8999E900D9E6E8;
+			remoteInfo = QuakeTower;
+		};
+		5B89E1462B8999E900D9E6E8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5B89E11D2B8999E800D9E6E8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5B89E1242B8999E900D9E6E8;
+			remoteInfo = QuakeTower;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5B89E1252B8999E900D9E6E8 /* QuakeTower.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuakeTower.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B89E1282B8999E900D9E6E8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5B89E12A2B8999E900D9E6E8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		5B89E12C2B8999E900D9E6E8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5B89E12F2B8999E900D9E6E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5B89E1312B8999E900D9E6E8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5B89E1342B8999E900D9E6E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5B89E1362B8999E900D9E6E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5B89E13B2B8999E900D9E6E8 /* QuakeTowerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuakeTowerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B89E13F2B8999E900D9E6E8 /* QuakeTowerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuakeTowerTests.swift; sourceTree = "<group>"; };
+		5B89E1452B8999E900D9E6E8 /* QuakeTowerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuakeTowerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5B89E1492B8999E900D9E6E8 /* QuakeTowerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuakeTowerUITests.swift; sourceTree = "<group>"; };
+		5B89E14B2B8999E900D9E6E8 /* QuakeTowerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuakeTowerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5B89E1222B8999E900D9E6E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B89E1382B8999E900D9E6E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B89E1422B8999E900D9E6E8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5B89E11C2B8999E800D9E6E8 = {
+			isa = PBXGroup;
+			children = (
+				5B89E1272B8999E900D9E6E8 /* QuakeTower */,
+				5B89E13E2B8999E900D9E6E8 /* QuakeTowerTests */,
+				5B89E1482B8999E900D9E6E8 /* QuakeTowerUITests */,
+				5B89E1262B8999E900D9E6E8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5B89E1262B8999E900D9E6E8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5B89E1252B8999E900D9E6E8 /* QuakeTower.app */,
+				5B89E13B2B8999E900D9E6E8 /* QuakeTowerTests.xctest */,
+				5B89E1452B8999E900D9E6E8 /* QuakeTowerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5B89E1272B8999E900D9E6E8 /* QuakeTower */ = {
+			isa = PBXGroup;
+			children = (
+				5B89E1282B8999E900D9E6E8 /* AppDelegate.swift */,
+				5B89E12A2B8999E900D9E6E8 /* SceneDelegate.swift */,
+				5B89E12C2B8999E900D9E6E8 /* ViewController.swift */,
+				5B89E12E2B8999E900D9E6E8 /* Main.storyboard */,
+				5B89E1312B8999E900D9E6E8 /* Assets.xcassets */,
+				5B89E1332B8999E900D9E6E8 /* LaunchScreen.storyboard */,
+				5B89E1362B8999E900D9E6E8 /* Info.plist */,
+			);
+			path = QuakeTower;
+			sourceTree = "<group>";
+		};
+		5B89E13E2B8999E900D9E6E8 /* QuakeTowerTests */ = {
+			isa = PBXGroup;
+			children = (
+				5B89E13F2B8999E900D9E6E8 /* QuakeTowerTests.swift */,
+			);
+			path = QuakeTowerTests;
+			sourceTree = "<group>";
+		};
+		5B89E1482B8999E900D9E6E8 /* QuakeTowerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5B89E1492B8999E900D9E6E8 /* QuakeTowerUITests.swift */,
+				5B89E14B2B8999E900D9E6E8 /* QuakeTowerUITestsLaunchTests.swift */,
+			);
+			path = QuakeTowerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5B89E1242B8999E900D9E6E8 /* QuakeTower */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5B89E14F2B8999E900D9E6E8 /* Build configuration list for PBXNativeTarget "QuakeTower" */;
+			buildPhases = (
+				5B89E1212B8999E900D9E6E8 /* Sources */,
+				5B89E1222B8999E900D9E6E8 /* Frameworks */,
+				5B89E1232B8999E900D9E6E8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QuakeTower;
+			productName = QuakeTower;
+			productReference = 5B89E1252B8999E900D9E6E8 /* QuakeTower.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5B89E13A2B8999E900D9E6E8 /* QuakeTowerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5B89E1522B8999E900D9E6E8 /* Build configuration list for PBXNativeTarget "QuakeTowerTests" */;
+			buildPhases = (
+				5B89E1372B8999E900D9E6E8 /* Sources */,
+				5B89E1382B8999E900D9E6E8 /* Frameworks */,
+				5B89E1392B8999E900D9E6E8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5B89E13D2B8999E900D9E6E8 /* PBXTargetDependency */,
+			);
+			name = QuakeTowerTests;
+			productName = QuakeTowerTests;
+			productReference = 5B89E13B2B8999E900D9E6E8 /* QuakeTowerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5B89E1442B8999E900D9E6E8 /* QuakeTowerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5B89E1552B8999E900D9E6E8 /* Build configuration list for PBXNativeTarget "QuakeTowerUITests" */;
+			buildPhases = (
+				5B89E1412B8999E900D9E6E8 /* Sources */,
+				5B89E1422B8999E900D9E6E8 /* Frameworks */,
+				5B89E1432B8999E900D9E6E8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5B89E1472B8999E900D9E6E8 /* PBXTargetDependency */,
+			);
+			name = QuakeTowerUITests;
+			productName = QuakeTowerUITests;
+			productReference = 5B89E1452B8999E900D9E6E8 /* QuakeTowerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5B89E11D2B8999E800D9E6E8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					5B89E1242B8999E900D9E6E8 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					5B89E13A2B8999E900D9E6E8 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 5B89E1242B8999E900D9E6E8;
+					};
+					5B89E1442B8999E900D9E6E8 = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = 5B89E1242B8999E900D9E6E8;
+					};
+				};
+			};
+			buildConfigurationList = 5B89E1202B8999E800D9E6E8 /* Build configuration list for PBXProject "QuakeTower" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5B89E11C2B8999E800D9E6E8;
+			productRefGroup = 5B89E1262B8999E900D9E6E8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5B89E1242B8999E900D9E6E8 /* QuakeTower */,
+				5B89E13A2B8999E900D9E6E8 /* QuakeTowerTests */,
+				5B89E1442B8999E900D9E6E8 /* QuakeTowerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5B89E1232B8999E900D9E6E8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B89E1352B8999E900D9E6E8 /* LaunchScreen.storyboard in Resources */,
+				5B89E1322B8999E900D9E6E8 /* Assets.xcassets in Resources */,
+				5B89E1302B8999E900D9E6E8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B89E1392B8999E900D9E6E8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B89E1432B8999E900D9E6E8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5B89E1212B8999E900D9E6E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B89E12D2B8999E900D9E6E8 /* ViewController.swift in Sources */,
+				5B89E1292B8999E900D9E6E8 /* AppDelegate.swift in Sources */,
+				5B89E12B2B8999E900D9E6E8 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B89E1372B8999E900D9E6E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B89E1402B8999E900D9E6E8 /* QuakeTowerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5B89E1412B8999E900D9E6E8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B89E14C2B8999E900D9E6E8 /* QuakeTowerUITestsLaunchTests.swift in Sources */,
+				5B89E14A2B8999E900D9E6E8 /* QuakeTowerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5B89E13D2B8999E900D9E6E8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5B89E1242B8999E900D9E6E8 /* QuakeTower */;
+			targetProxy = 5B89E13C2B8999E900D9E6E8 /* PBXContainerItemProxy */;
+		};
+		5B89E1472B8999E900D9E6E8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5B89E1242B8999E900D9E6E8 /* QuakeTower */;
+			targetProxy = 5B89E1462B8999E900D9E6E8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5B89E12E2B8999E900D9E6E8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5B89E12F2B8999E900D9E6E8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5B89E1332B8999E900D9E6E8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5B89E1342B8999E900D9E6E8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5B89E14D2B8999E900D9E6E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5B89E14E2B8999E900D9E6E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5B89E1502B8999E900D9E6E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = QuakeTower/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = arch.saito.QuakeTower;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5B89E1512B8999E900D9E6E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = QuakeTower/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = arch.saito.QuakeTower;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5B89E1532B8999E900D9E6E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = arch.saito.QuakeTowerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QuakeTower.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/QuakeTower";
+			};
+			name = Debug;
+		};
+		5B89E1542B8999E900D9E6E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = arch.saito.QuakeTowerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QuakeTower.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/QuakeTower";
+			};
+			name = Release;
+		};
+		5B89E1562B8999E900D9E6E8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = arch.saito.QuakeTowerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = QuakeTower;
+			};
+			name = Debug;
+		};
+		5B89E1572B8999E900D9E6E8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = arch.saito.QuakeTowerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = QuakeTower;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5B89E1202B8999E800D9E6E8 /* Build configuration list for PBXProject "QuakeTower" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B89E14D2B8999E900D9E6E8 /* Debug */,
+				5B89E14E2B8999E900D9E6E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5B89E14F2B8999E900D9E6E8 /* Build configuration list for PBXNativeTarget "QuakeTower" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B89E1502B8999E900D9E6E8 /* Debug */,
+				5B89E1512B8999E900D9E6E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5B89E1522B8999E900D9E6E8 /* Build configuration list for PBXNativeTarget "QuakeTowerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B89E1532B8999E900D9E6E8 /* Debug */,
+				5B89E1542B8999E900D9E6E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5B89E1552B8999E900D9E6E8 /* Build configuration list for PBXNativeTarget "QuakeTowerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5B89E1562B8999E900D9E6E8 /* Debug */,
+				5B89E1572B8999E900D9E6E8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5B89E11D2B8999E800D9E6E8 /* Project object */;
+}
