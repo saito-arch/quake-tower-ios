@@ -32,6 +32,8 @@
 		5B89E17D2B89D24700D9E6E8 /* SignInRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E17C2B89D24700D9E6E8 /* SignInRouter.swift */; };
 		5B89E1802B89D31800D9E6E8 /* SignInInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E17F2B89D31800D9E6E8 /* SignInInteractor.swift */; };
 		5B89E1822B89D39800D9E6E8 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E1812B89D39800D9E6E8 /* R.generated.swift */; };
+		5B89E1862B89DF5600D9E6E8 /* Apis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E1852B89DF5600D9E6E8 /* Apis.swift */; };
+		5B89E1892B89EFFC00D9E6E8 /* SignInEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E1882B89EFFC00D9E6E8 /* SignInEntity.swift */; };
 		B4A4246021BC4E4AAE874E83 /* Pods_QuakeTowerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8938223B9ACD63FF506D606 /* Pods_QuakeTowerTests.framework */; };
 		E1A69F1285C41AE2F534E4DC /* Pods_QuakeTower_QuakeTowerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0CA8F10A17F60A9711D8D75 /* Pods_QuakeTower_QuakeTowerUITests.framework */; };
 /* End PBXBuildFile section */
@@ -85,6 +87,8 @@
 		5B89E17C2B89D24700D9E6E8 /* SignInRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRouter.swift; sourceTree = "<group>"; };
 		5B89E17F2B89D31800D9E6E8 /* SignInInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInInteractor.swift; sourceTree = "<group>"; };
 		5B89E1812B89D39800D9E6E8 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		5B89E1852B89DF5600D9E6E8 /* Apis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apis.swift; sourceTree = "<group>"; };
+		5B89E1882B89EFFC00D9E6E8 /* SignInEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInEntity.swift; sourceTree = "<group>"; };
 		6582F4CA4A8ADC8A108F7FE8 /* Pods-QuakeTower-QuakeTowerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuakeTower-QuakeTowerUITests.debug.xcconfig"; path = "Target Support Files/Pods-QuakeTower-QuakeTowerUITests/Pods-QuakeTower-QuakeTowerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7EFE7A18761178982EFA008D /* Pods-QuakeTower.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuakeTower.release.xcconfig"; path = "Target Support Files/Pods-QuakeTower/Pods-QuakeTower.release.xcconfig"; sourceTree = "<group>"; };
 		A0CA8F10A17F60A9711D8D75 /* Pods_QuakeTower_QuakeTowerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuakeTower_QuakeTowerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -193,6 +197,7 @@
 		5B89E15A2B89ADA800D9E6E8 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				5B89E1832B89DF3A00D9E6E8 /* Infrastructure */,
 				5B89E1712B89CF4A00D9E6E8 /* Application */,
 				5B89E1702B89CF4100D9E6E8 /* Presentation */,
 				5B89E1682B89B15F00D9E6E8 /* Domain */,
@@ -218,6 +223,7 @@
 		5B89E1682B89B15F00D9E6E8 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				5B89E1872B89EF5800D9E6E8 /* Entities */,
 				5B89E1692B89B16900D9E6E8 /* Interfaces */,
 			);
 			path = Domain;
@@ -288,6 +294,30 @@
 				5B89E17F2B89D31800D9E6E8 /* SignInInteractor.swift */,
 			);
 			path = Usecases;
+			sourceTree = "<group>";
+		};
+		5B89E1832B89DF3A00D9E6E8 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				5B89E1842B89DF4E00D9E6E8 /* API */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		5B89E1842B89DF4E00D9E6E8 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				5B89E1852B89DF5600D9E6E8 /* Apis.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		5B89E1872B89EF5800D9E6E8 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				5B89E1882B89EFFC00D9E6E8 /* SignInEntity.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		C636BC606C536BF1BB04A326 /* Frameworks */ = {
@@ -600,8 +630,10 @@
 				5B89E1672B89AF6E00D9E6E8 /* ServiceErrors.swift in Sources */,
 				5B89E1612B89AE9300D9E6E8 /* Api.swift in Sources */,
 				5B89E15F2B89AE0800D9E6E8 /* ViperExtensions.swift in Sources */,
+				5B89E1892B89EFFC00D9E6E8 /* SignInEntity.swift in Sources */,
 				5B89E1802B89D31800D9E6E8 /* SignInInteractor.swift in Sources */,
 				5B89E17B2B89D23D00D9E6E8 /* SignInPresenter.swift in Sources */,
+				5B89E1862B89DF5600D9E6E8 /* Apis.swift in Sources */,
 				5B89E16D2B89B1AD00D9E6E8 /* Common.swift in Sources */,
 				5B89E17D2B89D24700D9E6E8 /* SignInRouter.swift in Sources */,
 				5B89E1822B89D39800D9E6E8 /* R.generated.swift in Sources */,
