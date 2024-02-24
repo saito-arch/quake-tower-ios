@@ -24,6 +24,7 @@
 		5B89E1652B89AF5200D9E6E8 /* SystemErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E1642B89AF5200D9E6E8 /* SystemErrors.swift */; };
 		5B89E1672B89AF6E00D9E6E8 /* ServiceErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E1662B89AF6E00D9E6E8 /* ServiceErrors.swift */; };
 		5B89E16B2B89B17500D9E6E8 /* ApiInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E16A2B89B17500D9E6E8 /* ApiInterface.swift */; };
+		5B89E16D2B89B1AD00D9E6E8 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E16C2B89B1AD00D9E6E8 /* Common.swift */; };
 		B4A4246021BC4E4AAE874E83 /* Pods_QuakeTowerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8938223B9ACD63FF506D606 /* Pods_QuakeTowerTests.framework */; };
 		E1A69F1285C41AE2F534E4DC /* Pods_QuakeTower_QuakeTowerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0CA8F10A17F60A9711D8D75 /* Pods_QuakeTower_QuakeTowerUITests.framework */; };
 /* End PBXBuildFile section */
@@ -69,6 +70,7 @@
 		5B89E1642B89AF5200D9E6E8 /* SystemErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemErrors.swift; sourceTree = "<group>"; };
 		5B89E1662B89AF6E00D9E6E8 /* ServiceErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceErrors.swift; sourceTree = "<group>"; };
 		5B89E16A2B89B17500D9E6E8 /* ApiInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiInterface.swift; sourceTree = "<group>"; };
+		5B89E16C2B89B1AD00D9E6E8 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		6582F4CA4A8ADC8A108F7FE8 /* Pods-QuakeTower-QuakeTowerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuakeTower-QuakeTowerUITests.debug.xcconfig"; path = "Target Support Files/Pods-QuakeTower-QuakeTowerUITests/Pods-QuakeTower-QuakeTowerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7EFE7A18761178982EFA008D /* Pods-QuakeTower.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuakeTower.release.xcconfig"; path = "Target Support Files/Pods-QuakeTower/Pods-QuakeTower.release.xcconfig"; sourceTree = "<group>"; };
 		A0CA8F10A17F60A9711D8D75 /* Pods_QuakeTower_QuakeTowerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuakeTower_QuakeTowerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -190,6 +192,7 @@
 				5B89E1602B89AE9300D9E6E8 /* Api.swift */,
 				5B89E1622B89AF3B00D9E6E8 /* ApiClient.swift */,
 				5B89E1642B89AF5200D9E6E8 /* SystemErrors.swift */,
+				5B89E16C2B89B1AD00D9E6E8 /* Common.swift */,
 			);
 			path = System;
 			sourceTree = "<group>";
@@ -519,6 +522,7 @@
 				5B89E1672B89AF6E00D9E6E8 /* ServiceErrors.swift in Sources */,
 				5B89E1612B89AE9300D9E6E8 /* Api.swift in Sources */,
 				5B89E15F2B89AE0800D9E6E8 /* ViperExtensions.swift in Sources */,
+				5B89E16D2B89B1AD00D9E6E8 /* Common.swift in Sources */,
 				5B89E16B2B89B17500D9E6E8 /* ApiInterface.swift in Sources */,
 				5B89E12D2B8999E900D9E6E8 /* ViewController.swift in Sources */,
 				5B89E1292B8999E900D9E6E8 /* AppDelegate.swift in Sources */,
