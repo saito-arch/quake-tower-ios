@@ -179,6 +179,7 @@
 				5B89E1212B8999E900D9E6E8 /* Sources */,
 				5B89E1222B8999E900D9E6E8 /* Frameworks */,
 				5B89E1232B8999E900D9E6E8 /* Resources */,
+				5B89E1592B89A05700D9E6E8 /* ShellScript */,
 				BEFD46527EE93F3567C8391B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
@@ -385,6 +386,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/QuakeTower/R.generated.swift\"\n";
+		};
+		5B89E1592B89A05700D9E6E8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if test -d /opt/homebrew/bin; then\n    PATH=/opt/homebrew/bin/:$PATH\nfi\n\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 		BEFD46527EE93F3567C8391B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
