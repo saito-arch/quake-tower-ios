@@ -26,6 +26,12 @@
 		5B89E16B2B89B17500D9E6E8 /* ApiInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E16A2B89B17500D9E6E8 /* ApiInterface.swift */; };
 		5B89E16D2B89B1AD00D9E6E8 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E16C2B89B1AD00D9E6E8 /* Common.swift */; };
 		5B89E16F2B89B34600D9E6E8 /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E16E2B89B34600D9E6E8 /* Alertable.swift */; };
+		5B89E1772B89D11C00D9E6E8 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E1762B89D11C00D9E6E8 /* SignInViewController.swift */; };
+		5B89E1792B89D23100D9E6E8 /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B89E1782B89D23100D9E6E8 /* SignIn.storyboard */; };
+		5B89E17B2B89D23D00D9E6E8 /* SignInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E17A2B89D23D00D9E6E8 /* SignInPresenter.swift */; };
+		5B89E17D2B89D24700D9E6E8 /* SignInRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E17C2B89D24700D9E6E8 /* SignInRouter.swift */; };
+		5B89E1802B89D31800D9E6E8 /* SignInInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E17F2B89D31800D9E6E8 /* SignInInteractor.swift */; };
+		5B89E1822B89D39800D9E6E8 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E1812B89D39800D9E6E8 /* R.generated.swift */; };
 		B4A4246021BC4E4AAE874E83 /* Pods_QuakeTowerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8938223B9ACD63FF506D606 /* Pods_QuakeTowerTests.framework */; };
 		E1A69F1285C41AE2F534E4DC /* Pods_QuakeTower_QuakeTowerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0CA8F10A17F60A9711D8D75 /* Pods_QuakeTower_QuakeTowerUITests.framework */; };
 /* End PBXBuildFile section */
@@ -73,6 +79,12 @@
 		5B89E16A2B89B17500D9E6E8 /* ApiInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiInterface.swift; sourceTree = "<group>"; };
 		5B89E16C2B89B1AD00D9E6E8 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		5B89E16E2B89B34600D9E6E8 /* Alertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
+		5B89E1762B89D11C00D9E6E8 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		5B89E1782B89D23100D9E6E8 /* SignIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
+		5B89E17A2B89D23D00D9E6E8 /* SignInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPresenter.swift; sourceTree = "<group>"; };
+		5B89E17C2B89D24700D9E6E8 /* SignInRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRouter.swift; sourceTree = "<group>"; };
+		5B89E17F2B89D31800D9E6E8 /* SignInInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInInteractor.swift; sourceTree = "<group>"; };
+		5B89E1812B89D39800D9E6E8 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		6582F4CA4A8ADC8A108F7FE8 /* Pods-QuakeTower-QuakeTowerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuakeTower-QuakeTowerUITests.debug.xcconfig"; path = "Target Support Files/Pods-QuakeTower-QuakeTowerUITests/Pods-QuakeTower-QuakeTowerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7EFE7A18761178982EFA008D /* Pods-QuakeTower.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuakeTower.release.xcconfig"; path = "Target Support Files/Pods-QuakeTower/Pods-QuakeTower.release.xcconfig"; sourceTree = "<group>"; };
 		A0CA8F10A17F60A9711D8D75 /* Pods_QuakeTower_QuakeTowerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuakeTower_QuakeTowerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,6 +166,7 @@
 				5B89E12C2B8999E900D9E6E8 /* ViewController.swift */,
 				5B89E12E2B8999E900D9E6E8 /* Main.storyboard */,
 				5B89E1312B8999E900D9E6E8 /* Assets.xcassets */,
+				5B89E1812B89D39800D9E6E8 /* R.generated.swift */,
 				5B89E1332B8999E900D9E6E8 /* LaunchScreen.storyboard */,
 				5B89E1362B8999E900D9E6E8 /* Info.plist */,
 			);
@@ -180,6 +193,8 @@
 		5B89E15A2B89ADA800D9E6E8 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				5B89E1712B89CF4A00D9E6E8 /* Application */,
+				5B89E1702B89CF4100D9E6E8 /* Presentation */,
 				5B89E1682B89B15F00D9E6E8 /* Domain */,
 				5B89E1662B89AF6E00D9E6E8 /* ServiceErrors.swift */,
 			);
@@ -214,6 +229,65 @@
 				5B89E16A2B89B17500D9E6E8 /* ApiInterface.swift */,
 			);
 			path = Interfaces;
+			sourceTree = "<group>";
+		};
+		5B89E1702B89CF4100D9E6E8 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				5B89E1752B89D10900D9E6E8 /* Routers */,
+				5B89E1742B89D0FD00D9E6E8 /* Presenters */,
+				5B89E1732B89D0F700D9E6E8 /* Storyboards */,
+				5B89E1722B89D0EC00D9E6E8 /* ViewControllers */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		5B89E1712B89CF4A00D9E6E8 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				5B89E17E2B89D30C00D9E6E8 /* Usecases */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		5B89E1722B89D0EC00D9E6E8 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				5B89E1762B89D11C00D9E6E8 /* SignInViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		5B89E1732B89D0F700D9E6E8 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				5B89E1782B89D23100D9E6E8 /* SignIn.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		5B89E1742B89D0FD00D9E6E8 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				5B89E17A2B89D23D00D9E6E8 /* SignInPresenter.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		5B89E1752B89D10900D9E6E8 /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				5B89E17C2B89D24700D9E6E8 /* SignInRouter.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
+		5B89E17E2B89D30C00D9E6E8 /* Usecases */ = {
+			isa = PBXGroup;
+			children = (
+				5B89E17F2B89D31800D9E6E8 /* SignInInteractor.swift */,
+			);
+			path = Usecases;
 			sourceTree = "<group>";
 		};
 		C636BC606C536BF1BB04A326 /* Frameworks */ = {
@@ -338,6 +412,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B89E1792B89D23100D9E6E8 /* SignIn.storyboard in Resources */,
 				5B89E1352B8999E900D9E6E8 /* LaunchScreen.storyboard in Resources */,
 				5B89E1322B8999E900D9E6E8 /* Assets.xcassets in Resources */,
 				5B89E1302B8999E900D9E6E8 /* Main.storyboard in Resources */,
@@ -525,7 +600,12 @@
 				5B89E1672B89AF6E00D9E6E8 /* ServiceErrors.swift in Sources */,
 				5B89E1612B89AE9300D9E6E8 /* Api.swift in Sources */,
 				5B89E15F2B89AE0800D9E6E8 /* ViperExtensions.swift in Sources */,
+				5B89E1802B89D31800D9E6E8 /* SignInInteractor.swift in Sources */,
+				5B89E17B2B89D23D00D9E6E8 /* SignInPresenter.swift in Sources */,
 				5B89E16D2B89B1AD00D9E6E8 /* Common.swift in Sources */,
+				5B89E17D2B89D24700D9E6E8 /* SignInRouter.swift in Sources */,
+				5B89E1822B89D39800D9E6E8 /* R.generated.swift in Sources */,
+				5B89E1772B89D11C00D9E6E8 /* SignInViewController.swift in Sources */,
 				5B89E16B2B89B17500D9E6E8 /* ApiInterface.swift in Sources */,
 				5B89E16F2B89B34600D9E6E8 /* Alertable.swift in Sources */,
 				5B89E12D2B8999E900D9E6E8 /* ViewController.swift in Sources */,
