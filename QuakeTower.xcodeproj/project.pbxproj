@@ -36,6 +36,8 @@
 		5B89E1892B89EFFC00D9E6E8 /* SignInEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E1882B89EFFC00D9E6E8 /* SignInEntity.swift */; };
 		5B89E18B2B89F0C900D9E6E8 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E18A2B89F0C900D9E6E8 /* ApiService.swift */; };
 		5B89E18D2B89F18000D9E6E8 /* AlamofireApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E18C2B89F18000D9E6E8 /* AlamofireApiClient.swift */; };
+		5B89E1902B89F27D00D9E6E8 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E18F2B89F27D00D9E6E8 /* Session.swift */; };
+		5B89E1932B89F38300D9E6E8 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E1922B89F38300D9E6E8 /* Keychain.swift */; };
 		B4A4246021BC4E4AAE874E83 /* Pods_QuakeTowerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8938223B9ACD63FF506D606 /* Pods_QuakeTowerTests.framework */; };
 		E1A69F1285C41AE2F534E4DC /* Pods_QuakeTower_QuakeTowerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0CA8F10A17F60A9711D8D75 /* Pods_QuakeTower_QuakeTowerUITests.framework */; };
 /* End PBXBuildFile section */
@@ -93,6 +95,8 @@
 		5B89E1882B89EFFC00D9E6E8 /* SignInEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInEntity.swift; sourceTree = "<group>"; };
 		5B89E18A2B89F0C900D9E6E8 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		5B89E18C2B89F18000D9E6E8 /* AlamofireApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireApiClient.swift; sourceTree = "<group>"; };
+		5B89E18F2B89F27D00D9E6E8 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		5B89E1922B89F38300D9E6E8 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		6582F4CA4A8ADC8A108F7FE8 /* Pods-QuakeTower-QuakeTowerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuakeTower-QuakeTowerUITests.debug.xcconfig"; path = "Target Support Files/Pods-QuakeTower-QuakeTowerUITests/Pods-QuakeTower-QuakeTowerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7EFE7A18761178982EFA008D /* Pods-QuakeTower.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuakeTower.release.xcconfig"; path = "Target Support Files/Pods-QuakeTower/Pods-QuakeTower.release.xcconfig"; sourceTree = "<group>"; };
 		A0CA8F10A17F60A9711D8D75 /* Pods_QuakeTower_QuakeTowerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuakeTower_QuakeTowerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -227,6 +231,7 @@
 		5B89E1682B89B15F00D9E6E8 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				5B89E18E2B89F27500D9E6E8 /* Models */,
 				5B89E1872B89EF5800D9E6E8 /* Entities */,
 				5B89E1692B89B16900D9E6E8 /* Interfaces */,
 			);
@@ -303,6 +308,7 @@
 		5B89E1832B89DF3A00D9E6E8 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				5B89E1912B89F37000D9E6E8 /* DataStore */,
 				5B89E1842B89DF4E00D9E6E8 /* API */,
 			);
 			path = Infrastructure;
@@ -324,6 +330,22 @@
 				5B89E1882B89EFFC00D9E6E8 /* SignInEntity.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		5B89E18E2B89F27500D9E6E8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5B89E18F2B89F27D00D9E6E8 /* Session.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5B89E1912B89F37000D9E6E8 /* DataStore */ = {
+			isa = PBXGroup;
+			children = (
+				5B89E1922B89F38300D9E6E8 /* Keychain.swift */,
+			);
+			path = DataStore;
 			sourceTree = "<group>";
 		};
 		C636BC606C536BF1BB04A326 /* Frameworks */ = {
@@ -643,6 +665,7 @@
 				5B89E17B2B89D23D00D9E6E8 /* SignInPresenter.swift in Sources */,
 				5B89E1862B89DF5600D9E6E8 /* Apis.swift in Sources */,
 				5B89E16D2B89B1AD00D9E6E8 /* Common.swift in Sources */,
+				5B89E1932B89F38300D9E6E8 /* Keychain.swift in Sources */,
 				5B89E17D2B89D24700D9E6E8 /* SignInRouter.swift in Sources */,
 				5B89E1822B89D39800D9E6E8 /* R.generated.swift in Sources */,
 				5B89E1772B89D11C00D9E6E8 /* SignInViewController.swift in Sources */,
@@ -650,6 +673,7 @@
 				5B89E16F2B89B34600D9E6E8 /* Alertable.swift in Sources */,
 				5B89E12D2B8999E900D9E6E8 /* ViewController.swift in Sources */,
 				5B89E1292B8999E900D9E6E8 /* AppDelegate.swift in Sources */,
+				5B89E1902B89F27D00D9E6E8 /* Session.swift in Sources */,
 				5B89E15D2B89ADCF00D9E6E8 /* ViperProtocols.swift in Sources */,
 				5B89E12B2B8999E900D9E6E8 /* SceneDelegate.swift in Sources */,
 				5B89E1652B89AF5200D9E6E8 /* SystemErrors.swift in Sources */,
