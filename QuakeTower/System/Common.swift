@@ -14,17 +14,17 @@ let IS_TESTING = { (isTesting: String?) -> Bool in
     return false
 }(ProcessInfo().environment["IS_TESTING"])
 
-func log(_ msg: String, file: String = #file, line: Int = #line, function: String = #function) {
+func log(_ message: String, file: String = #file, line: Int = #line, function: String = #function) {
 
-    var f = "NONE"
+    var file = "NONE"
 
-    if let _f = file.components(separatedBy: "/").last {
-        f = _f.replacingOccurrences(of: ".swift", with: "")
-        f = f.replacingOccurrences(of: "ViewController", with: "Vc")
-        f = f.replacingOccurrences(of: "Repository", with: "Rp")
-        f = f.replacingOccurrences(of: "Interactor", with: "Ir")
-        f = f.replacingOccurrences(of: "Presenter", with: "Ps")
+    if let fileLast = file.components(separatedBy: "/").last {
+        file = fileLast.replacingOccurrences(of: ".swift", with: "")
+        file = file.replacingOccurrences(of: "ViewController", with: "Vc")
+        file = file.replacingOccurrences(of: "Repository", with: "Rp")
+        file = file.replacingOccurrences(of: "Interactor", with: "Ir")
+        file = file.replacingOccurrences(of: "Presenter", with: "Ps")
     }
 
-    print("\(f):\(line) [\(function)]: \(msg)")
+    print("\(file):\(line) [\(function)]: \(message)")
 }

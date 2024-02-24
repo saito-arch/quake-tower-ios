@@ -26,8 +26,8 @@ class ApiService {
 }
 
 extension ApiService: ApiInterface {
-    func signIn(with uuid: String, email: String, pass: String) -> Single<ApiContext<SignInEntity, MyError>> {
-        let api = Apis.Ver1.SignIn(uuid: uuid, email: email, pass: pass)
+    func signIn(with uuid: String, email: String, password: String) -> Single<ApiContext<SignInEntity, MyError>> {
+        let api = Apis.Ver1.SignIn(uuid: uuid, email: email, pass: password)
         return self.apiClient.call(api: api)
     }
 }
