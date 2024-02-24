@@ -30,7 +30,7 @@ class Session {
 
     private init() {}
 
-    func signIn(with uuid: String, email: String, password: String) -> Single<ApiContext<SignInEntity, Alternatives.SignIn>> {
+    func signIn(with uuid: String, email: String, password: String) -> Single<ApiContext<SignInEntity, MyError>> {
         return ApiService.shared.signIn(with: uuid, email: email, password: password)
             .do(onSuccess: { apiContext in
 

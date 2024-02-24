@@ -17,12 +17,7 @@ enum Alternatives {
 
     enum None {}
 
-    enum SignIn {
-        case signInFailed
-    }
-
     case none(_ error: None)
-    case signIn(_ error: SignIn)
 }
 
 protocol ApiInterface {
@@ -33,5 +28,5 @@ protocol ApiInterface {
     ///   - email: user's email
     ///   - pass: user's password
     /// - Returns: Context of execution result
-    func signIn(with uuid: String, email: String, password: String) -> Single<ApiContext<SignInEntity, Alternatives.SignIn>>
+    func signIn(with uuid: String, email: String, password: String) -> Single<ApiContext<SignInEntity, MyError>>
 }
