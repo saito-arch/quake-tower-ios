@@ -17,6 +17,7 @@
 		5B89E1402B8999E900D9E6E8 /* QuakeTowerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E13F2B8999E900D9E6E8 /* QuakeTowerTests.swift */; };
 		5B89E14A2B8999E900D9E6E8 /* QuakeTowerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E1492B8999E900D9E6E8 /* QuakeTowerUITests.swift */; };
 		5B89E14C2B8999E900D9E6E8 /* QuakeTowerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E14B2B8999E900D9E6E8 /* QuakeTowerUITestsLaunchTests.swift */; };
+		5B89E15D2B89ADCF00D9E6E8 /* ViperProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E15C2B89ADCF00D9E6E8 /* ViperProtocols.swift */; };
 		B4A4246021BC4E4AAE874E83 /* Pods_QuakeTowerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8938223B9ACD63FF506D606 /* Pods_QuakeTowerTests.framework */; };
 		E1A69F1285C41AE2F534E4DC /* Pods_QuakeTower_QuakeTowerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0CA8F10A17F60A9711D8D75 /* Pods_QuakeTower_QuakeTowerUITests.framework */; };
 /* End PBXBuildFile section */
@@ -55,6 +56,7 @@
 		5B89E1452B8999E900D9E6E8 /* QuakeTowerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuakeTowerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B89E1492B8999E900D9E6E8 /* QuakeTowerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuakeTowerUITests.swift; sourceTree = "<group>"; };
 		5B89E14B2B8999E900D9E6E8 /* QuakeTowerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuakeTowerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		5B89E15C2B89ADCF00D9E6E8 /* ViperProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViperProtocols.swift; sourceTree = "<group>"; };
 		6582F4CA4A8ADC8A108F7FE8 /* Pods-QuakeTower-QuakeTowerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuakeTower-QuakeTowerUITests.debug.xcconfig"; path = "Target Support Files/Pods-QuakeTower-QuakeTowerUITests/Pods-QuakeTower-QuakeTowerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7EFE7A18761178982EFA008D /* Pods-QuakeTower.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuakeTower.release.xcconfig"; path = "Target Support Files/Pods-QuakeTower/Pods-QuakeTower.release.xcconfig"; sourceTree = "<group>"; };
 		A0CA8F10A17F60A9711D8D75 /* Pods_QuakeTower_QuakeTowerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuakeTower_QuakeTowerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +131,8 @@
 		5B89E1272B8999E900D9E6E8 /* QuakeTower */ = {
 			isa = PBXGroup;
 			children = (
+				5B89E15A2B89ADA800D9E6E8 /* Service */,
+				5B89E15B2B89ADB700D9E6E8 /* System */,
 				5B89E1282B8999E900D9E6E8 /* AppDelegate.swift */,
 				5B89E12A2B8999E900D9E6E8 /* SceneDelegate.swift */,
 				5B89E12C2B8999E900D9E6E8 /* ViewController.swift */,
@@ -155,6 +159,21 @@
 				5B89E14B2B8999E900D9E6E8 /* QuakeTowerUITestsLaunchTests.swift */,
 			);
 			path = QuakeTowerUITests;
+			sourceTree = "<group>";
+		};
+		5B89E15A2B89ADA800D9E6E8 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		5B89E15B2B89ADB700D9E6E8 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				5B89E15C2B89ADCF00D9E6E8 /* ViperProtocols.swift */,
+			);
+			path = System;
 			sourceTree = "<group>";
 		};
 		C636BC606C536BF1BB04A326 /* Frameworks */ = {
@@ -464,6 +483,7 @@
 			files = (
 				5B89E12D2B8999E900D9E6E8 /* ViewController.swift in Sources */,
 				5B89E1292B8999E900D9E6E8 /* AppDelegate.swift in Sources */,
+				5B89E15D2B89ADCF00D9E6E8 /* ViperProtocols.swift in Sources */,
 				5B89E12B2B8999E900D9E6E8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
