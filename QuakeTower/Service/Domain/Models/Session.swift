@@ -36,6 +36,7 @@ class Session {
 
                 switch apiContext {
                 case .success(let entity):
+                    self.uuid = uuid
                     self.currentAccount.userId = entity.userId
 
                 default:
