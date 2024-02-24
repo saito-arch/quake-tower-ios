@@ -1,5 +1,5 @@
 //
-//  QTAccount.swift
+//  QuakeTowerAccount.swift
 //  QuakeTower
 //
 //  Created by Saito on 2024/02/24.
@@ -8,7 +8,7 @@
 import Foundation
 import RxSwift
 
-class QTAccount {
+class QuakeTowerAccount {
     var userId: Int? {
         get {
             if let userId = Stored.IntValue.userId.object() {

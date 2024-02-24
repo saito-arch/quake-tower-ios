@@ -26,7 +26,7 @@ class Session {
         }
     }
 
-    var currentAccount = QTAccount()
+    var currentAccount = QuakeTowerAccount()
 
     private init() {}
 
