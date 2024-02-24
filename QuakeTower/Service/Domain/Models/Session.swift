@@ -14,15 +14,15 @@ class Session {
     static let shared = Session()
 
     var uuid: String? {
+        get {
+            Keychain.uuid.load()
+        }
         set {
             if let uuid = newValue {
                 Keychain.uuid.store(uuid)
             } else {
                 Keychain.uuid.delete()
             }
-        }
-        get {
-            return Keychain.uuid.load()
         }
     }
 
@@ -31,7 +31,7 @@ class Session {
     private init() {}
 
     func signIn(with uuid: String, email: String, password: String) -> Single<ApiContext<SignInEntity, MyError>> {
-        return ApiService.shared.signIn(with: uuid, email: email, password: password)
+        ApiService.shared.signIn(with: uuid, email: email, password: password)
             .do(onSuccess: { apiContext in
 
                 switch apiContext {

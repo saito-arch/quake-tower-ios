@@ -67,7 +67,7 @@ fileprivate class MockUserDefaults {
     func set(value: Any?, forKey: String) {
         guard let key = searchKey(forKey: forKey) else {
             log("forKey >>> \(forKey)")
-            fatalError()
+            fatalError("can't set \(forKey)")
         }
         storedValues[key] = value
     }
@@ -75,7 +75,7 @@ fileprivate class MockUserDefaults {
     func object(forKey: String) -> Any? {
         guard let key = searchKey(forKey: forKey) else {
             log("forKey >>> \(forKey)")
-            fatalError()
+            fatalError("can't object \(forKey)")
         }
         return storedValues[key] as Any?
     }
@@ -83,7 +83,7 @@ fileprivate class MockUserDefaults {
     func removeObject(forKey: String) {
         guard let key = searchKey(forKey: forKey) else {
             log("forKey >>> \(forKey)")
-            fatalError()
+            fatalError("can't remove object \(forKey)")
         }
         storedValues[key] = nil
     }

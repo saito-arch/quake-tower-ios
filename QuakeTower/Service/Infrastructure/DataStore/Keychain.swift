@@ -14,9 +14,9 @@ enum Keychain: String {
 
     func store(_ value: String) {
         let query: [String: Any] = [
-            kSecClass as String : kSecClassGenericPassword,
-            kSecAttrAccount as String : self.rawValue,
-            kSecValueData as String : value.data(using: .utf8)!
+            kSecClass as String: kSecClassGenericPassword,
+            kSecAttrAccount as String: self.rawValue,
+            kSecValueData as String: value.data(using: .utf8)!
         ]
 
         SecItemDelete(query as CFDictionary)
@@ -26,10 +26,10 @@ enum Keychain: String {
     func load() -> String? {
 
         let query: [String: Any] = [
-            kSecClass as String : kSecClassGenericPassword,
-            kSecAttrAccount as String : self.rawValue,
-            kSecReturnData as String : kCFBooleanTrue as Any,
-            kSecMatchLimit as String : kSecMatchLimitOne
+            kSecClass as String: kSecClassGenericPassword,
+            kSecAttrAccount as String: self.rawValue,
+            kSecReturnData as String: kCFBooleanTrue as Any,
+            kSecMatchLimit as String: kSecMatchLimitOne
         ]
 
         var result: AnyObject?
@@ -46,8 +46,8 @@ enum Keychain: String {
 
     func delete() {
         let query: [String: Any] = [
-            kSecClass as String : kSecClassGenericPassword,
-            kSecAttrAccount as String : self.rawValue
+            kSecClass as String: kSecClassGenericPassword,
+            kSecAttrAccount as String: self.rawValue
         ]
 
         if errSecSuccess == SecItemDelete(query as CFDictionary) {
