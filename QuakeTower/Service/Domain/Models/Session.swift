@@ -13,16 +13,16 @@ class Session {
     // Singleton
     static let shared = Session()
 
-    var udid: String? {
+    var uuid: String? {
         set {
-            if let udid = newValue {
-                Keychain.udid.store(udid)
+            if let uuid = newValue {
+                Keychain.uuid.store(uuid)
             } else {
-                Keychain.udid.delete()
+                Keychain.uuid.delete()
             }
         }
         get {
-            return Keychain.udid.load()
+            return Keychain.uuid.load()
         }
     }
 
@@ -30,8 +30,8 @@ class Session {
 
     private init() {}
 
-    func signIn(with udid: String, email: String, password: String) -> Single<ApiContext<SignInEntity, Alternatives.SignIn>> {
-        return ApiService.shared.signIn(with: udid, email: email, password: password)
+    func signIn(with uuid: String, email: String, password: String) -> Single<ApiContext<SignInEntity, Alternatives.SignIn>> {
+        return ApiService.shared.signIn(with: uuid, email: email, password: password)
             .do(onSuccess: { apiContext in
 
                 switch apiContext {

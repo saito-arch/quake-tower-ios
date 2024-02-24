@@ -10,7 +10,7 @@ import Security
 
 enum Keychain: String {
 
-    case udid
+    case uuid
 
     func store(_ value: String) {
         let query: [String: Any] = [

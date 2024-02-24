@@ -35,8 +35,8 @@ enum Apis {
             var headers: HTTPHeaders? = DEFAULT_HEADERS
             let params: [String: Any]
 
-            init(udid: String, email: String, pass: String) {
-                self.params = ["udid": "\(udid)", "email": "\(email)", "pass": "\(pass)"]
+            init(uuid: String, email: String, pass: String) {
+                self.params = ["uuid": "\(uuid)", "email": "\(email)", "pass": "\(pass)"]
             }
         }
     }

@@ -29,9 +29,9 @@ protocol ApiInterface {
     /// Execute to sign in
     ///
     /// - Parameters:
-    ///   - udid: Terminal identification ID
+    ///   - uuid: Terminal identification ID
     ///   - email: user's email
     ///   - pass: user's password
     /// - Returns: Context of execution result
-    func signIn(with udid: String, email: String, password: String) -> Single<ApiContext<SignInEntity, Alternatives.SignIn>>
+    func signIn(with uuid: String, email: String, password: String) -> Single<ApiContext<SignInEntity, Alternatives.SignIn>>
 }
