@@ -17,8 +17,21 @@ enum Alternatives {
 
     enum None {}
 
+    enum SignIn {
+        case signInFailed
+    }
+
     case none(_ error: None)
+    case signIn(_ error: SignIn)
 }
 
 protocol ApiInterface {
+    /// Execute to sign in
+    ///
+    /// - Parameters:
+    ///   - udid: Terminal identification ID
+    ///   - email: user's email
+    ///   - pass: user's password
+    /// - Returns: Context of execution result
+    func signIn(with udid: String, email: String, password: String) -> Single<ApiContext<SignInEntity, Alternatives.SignIn>>
 }

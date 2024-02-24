@@ -12,7 +12,7 @@ enum Stored {
     enum IntValue: String, UserDefaultsKey {
         typealias ValueType = Int
 
-        case id
+        case userId
     }
 }
 
@@ -56,7 +56,7 @@ fileprivate class MockUserDefaults {
     var storedValues = [Keys: Any?]()
 
     enum Keys: String {
-        case id
+        case userId
     }
 
     private func searchKey(forKey: String) -> Keys? {

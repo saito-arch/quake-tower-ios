@@ -21,10 +21,10 @@ enum Apis {
             struct SignInResult: Codable, JudgableVer1 {
                 typealias Context = SignInEntity
 
-                let id: Int
+                let userId: Int
 
                 func getContext() -> SignInEntity {
-                    let entity = SignInEntity(id: id)
+                    let entity = SignInEntity(userId: userId)
 
                     return entity
                 }

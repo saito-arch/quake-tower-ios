@@ -8,5 +8,5 @@
 import Foundation
 
 struct SignInEntity: Entity {
-    let id: Int
+    let userId: Int
 }
