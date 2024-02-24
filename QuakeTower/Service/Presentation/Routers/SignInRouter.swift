@@ -36,4 +36,3 @@ struct SignInRouter {
 
 extension SignInRouter: SignInWireframe {
 }
-

@@ -46,4 +46,3 @@ extension ApiVer1 {
         try JSONDecoder().decode(MyError.self, from: json)
     }
 }
-

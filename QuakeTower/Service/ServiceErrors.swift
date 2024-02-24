@@ -15,7 +15,7 @@ enum ServiceErrors: Error {
 
     enum Server: Error {
         enum Ver1: Int, Error {
-            case AppNeedsToBeUpdated = 1_001
+            case appNeedsToBeUpdated = 1_001
         }
     }
 

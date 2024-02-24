@@ -13,4 +13,3 @@ protocol SignInUsecase: Usecase {
 
 struct SignInInteractor: SignInUsecase {
 }
-
