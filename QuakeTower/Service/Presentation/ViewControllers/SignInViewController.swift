@@ -13,6 +13,20 @@ protocol SignInUserInterface: UserInterface, Alertable where Presenter: SignInPr
 class SignInViewController: UIViewController {
 
     var presenter: Presenter?
+
+    @IBOutlet weak var textFieldEmail: UITextField!
+
+    @IBOutlet weak var textFieldPassword: UITextField!
+
+    @IBOutlet weak var buttonSignIn: UIButton!
+
+    @IBAction func onTouchSignInButton(_ sender: UIButton) {
+
+    }
+
+    @IBAction func onTouchSignUpButton(_ sender: UIButton) {
+
+    }
 }
 
 extension SignInViewController: SignInUserInterface {
