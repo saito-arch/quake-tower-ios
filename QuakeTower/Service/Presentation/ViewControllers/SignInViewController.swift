@@ -16,7 +16,11 @@ class SignInViewController: UIViewController {
 
     @IBOutlet weak var textFieldEmail: UITextField!
 
-    @IBOutlet weak var textFieldPassword: UITextField!
+    @IBOutlet weak var textFieldPassword: UITextField! {
+        didSet {
+            self.textFieldPassword.isSecureTextEntry = true
+        }
+    }
 
     @IBOutlet weak var buttonSignIn: UIButton!
 
