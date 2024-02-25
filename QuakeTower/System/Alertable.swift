@@ -32,11 +32,13 @@ let ERROR_ALERT_CONTENT_MAP: [MessagePatternId: AlertContent] = [
 
 enum AlertActionPatternV2 {
     case d1001
+    case d1002
     case d2xxx
 }
 
 let ERROR_ALERT_CONTENT_MAP_V2: [AlertActionPatternV2: [(String, UIAlertAction.Style)]] = [
     .d1001: [(COMMON_OK, .default)],
+    .d1002: [(COMMON_OK, .default)],
     .d2xxx: [(COMMON_OK, .default)]
 ]
 
