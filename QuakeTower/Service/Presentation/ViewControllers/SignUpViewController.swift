@@ -18,7 +18,7 @@ class SignUpViewController: UIViewController {
     var presenter: Presenter?
     
     lazy var indicator: UIActivityIndicatorView? = {
-        return UIActivityIndicatorView.instantiate(view: self.view)
+        UIActivityIndicatorView.instantiate(view: self.view)
     }()
 
     // MARK: - Lifecycle Events

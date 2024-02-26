@@ -37,7 +37,7 @@ class SignInViewController: UIViewController {
     }
 
     lazy var indicator: UIActivityIndicatorView? = {
-        return UIActivityIndicatorView.instantiate(view: self.view)
+        UIActivityIndicatorView.instantiate(view: self.view)
     }()
 
     // MARK: - Lifecycle Events
