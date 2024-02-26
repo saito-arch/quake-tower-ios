@@ -16,10 +16,15 @@ class SignInViewController: UIViewController {
 
     var presenter: Presenter?
 
-    @IBOutlet weak var textFieldEmail: UITextField!
+    @IBOutlet weak var textFieldEmail: UITextField! {
+        didSet {
+            self.textFieldEmail.delegate = self
+        }
+    }
 
     @IBOutlet weak var textFieldPassword: UITextField! {
         didSet {
+            self.textFieldPassword.delegate = self
             self.textFieldPassword.isSecureTextEntry = true
         }
     }
