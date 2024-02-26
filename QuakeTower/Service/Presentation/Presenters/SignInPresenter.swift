@@ -41,9 +41,12 @@ class SignInPresenter<T: SignInUserInterface, U: SignInUsecase, V: SignInWirefra
 
     private func signIn(email: String, password: String) {
         let uuid = UUID().uuidString
+        vc?.showIndicator()
         _ = self.interactor.signIn(uuid: uuid, email: email, password: password)
             .do(onSuccess: { _ in
+                self.vc?.hideIndicator()
             }, onError: { _ in
+                self.vc?.hideIndicator()
             })
             .subscribe(onSuccess: { contexts in
                 self.onSuccessSignIn(contexts: contexts)
