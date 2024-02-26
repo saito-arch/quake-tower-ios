@@ -10,6 +10,8 @@ import RxSwift
 
 protocol SignInPresentation: Presentation
 where ViewController: SignInUserInterface, Interactor: SignInUsecase, Router: SignInWireframe {
+    func onTouchSignInButton(email: String, password: String)
+    func onTouchSignUpButton()
 }
 
 class SignInPresenter<T: SignInUserInterface, U: SignInUsecase, V: SignInWireframe>: SignInPresentation {
@@ -26,6 +28,15 @@ class SignInPresenter<T: SignInUserInterface, U: SignInUsecase, V: SignInWirefra
         self.vc = vc
         self.interactor = interactor
         self.router = router
+    }
+
+    func onTouchSignInButton(email: String, password: String) {
+        //TODO: failure count limit
+        signIn(email: email, password: password)
+    }
+
+    func onTouchSignUpButton() {
+        //TODO: to sign up screen
     }
 
     private func signIn(email: String, password: String) {

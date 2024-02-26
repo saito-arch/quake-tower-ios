@@ -25,11 +25,13 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var buttonSignIn: UIButton!
 
     @IBAction func onTouchSignInButton(_ sender: UIButton) {
-
+        if let email = textFieldEmail.text, let password = textFieldPassword.text {
+            presenter?.onTouchSignInButton(email: email, password: password)
+        }
     }
 
     @IBAction func onTouchSignUpButton(_ sender: UIButton) {
-
+        presenter?.onTouchSignUpButton()
     }
 }
 
