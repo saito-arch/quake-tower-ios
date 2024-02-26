@@ -47,6 +47,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Sign up"/>
+                                <connections>
+                                    <action selector="onTouchSignUpButton:" destination="xBd-HV-Yyn" eventType="touchUpInside" id="5ds-I2-owR"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="D5w-zl-fTW"/>
@@ -66,6 +69,12 @@
                             <constraint firstItem="D5w-zl-fTW" firstAttribute="trailing" secondItem="1KF-Tp-WFM" secondAttribute="trailing" constant="32" id="xQT-eg-nRX"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="buttonSignUp" destination="1KF-Tp-WFM" id="t8X-b4-60b"/>
+                        <outlet property="textFieldEmail" destination="2FY-B5-rGa" id="iyH-Et-Q1k"/>
+                        <outlet property="textFieldPassword" destination="CUu-DX-EpA" id="9Yo-NL-ngf"/>
+                        <outlet property="textFieldUserName" destination="Zwg-Rp-DuP" id="i1X-eO-gyX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WCF-fu-8I0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

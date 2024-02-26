@@ -16,7 +16,28 @@ protocol SignUpUserInterface: UserInterface, Alertable where Presenter: SignUpPr
 class SignUpViewController: UIViewController {
 
     var presenter: Presenter?
-    
+
+    @IBOutlet weak var textFieldUserName: UITextField! {
+        didSet {
+            self.textFieldUserName.delegate = self
+        }
+    }
+
+    @IBOutlet weak var textFieldEmail: UITextField! {
+        didSet {
+            self.textFieldEmail.delegate = self
+        }
+    }
+
+    @IBOutlet weak var textFieldPassword: UITextField! {
+        didSet {
+            self.textFieldPassword.delegate = self
+            self.textFieldPassword.isSecureTextEntry = true
+        }
+    }
+
+    @IBOutlet weak var buttonSignUp: UIButton!
+
     lazy var indicator: UIActivityIndicatorView? = {
         UIActivityIndicatorView.instantiate(view: self.view)
     }()
@@ -27,6 +48,16 @@ class SignUpViewController: UIViewController {
         super.viewDidLoad()
 
         self.view.addSubview(indicator!)
+    }
+
+    // MARK: - User Actions
+
+    @IBAction func onTouchSignUpButton(_ sender: UIButton) {
+        if let userName = textFieldUserName.text,
+           let email = textFieldEmail.text,
+           let password = textFieldPassword.text {
+            presenter?.onTouchSignUpButton(userName: userName, email: email, password: password)
+        }
     }
 }
 
@@ -48,4 +79,13 @@ extension SignUpViewController: SignUpUserInterface {
 }
 
 extension SignUpViewController: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textFieldUserName.validate(type: .userName) == .valid &&
+            textFieldEmail.validate(type: .email) == .valid &&
+            textFieldPassword.validate(type: .password) == .valid {
+            buttonSignUp.isEnabled = true
+        } else {
+            buttonSignUp.isEnabled = false
+        }
+    }
 }

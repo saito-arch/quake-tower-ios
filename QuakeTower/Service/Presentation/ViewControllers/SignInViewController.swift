@@ -31,16 +31,6 @@ class SignInViewController: UIViewController {
 
     @IBOutlet weak var buttonSignIn: UIButton!
 
-    @IBAction func onTouchSignInButton(_ sender: UIButton) {
-        if let email = textFieldEmail.text, let password = textFieldPassword.text {
-            presenter?.onTouchSignInButton(email: email, password: password)
-        }
-    }
-
-    @IBAction func onTouchSignUpButton(_ sender: UIButton) {
-        presenter?.onTouchSignUpButton()
-    }
-
     lazy var indicator: UIActivityIndicatorView? = {
         UIActivityIndicatorView.instantiate(view: self.view)
     }()
@@ -51,6 +41,18 @@ class SignInViewController: UIViewController {
         super.viewDidLoad()
 
         self.view.addSubview(indicator!)
+    }
+
+    // MARK: - User Actions
+
+    @IBAction func onTouchSignInButton(_ sender: UIButton) {
+        if let email = textFieldEmail.text, let password = textFieldPassword.text {
+            presenter?.onTouchSignInButton(email: email, password: password)
+        }
+    }
+
+    @IBAction func onTouchSignUpButton(_ sender: UIButton) {
+        presenter?.onTouchSignUpButton()
     }
 }
 
