@@ -68,7 +68,18 @@ class SignInRouterMock: SignInWireframe {
         return vc
     }
 
+    private var embeddedClosure4ToMain: (()->Void)?
+    func embedAssertion4ToMain(closure:@escaping (()->Void)) {
+        self.embeddedClosure4ToMain = closure
+    }
+    func toMain() {
+        self.embeddedClosure4ToMain?()
+        self.embeddedClosure4ToMain = nil
+    }
+
     func assertErrorContext(error: Error) {}
+
+    func toSignUp() {}
 }
 
 // MARK: - TestCases

@@ -39,7 +39,7 @@ class SignInPresenter<T: SignInUserInterface, U: SignInUsecase, V: SignInWirefra
     }
 
     func onTouchSignUpButton() {
-        // TODO: to sign up screen
+        self.router.toSignUp()
     }
 
     private func signIn(email: String, password: String) {
@@ -63,8 +63,8 @@ class SignInPresenter<T: SignInUserInterface, U: SignInUsecase, V: SignInWirefra
         let context = contexts.last
         switch context {
         case .some(.signInSuccess):
-            // TODO: to main screen
             Session.shared.countSignInFailure = 0
+            self.router.toMain()
         case .some(.signInFailure(let title, let message)):
             Session.shared.countSignInFailure += 1
             self.vc?.showAlert(title: title, message: message, pattern: .d1002, handler: nil)
