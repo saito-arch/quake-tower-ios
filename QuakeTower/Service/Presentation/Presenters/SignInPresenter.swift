@@ -31,12 +31,12 @@ class SignInPresenter<T: SignInUserInterface, U: SignInUsecase, V: SignInWirefra
     }
 
     func onTouchSignInButton(email: String, password: String) {
-        //TODO: failure count limit
+        // TODO: failure count limit
         signIn(email: email, password: password)
     }
 
     func onTouchSignUpButton() {
-        //TODO: to sign up screen
+        // TODO: to sign up screen
     }
 
     private func signIn(email: String, password: String) {
