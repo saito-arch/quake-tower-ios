@@ -14,6 +14,8 @@ let IS_TESTING = { (isTesting: String?) -> Bool in
     return false
 }(ProcessInfo().environment["IS_TESTING"])
 
+let MAX_COUNT_SIGN_IN_FAILURE = 5
+
 func log(_ message: String, file: String = #file, line: Int = #line, function: String = #function) {
 
     var file = "NONE"

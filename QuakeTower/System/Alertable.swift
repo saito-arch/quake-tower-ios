@@ -20,12 +20,18 @@ struct AlertContent {
 
 enum MessagePatternId {
     case d001
+    case d002
 }
 
 let ERROR_ALERT_CONTENT_MAP: [MessagePatternId: AlertContent] = [
     .d001: AlertContent(
         title: ERR_TITLE_COMMUNICATION,
         message: nil,
+        actions: [(COMMON_OK, .default)]
+    ),
+    .d002: AlertContent(
+        title: ERR_TITLE_LIMIT_SIGN_IN_FAILURE,
+        message: ERR_MESSAGE_LIMIT_SIGN_IN_FAILURE,
         actions: [(COMMON_OK, .default)]
     )
 ]
@@ -100,3 +106,5 @@ extension Alertable {
 let COMMON_OK = "OK"
 
 let ERR_TITLE_COMMUNICATION = "Network error"
+let ERR_TITLE_LIMIT_SIGN_IN_FAILURE = "Can't sign in"
+let ERR_MESSAGE_LIMIT_SIGN_IN_FAILURE = "The number of failed sign in attempts has reached the limit."

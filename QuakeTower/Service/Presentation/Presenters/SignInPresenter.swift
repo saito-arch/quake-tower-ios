@@ -31,8 +31,11 @@ class SignInPresenter<T: SignInUserInterface, U: SignInUsecase, V: SignInWirefra
     }
 
     func onTouchSignInButton(email: String, password: String) {
-        // TODO: failure count limit
-        signIn(email: email, password: password)
+        if Session.shared.countSignInFailure < MAX_COUNT_SIGN_IN_FAILURE {
+            signIn(email: email, password: password)
+        } else {
+            vc?.showAlert(of: .d002, handler: nil)
+        }
     }
 
     func onTouchSignUpButton() {
@@ -61,8 +64,10 @@ class SignInPresenter<T: SignInUserInterface, U: SignInUsecase, V: SignInWirefra
         switch context {
         case .some(.signInSuccess):
             // TODO: to main screen
+            Session.shared.countSignInFailure = 0
             break
         case .some(.signInFailure(let title, let message)):
+            Session.shared.countSignInFailure += 1
             self.vc?.showAlert(title: title, message: message, pattern: .d1002, handler: nil)
         case .some(.unexpectedError):
             self.vc?.showAlert(of: .d001, handler: nil)

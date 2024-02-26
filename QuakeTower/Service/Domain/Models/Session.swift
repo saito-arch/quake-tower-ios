@@ -26,6 +26,19 @@ class Session {
         }
     }
 
+    var countSignInFailure: Int {
+        get {
+            if let countSignInFailure = Stored.IntValue.countSignInFailure.object() {
+                return countSignInFailure
+            } else {
+                return 0
+            }
+        }
+        set {
+            Stored.IntValue.countSignInFailure.set(newValue)
+        }
+    }
+
     var currentAccount = QuakeTowerAccount()
 
     private init() {}
