@@ -29,4 +29,14 @@ protocol ApiInterface {
     ///   - pass: user's password
     /// - Returns: Context of execution result
     func signIn(with uuid: String, email: String, password: String) -> Single<ApiContext<SignInEntity, MyError>>
+
+    /// Execute to sign up
+    ///
+    /// - Parameters:
+    ///   - uuid: Terminal identification ID
+    ///   - userName: user's name
+    ///   - email: user's email
+    ///   - pass: user's password
+    /// - Returns: Context of execution result
+    func signUp(with uuid: String, userName: String, email: String, password: String) -> Single<ApiContext<SignUpEntity, MyError>>
 }
