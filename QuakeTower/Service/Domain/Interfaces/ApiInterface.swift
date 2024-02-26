@@ -38,5 +38,6 @@ protocol ApiInterface {
     ///   - email: user's email
     ///   - pass: user's password
     /// - Returns: Context of execution result
-    func signUp(with uuid: String, userName: String, email: String, password: String) -> Single<ApiContext<SignUpEntity, MyError>>
+    func signUp(with uuid: String, userName: String, email: String, password: String)
+    -> Single<ApiContext<SignUpEntity, MyError>>
 }

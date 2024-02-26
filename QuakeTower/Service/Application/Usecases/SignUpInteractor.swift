@@ -48,7 +48,6 @@ enum SignUp: Scenario {
     }
 }
 
-
 protocol SignUpUsecase: Usecase {
     /// usecase "SignUp"
     ///
