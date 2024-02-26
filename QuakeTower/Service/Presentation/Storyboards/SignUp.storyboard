@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xBd-HV-Yyn">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Sign Up View Controller-->
+        <scene sceneID="7v3-lP-lo8">
+            <objects>
+                <viewController id="xBd-HV-Yyn" customClass="SignUpViewController" customModule="QuakeTower" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="D9q-Hr-uNP">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="user name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zwg-Rp-DuP">
+                                <rect key="frame" x="32" y="119" width="329" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="513-Id-sc2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2FY-B5-rGa">
+                                <rect key="frame" x="32" y="185" width="329" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="5ps-b6-4Zf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CUu-DX-EpA">
+                                <rect key="frame" x="32" y="251" width="329" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="eW9-N4-fKI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1KF-Tp-WFM">
+                                <rect key="frame" x="32" y="317" width="329" height="35"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="oQw-pa-oxa"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Sign up"/>
+                                <connections>
+                                    <action selector="onTouchSignUpButton:" destination="xBd-HV-Yyn" eventType="touchUpInside" id="5ds-I2-owR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="D5w-zl-fTW"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="D5w-zl-fTW" firstAttribute="trailing" secondItem="2FY-B5-rGa" secondAttribute="trailing" constant="32" id="1L9-Uf-dqj"/>
+                            <constraint firstItem="D5w-zl-fTW" firstAttribute="trailing" secondItem="CUu-DX-EpA" secondAttribute="trailing" constant="32" id="1NI-Eo-bF0"/>
+                            <constraint firstItem="CUu-DX-EpA" firstAttribute="top" secondItem="2FY-B5-rGa" secondAttribute="bottom" constant="32" id="6LN-4U-OSN"/>
+                            <constraint firstItem="1KF-Tp-WFM" firstAttribute="leading" secondItem="D5w-zl-fTW" secondAttribute="leading" constant="32" id="7ub-wT-tfu"/>
+                            <constraint firstItem="CUu-DX-EpA" firstAttribute="leading" secondItem="D5w-zl-fTW" secondAttribute="leading" constant="32" id="BTR-cX-ylR"/>
+                            <constraint firstItem="Zwg-Rp-DuP" firstAttribute="top" secondItem="D5w-zl-fTW" secondAttribute="top" constant="60" id="EWX-1q-WoA"/>
+                            <constraint firstItem="2FY-B5-rGa" firstAttribute="top" secondItem="Zwg-Rp-DuP" secondAttribute="bottom" constant="32" id="RFK-VB-2qv"/>
+                            <constraint firstItem="1KF-Tp-WFM" firstAttribute="top" secondItem="CUu-DX-EpA" secondAttribute="bottom" constant="32" id="RTW-DE-i9T"/>
+                            <constraint firstItem="2FY-B5-rGa" firstAttribute="leading" secondItem="D5w-zl-fTW" secondAttribute="leading" constant="32" id="jFx-EW-PKY"/>
+                            <constraint firstItem="D5w-zl-fTW" firstAttribute="trailing" secondItem="Zwg-Rp-DuP" secondAttribute="trailing" constant="32" id="n7n-UB-qq4"/>
+                            <constraint firstItem="Zwg-Rp-DuP" firstAttribute="leading" secondItem="D5w-zl-fTW" secondAttribute="leading" constant="32" id="p1g-do-fmA"/>
+                            <constraint firstItem="D5w-zl-fTW" firstAttribute="trailing" secondItem="1KF-Tp-WFM" secondAttribute="trailing" constant="32" id="xQT-eg-nRX"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="buttonSignUp" destination="1KF-Tp-WFM" id="t8X-b4-60b"/>
+                        <outlet property="textFieldEmail" destination="2FY-B5-rGa" id="iyH-Et-Q1k"/>
+                        <outlet property="textFieldPassword" destination="CUu-DX-EpA" id="9Yo-NL-ngf"/>
+                        <outlet property="textFieldUserName" destination="Zwg-Rp-DuP" id="i1X-eO-gyX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WCF-fu-8I0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="46.564885496183201" y="-2.1126760563380285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

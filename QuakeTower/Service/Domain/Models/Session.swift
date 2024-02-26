@@ -51,6 +51,24 @@ class Session {
                 case .success(let entity):
                     self.uuid = uuid
                     self.currentAccount.userId = entity.userId
+                    self.currentAccount.userName = entity.userName
+
+                default:
+                    break
+                }
+            })
+    }
+
+    func signUp(with uuid: String, userName: String, email: String, password: String)
+    -> Single<ApiContext<SignUpEntity, MyError>> {
+        ApiService.shared.signUp(with: uuid, userName: userName, email: email, password: password)
+            .do(onSuccess: { apiContext in
+
+                switch apiContext {
+                case .success(let entity):
+                    self.uuid = uuid
+                    self.currentAccount.userId = entity.userId
+                    self.currentAccount.userName = userName
 
                 default:
                     break

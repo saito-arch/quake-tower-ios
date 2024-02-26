@@ -15,6 +15,12 @@ enum Stored {
         case userId
         case countSignInFailure
     }
+
+    enum StringValue: String, UserDefaultsKey {
+        typealias ValueType = String
+
+        case userName
+    }
 }
 
 protocol UserDefaultsKey: RawRepresentable where RawValue == String {
@@ -59,6 +65,7 @@ fileprivate class MockUserDefaults {
     enum Keys: String {
         case userId
         case countSignInFailure
+        case userName
     }
 
     private func searchKey(forKey: String) -> Keys? {

@@ -49,10 +49,6 @@ enum SignIn: Scenario {
 }
 
 protocol SignInUsecase: Usecase {
-    func signIn(uuid: String, email: String, password: String) -> Single<[SignIn]>
-}
-
-struct SignInInteractor: SignInUsecase {
     /// usecase "SignIn"
     ///
     /// - Parameters:
@@ -60,6 +56,10 @@ struct SignInInteractor: SignInUsecase {
     ///   - email: user's email
     ///   - password: user's password
     /// - Returns: Context of execution result
+    func signIn(uuid: String, email: String, password: String) -> Single<[SignIn]>
+}
+
+struct SignInInteractor: SignInUsecase {
     func signIn(uuid: String, email: String, password: String) -> Single<[SignIn]> {
         self.interact(contexts: [SignIn(uuid: uuid, email: email, password: password)])
     }

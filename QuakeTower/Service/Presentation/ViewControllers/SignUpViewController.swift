@@ -1,20 +1,27 @@
 //
-//  SignInViewController.swift
+//  SignUpViewController.swift
 //  QuakeTower
 //
-//  Created by Saito on 2024/02/24.
+//  Created by Saito on 2024/02/26.
 //
 
+import Foundation
 import UIKit
 
-protocol SignInUserInterface: UserInterface, Alertable where Presenter: SignInPresentation {
+protocol SignUpUserInterface: UserInterface, Alertable where Presenter: SignUpPresentation {
     func showIndicator()
     func hideIndicator()
 }
 
-class SignInViewController: UIViewController {
+class SignUpViewController: UIViewController {
 
     var presenter: Presenter?
+
+    @IBOutlet weak var textFieldUserName: UITextField! {
+        didSet {
+            self.textFieldUserName.delegate = self
+        }
+    }
 
     @IBOutlet weak var textFieldEmail: UITextField! {
         didSet {
@@ -29,7 +36,7 @@ class SignInViewController: UIViewController {
         }
     }
 
-    @IBOutlet weak var buttonSignIn: UIButton!
+    @IBOutlet weak var buttonSignUp: UIButton!
 
     lazy var indicator: UIActivityIndicatorView? = {
         UIActivityIndicatorView.instantiate(view: self.view)
@@ -45,20 +52,18 @@ class SignInViewController: UIViewController {
 
     // MARK: - User Actions
 
-    @IBAction func onTouchSignInButton(_ sender: UIButton) {
-        if let email = textFieldEmail.text, let password = textFieldPassword.text {
-            presenter?.onTouchSignInButton(email: email, password: password)
-        }
-    }
-
     @IBAction func onTouchSignUpButton(_ sender: UIButton) {
-        presenter?.onTouchSignUpButton()
+        if let userName = textFieldUserName.text,
+            let email = textFieldEmail.text,
+            let password = textFieldPassword.text {
+            presenter?.onTouchSignUpButton(userName: userName, email: email, password: password)
+        }
     }
 }
 
-extension SignInViewController: SignInUserInterface {
+extension SignUpViewController: SignUpUserInterface {
 
-    typealias Presenter = SignInPresenter<SignInViewController, SignInInteractor, SignInRouter>
+    typealias Presenter = SignUpPresenter<SignUpViewController, SignUpInteractor, SignUpRouter>
 
     func set(presenter: Presenter) {
         self.presenter = presenter
@@ -73,13 +78,14 @@ extension SignInViewController: SignInUserInterface {
     }
 }
 
-extension SignInViewController: UITextFieldDelegate {
+extension SignUpViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
-        if textFieldEmail.validate(type: .email) == .valid &&
+        if textFieldUserName.validate(type: .userName) == .valid &&
+            textFieldEmail.validate(type: .email) == .valid &&
             textFieldPassword.validate(type: .password) == .valid {
-            buttonSignIn.isEnabled = true
+            buttonSignUp.isEnabled = true
         } else {
-            buttonSignIn.isEnabled = false
+            buttonSignUp.isEnabled = false
         }
     }
 }
