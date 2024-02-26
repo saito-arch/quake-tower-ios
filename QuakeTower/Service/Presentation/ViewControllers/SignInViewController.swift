@@ -33,6 +33,18 @@ class SignInViewController: UIViewController {
     @IBAction func onTouchSignUpButton(_ sender: UIButton) {
         presenter?.onTouchSignUpButton()
     }
+
+    lazy var indicator: UIActivityIndicatorView? = {
+        return UIActivityIndicatorView.instantiate(view: self.view)
+    }()
+
+    // MARK: - Lifecycle Events
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        self.view.addSubview(indicator!)
+    }
 }
 
 extension SignInViewController: SignInUserInterface {
