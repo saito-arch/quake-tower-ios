@@ -44,6 +44,10 @@ class SignInViewControllerMock: SignInUserInterface {
         self.embeddedClosure4Alert?(pattern)
         self.embeddedClosure4Alert = nil
     }
+
+    // Don't use protocol method in spec
+    func showIndicator() {}
+    func hideIndicator() {}
 }
 
 class SignInRouterMock: SignInWireframe {
@@ -80,6 +84,26 @@ class SignInSpec: QuickSpec {
          * API              : Apis.Ver1.SignIn
          */
         describe("sign in") {
+            context("when udid isn't registered") {
+                beforeEach {
+                    Session.shared.countSignInFailure = MAX_COUNT_SIGN_IN_FAILURE
+                }
+                it("show alert 002") {
+                    waitUntil(timeout: TIMEOUT) { done in
+                        vc.embedAssertion4Alert { pattern in
+                            expect({
+                                guard case .d002 = pattern else {
+                                    return .failed(reason: "wrong enum case: \(pattern)")
+                                }
+                                print(">>> success \(pattern)")
+                                return .succeeded
+                            }).to(succeed())
+                            done()
+                        }
+                        presenter.onTouchSignInButton(email: "foo@bar.com", password: "12345678")
+                    }
+                }
+            }
         }
     }
 }
