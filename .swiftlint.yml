@@ -123,3 +123,5 @@ identifier_name:
     - all
     - uns
     - idx
+    - lhs
+    - rhs

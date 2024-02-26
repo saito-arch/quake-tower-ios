@@ -13,6 +13,21 @@ enum ValidationResult {
     case invalid(ValidationError)
 }
 
+extension ValidationResult: Equatable {
+    static func == (lhs: ValidationResult, rhs: ValidationResult) -> Bool {
+        switch (lhs, rhs) {
+        case (.valid, .valid):
+            return true
+        case (.invalid, .valid):
+            return false
+        case (.valid, .invalid):
+            return false
+        case (.invalid, .invalid):
+            return true
+        }
+    }
+}
+
 protocol ValidationErrorProtocol: LocalizedError { }
 
 enum ValidationError: ValidationErrorProtocol {

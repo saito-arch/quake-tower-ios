@@ -43,3 +43,14 @@ extension SignInViewController: SignInUserInterface {
         self.presenter = presenter
     }
 }
+
+extension SignInViewController: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textFieldEmail.validate(type: .email) == .valid &&
+            textFieldPassword.validate(type: .password) == .valid {
+            buttonSignIn.isEnabled = true
+        } else {
+            buttonSignIn.isEnabled = false
+        }
+    }
+}
