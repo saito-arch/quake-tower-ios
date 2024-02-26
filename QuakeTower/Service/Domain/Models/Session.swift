@@ -51,6 +51,7 @@ class Session {
                 case .success(let entity):
                     self.uuid = uuid
                     self.currentAccount.userId = entity.userId
+                    self.currentAccount.userName = entity.userName
 
                 default:
                     break
@@ -66,6 +67,7 @@ class Session {
                 case .success(let entity):
                     self.uuid = uuid
                     self.currentAccount.userId = entity.userId
+                    self.currentAccount.userName = userName
 
                 default:
                     break

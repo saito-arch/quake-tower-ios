@@ -22,9 +22,10 @@ enum Apis {
                 typealias Context = SignInEntity
 
                 let userId: Int
+                let userName: String
 
                 func getContext() -> SignInEntity {
-                    let entity = SignInEntity(userId: userId)
+                    let entity = SignInEntity(userId: userId, userName: userName)
 
                     return entity
                 }
