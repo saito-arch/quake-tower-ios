@@ -222,6 +222,23 @@ class SignInSpec: QuickSpec {
                         }
                     }
                 }
+                context("when sign in success") {
+                    it("move to main screen") {
+                        waitUntil(timeout: TIMEOUT) { done in
+                            let mock = MockApiClient<Apis.Ver1.SignIn>(
+                                stub: Apis.Ver1.SignIn.Response(userId: 1)
+                            )
+                            ApiService.set(apiClient: mock)
+                            presenter.router.embedAssertion4ToMain {
+                                expect({
+                                    .succeeded
+                                }).to(succeed())
+                                done()
+                            }
+                            presenter.onTouchSignInButton(email: email, password: password)
+                        }
+                    }
+                }
             }
         }
     }
