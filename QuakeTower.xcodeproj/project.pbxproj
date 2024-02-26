@@ -263,6 +263,7 @@
 				5B89E1742B89D0FD00D9E6E8 /* Presenters */,
 				5B89E1732B89D0F700D9E6E8 /* Storyboards */,
 				5B89E1722B89D0EC00D9E6E8 /* ViewControllers */,
+				5B89E1A02B8C524F00D9E6E8 /* UIComponents */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -366,6 +367,21 @@
 				5B89E19E2B8C4C2600D9E6E8 /* SignInSpec.swift */,
 			);
 			path = Specs;
+			sourceTree = "<group>";
+		};
+		5B89E1A02B8C524F00D9E6E8 /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				5B89E1A12B8C526800D9E6E8 /* Common */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		5B89E1A12B8C526800D9E6E8 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		C636BC606C536BF1BB04A326 /* Frameworks */ = {

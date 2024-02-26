@@ -167,3 +167,15 @@ extension UITextField {
         }
     }
 }
+
+extension UIActivityIndicatorView {
+    static func instantiate(view: UIView) -> UIActivityIndicatorView {
+        let indicator = UIActivityIndicatorView()
+        indicator.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+        indicator.center = view.center
+
+        indicator.hidesWhenStopped = true
+
+        return indicator
+    }
+}
