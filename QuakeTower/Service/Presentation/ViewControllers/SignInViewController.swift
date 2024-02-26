@@ -8,6 +8,8 @@
 import UIKit
 
 protocol SignInUserInterface: UserInterface, Alertable where Presenter: SignInPresentation {
+    func showIndicator()
+    func hideIndicator()
 }
 
 class SignInViewController: UIViewController {
@@ -53,6 +55,14 @@ extension SignInViewController: SignInUserInterface {
 
     func set(presenter: Presenter) {
         self.presenter = presenter
+    }
+
+    func showIndicator() {
+        self.indicator?.startAnimating()
+    }
+
+    func hideIndicator() {
+        self.indicator?.stopAnimating()
     }
 }
 
