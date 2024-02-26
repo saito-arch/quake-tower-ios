@@ -38,7 +38,8 @@ struct SignInRouter {
 
 extension SignInRouter: SignInWireframe {
     func toSignUp() {
-        // TODO: to sign up screen
+        let signUpVc = SignUpRouter.instantiate()
+        vc?.present(signUpVc, animated: true, completion: nil)
     }
     
     func toMain() {
