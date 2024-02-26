@@ -54,8 +54,8 @@ class SignUpViewController: UIViewController {
 
     @IBAction func onTouchSignUpButton(_ sender: UIButton) {
         if let userName = textFieldUserName.text,
-           let email = textFieldEmail.text,
-           let password = textFieldPassword.text {
+            let email = textFieldEmail.text,
+            let password = textFieldPassword.text {
             presenter?.onTouchSignUpButton(userName: userName, email: email, password: password)
         }
     }
