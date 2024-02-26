@@ -79,12 +79,15 @@ class SignInSpec: QuickSpec {
         let vc = SignInRouterMock.instantiate()
         let presenter = vc.presenter!
 
+        let email = "foo@bar.com"
+        let password = "aA1234"
+
         /* Scenario 1: sign in
          * Presenter method : onTouchSignInButton
          * API              : Apis.Ver1.SignIn
          */
         describe("sign in") {
-            context("when udid isn't registered") {
+            context("when number of sign-in failures >= MAX_COUNT_SIGN_IN_FAILURE") {
                 beforeEach {
                     Session.shared.countSignInFailure = MAX_COUNT_SIGN_IN_FAILURE
                 }
@@ -100,7 +103,34 @@ class SignInSpec: QuickSpec {
                             }).to(succeed())
                             done()
                         }
-                        presenter.onTouchSignInButton(email: "foo@bar.com", password: "12345678")
+                        presenter.onTouchSignInButton(email: email, password: password)
+                    }
+                }
+            }
+            context("when number of sign-in failures < MAX_COUNT_SIGN_IN_FAILURE") {
+                beforeEach {
+                    Session.shared.countSignInFailure = 0
+                }
+                context("when network error") {
+                    it("show alert 001") {
+                        waitUntil(timeout: TIMEOUT) { done in
+                            var mock = MockApiClient<Apis.Ver1.SignIn>(
+                                stub: Apis.Ver1.SignIn.Response(userId: 1)
+                            )
+                            mock.isReachable = false
+                            ApiService.set(apiClient: mock)
+                            vc.embedAssertion4Alert { pattern in
+                                expect({
+                                    guard case .d001 = pattern else {
+                                        return .failed(reason: "wrong enum case: \(pattern)")
+                                    }
+                                    print(">>> success \(pattern)")
+                                    return .succeeded
+                                }).to(succeed())
+                                done()
+                            }
+                            presenter.onTouchSignInButton(email: email, password: password)
+                        }
                     }
                 }
             }
