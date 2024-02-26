@@ -65,7 +65,6 @@ class SignInPresenter<T: SignInUserInterface, U: SignInUsecase, V: SignInWirefra
         case .some(.signInSuccess):
             // TODO: to main screen
             Session.shared.countSignInFailure = 0
-            break
         case .some(.signInFailure(let title, let message)):
             Session.shared.countSignInFailure += 1
             self.vc?.showAlert(title: title, message: message, pattern: .d1002, handler: nil)
@@ -81,6 +80,7 @@ class SignInPresenter<T: SignInUserInterface, U: SignInUsecase, V: SignInWirefra
         case ServiceErrors.client(let clientError):
             log("Unexpected error during usecase execution: \(String(describing: clientError))")
             switch clientError {
+            // not reachable
             case .disconnection:
                 self.vc?.showAlert(of: .d001, handler: nil)
             }

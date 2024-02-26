@@ -133,6 +133,84 @@ class SignInSpec: QuickSpec {
                         }
                     }
                 }
+                context("when 2xxx error") {
+                    it("show alert 2xxx") {
+                        waitUntil(timeout: TIMEOUT) { done in
+                            let mock = MockApiClient<Apis.Ver1.SignIn>(
+                                error: MyError(
+                                    code: 2_001,
+                                    message: "testErrorMessage",
+                                    errorTitle: "testErrorTitle",
+                                    retryable: false
+                                )
+                            )
+                            ApiService.set(apiClient: mock)
+                            vc.embedAssertion4AlertV2 { pattern in
+                                expect({
+                                    guard case .d2xxx = pattern else {
+                                        return .failed(reason: "wrong enum case: \(pattern)")
+                                    }
+                                    print(">>> success \(pattern)")
+                                    return .succeeded
+                                }).to(succeed())
+                                done()
+                            }
+                            presenter.onTouchSignInButton(email: email, password: password)
+                        }
+                    }
+                }
+                context("when undefined error") {
+                    it("show alert 001") {
+                        waitUntil(timeout: TIMEOUT) { done in
+                            let mock = MockApiClient<Apis.Ver1.SignIn>(
+                                error: MyError(
+                                    code: 1_999,
+                                    message: "testErrorMessage",
+                                    errorTitle: "testErrorTitle",
+                                    retryable: false
+                                )
+                            )
+                            ApiService.set(apiClient: mock)
+                            vc.embedAssertion4Alert { pattern in
+                                expect({
+                                    guard case .d001 = pattern else {
+                                        return .failed(reason: "wrong enum case: \(pattern)")
+                                    }
+                                    print(">>> success \(pattern)")
+                                    return .succeeded
+                                }).to(succeed())
+                                done()
+                            }
+                            presenter.onTouchSignInButton(email: email, password: password)
+                        }
+                    }
+                }
+                context("when sign in failure") {
+                    it("show alert 1002") {
+                        waitUntil(timeout: TIMEOUT) { done in
+                            let mock = MockApiClient<Apis.Ver1.SignIn>(
+                                error: MyError(
+                                    code: 1_002,
+                                    message: "testErrorMessage",
+                                    errorTitle: "testErrorTitle",
+                                    retryable: false
+                                )
+                            )
+                            ApiService.set(apiClient: mock)
+                            vc.embedAssertion4AlertV2 { pattern in
+                                expect({
+                                    guard case .d1002 = pattern else {
+                                        return .failed(reason: "wrong enum case: \(pattern)")
+                                    }
+                                    print(">>> success \(pattern)")
+                                    return .succeeded
+                                }).to(succeed())
+                                done()
+                            }
+                            presenter.onTouchSignInButton(email: email, password: password)
+                        }
+                    }
+                }
             }
         }
     }
