@@ -8,6 +8,8 @@
 import UIKit
 
 protocol SignInWireframe: Wireframe where ViewController: SignInUserInterface {
+    func toSignUp()
+    func toMain()
 }
 
 struct SignInRouter {
@@ -35,4 +37,11 @@ struct SignInRouter {
 }
 
 extension SignInRouter: SignInWireframe {
+    func toSignUp() {
+        // TODO: to sign up screen
+    }
+    
+    func toMain() {
+        // TODO: to main screen
+    }
 }
