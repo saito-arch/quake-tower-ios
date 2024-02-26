@@ -26,5 +26,22 @@ class QuakeTowerAccount {
         }
     }
 
+    var userName: String? {
+        get {
+            if let userName = Stored.StringValue.userName.object() {
+                return userName
+            } else {
+                return nil
+            }
+        }
+        set {
+            if let userName = newValue {
+                Stored.StringValue.userName.set(userName)
+            } else {
+                Stored.StringValue.userName.removeObject()
+            }
+        }
+    }
+
     init() {}
 }
