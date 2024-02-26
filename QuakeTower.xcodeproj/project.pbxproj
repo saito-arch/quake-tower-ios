@@ -17,6 +17,34 @@
 		5B89E1402B8999E900D9E6E8 /* QuakeTowerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E13F2B8999E900D9E6E8 /* QuakeTowerTests.swift */; };
 		5B89E14A2B8999E900D9E6E8 /* QuakeTowerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E1492B8999E900D9E6E8 /* QuakeTowerUITests.swift */; };
 		5B89E14C2B8999E900D9E6E8 /* QuakeTowerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E14B2B8999E900D9E6E8 /* QuakeTowerUITestsLaunchTests.swift */; };
+		5B89E15D2B89ADCF00D9E6E8 /* ViperProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E15C2B89ADCF00D9E6E8 /* ViperProtocols.swift */; };
+		5B89E15F2B89AE0800D9E6E8 /* ViperExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E15E2B89AE0800D9E6E8 /* ViperExtensions.swift */; };
+		5B89E1612B89AE9300D9E6E8 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E1602B89AE9300D9E6E8 /* Api.swift */; };
+		5B89E1632B89AF3B00D9E6E8 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E1622B89AF3B00D9E6E8 /* ApiClient.swift */; };
+		5B89E1652B89AF5200D9E6E8 /* SystemErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E1642B89AF5200D9E6E8 /* SystemErrors.swift */; };
+		5B89E1672B89AF6E00D9E6E8 /* ServiceErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E1662B89AF6E00D9E6E8 /* ServiceErrors.swift */; };
+		5B89E16B2B89B17500D9E6E8 /* ApiInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E16A2B89B17500D9E6E8 /* ApiInterface.swift */; };
+		5B89E16D2B89B1AD00D9E6E8 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E16C2B89B1AD00D9E6E8 /* Common.swift */; };
+		5B89E16F2B89B34600D9E6E8 /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E16E2B89B34600D9E6E8 /* Alertable.swift */; };
+		5B89E1772B89D11C00D9E6E8 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E1762B89D11C00D9E6E8 /* SignInViewController.swift */; };
+		5B89E1792B89D23100D9E6E8 /* SignIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B89E1782B89D23100D9E6E8 /* SignIn.storyboard */; };
+		5B89E17B2B89D23D00D9E6E8 /* SignInPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E17A2B89D23D00D9E6E8 /* SignInPresenter.swift */; };
+		5B89E17D2B89D24700D9E6E8 /* SignInRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E17C2B89D24700D9E6E8 /* SignInRouter.swift */; };
+		5B89E1802B89D31800D9E6E8 /* SignInInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E17F2B89D31800D9E6E8 /* SignInInteractor.swift */; };
+		5B89E1822B89D39800D9E6E8 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E1812B89D39800D9E6E8 /* R.generated.swift */; };
+		5B89E1862B89DF5600D9E6E8 /* Apis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E1852B89DF5600D9E6E8 /* Apis.swift */; };
+		5B89E1892B89EFFC00D9E6E8 /* SignInEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E1882B89EFFC00D9E6E8 /* SignInEntity.swift */; };
+		5B89E18B2B89F0C900D9E6E8 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E18A2B89F0C900D9E6E8 /* ApiService.swift */; };
+		5B89E18D2B89F18000D9E6E8 /* AlamofireApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E18C2B89F18000D9E6E8 /* AlamofireApiClient.swift */; };
+		5B89E1902B89F27D00D9E6E8 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E18F2B89F27D00D9E6E8 /* Session.swift */; };
+		5B89E1932B89F38300D9E6E8 /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E1922B89F38300D9E6E8 /* Keychain.swift */; };
+		5B89E1952B89F41000D9E6E8 /* StoredValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E1942B89F41000D9E6E8 /* StoredValue.swift */; };
+		5B89E1982B8A106400D9E6E8 /* QuakeTowerAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E1972B8A106400D9E6E8 /* QuakeTowerAccount.swift */; };
+		5B89E19A2B8B3AC100D9E6E8 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E1992B8B3AC100D9E6E8 /* Extensions.swift */; };
+		5B89E19F2B8C4C2600D9E6E8 /* SignInSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E19E2B8C4C2600D9E6E8 /* SignInSpec.swift */; };
+		5B89E1A52B8C6A4200D9E6E8 /* MockApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E1A42B8C6A4200D9E6E8 /* MockApiClient.swift */; };
+		5B89E1A72B8C6A6C00D9E6E8 /* TestingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E1A62B8C6A6C00D9E6E8 /* TestingError.swift */; };
+		5B89E1A82B8C6A7800D9E6E8 /* TestingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E1A62B8C6A6C00D9E6E8 /* TestingError.swift */; };
 		B4A4246021BC4E4AAE874E83 /* Pods_QuakeTowerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8938223B9ACD63FF506D606 /* Pods_QuakeTowerTests.framework */; };
 		E1A69F1285C41AE2F534E4DC /* Pods_QuakeTower_QuakeTowerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0CA8F10A17F60A9711D8D75 /* Pods_QuakeTower_QuakeTowerUITests.framework */; };
 /* End PBXBuildFile section */
@@ -55,6 +83,33 @@
 		5B89E1452B8999E900D9E6E8 /* QuakeTowerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuakeTowerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B89E1492B8999E900D9E6E8 /* QuakeTowerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuakeTowerUITests.swift; sourceTree = "<group>"; };
 		5B89E14B2B8999E900D9E6E8 /* QuakeTowerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuakeTowerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		5B89E15C2B89ADCF00D9E6E8 /* ViperProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViperProtocols.swift; sourceTree = "<group>"; };
+		5B89E15E2B89AE0800D9E6E8 /* ViperExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViperExtensions.swift; sourceTree = "<group>"; };
+		5B89E1602B89AE9300D9E6E8 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		5B89E1622B89AF3B00D9E6E8 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		5B89E1642B89AF5200D9E6E8 /* SystemErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemErrors.swift; sourceTree = "<group>"; };
+		5B89E1662B89AF6E00D9E6E8 /* ServiceErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceErrors.swift; sourceTree = "<group>"; };
+		5B89E16A2B89B17500D9E6E8 /* ApiInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiInterface.swift; sourceTree = "<group>"; };
+		5B89E16C2B89B1AD00D9E6E8 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		5B89E16E2B89B34600D9E6E8 /* Alertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
+		5B89E1762B89D11C00D9E6E8 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		5B89E1782B89D23100D9E6E8 /* SignIn.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignIn.storyboard; sourceTree = "<group>"; };
+		5B89E17A2B89D23D00D9E6E8 /* SignInPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInPresenter.swift; sourceTree = "<group>"; };
+		5B89E17C2B89D24700D9E6E8 /* SignInRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRouter.swift; sourceTree = "<group>"; };
+		5B89E17F2B89D31800D9E6E8 /* SignInInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInInteractor.swift; sourceTree = "<group>"; };
+		5B89E1812B89D39800D9E6E8 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		5B89E1852B89DF5600D9E6E8 /* Apis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Apis.swift; sourceTree = "<group>"; };
+		5B89E1882B89EFFC00D9E6E8 /* SignInEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInEntity.swift; sourceTree = "<group>"; };
+		5B89E18A2B89F0C900D9E6E8 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		5B89E18C2B89F18000D9E6E8 /* AlamofireApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireApiClient.swift; sourceTree = "<group>"; };
+		5B89E18F2B89F27D00D9E6E8 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		5B89E1922B89F38300D9E6E8 /* Keychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
+		5B89E1942B89F41000D9E6E8 /* StoredValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoredValue.swift; sourceTree = "<group>"; };
+		5B89E1972B8A106400D9E6E8 /* QuakeTowerAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuakeTowerAccount.swift; sourceTree = "<group>"; };
+		5B89E1992B8B3AC100D9E6E8 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		5B89E19E2B8C4C2600D9E6E8 /* SignInSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInSpec.swift; sourceTree = "<group>"; };
+		5B89E1A42B8C6A4200D9E6E8 /* MockApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockApiClient.swift; sourceTree = "<group>"; };
+		5B89E1A62B8C6A6C00D9E6E8 /* TestingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestingError.swift; sourceTree = "<group>"; };
 		6582F4CA4A8ADC8A108F7FE8 /* Pods-QuakeTower-QuakeTowerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuakeTower-QuakeTowerUITests.debug.xcconfig"; path = "Target Support Files/Pods-QuakeTower-QuakeTowerUITests/Pods-QuakeTower-QuakeTowerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7EFE7A18761178982EFA008D /* Pods-QuakeTower.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuakeTower.release.xcconfig"; path = "Target Support Files/Pods-QuakeTower/Pods-QuakeTower.release.xcconfig"; sourceTree = "<group>"; };
 		A0CA8F10A17F60A9711D8D75 /* Pods_QuakeTower_QuakeTowerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuakeTower_QuakeTowerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,11 +184,14 @@
 		5B89E1272B8999E900D9E6E8 /* QuakeTower */ = {
 			isa = PBXGroup;
 			children = (
+				5B89E15A2B89ADA800D9E6E8 /* Service */,
+				5B89E15B2B89ADB700D9E6E8 /* System */,
 				5B89E1282B8999E900D9E6E8 /* AppDelegate.swift */,
 				5B89E12A2B8999E900D9E6E8 /* SceneDelegate.swift */,
 				5B89E12C2B8999E900D9E6E8 /* ViewController.swift */,
 				5B89E12E2B8999E900D9E6E8 /* Main.storyboard */,
 				5B89E1312B8999E900D9E6E8 /* Assets.xcassets */,
+				5B89E1812B89D39800D9E6E8 /* R.generated.swift */,
 				5B89E1332B8999E900D9E6E8 /* LaunchScreen.storyboard */,
 				5B89E1362B8999E900D9E6E8 /* Info.plist */,
 			);
@@ -143,7 +201,9 @@
 		5B89E13E2B8999E900D9E6E8 /* QuakeTowerTests */ = {
 			isa = PBXGroup;
 			children = (
+				5B89E19B2B8C496800D9E6E8 /* Specs */,
 				5B89E13F2B8999E900D9E6E8 /* QuakeTowerTests.swift */,
+				5B89E1A62B8C6A6C00D9E6E8 /* TestingError.swift */,
 			);
 			path = QuakeTowerTests;
 			sourceTree = "<group>";
@@ -155,6 +215,180 @@
 				5B89E14B2B8999E900D9E6E8 /* QuakeTowerUITestsLaunchTests.swift */,
 			);
 			path = QuakeTowerUITests;
+			sourceTree = "<group>";
+		};
+		5B89E15A2B89ADA800D9E6E8 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				5B89E1832B89DF3A00D9E6E8 /* Infrastructure */,
+				5B89E1712B89CF4A00D9E6E8 /* Application */,
+				5B89E1702B89CF4100D9E6E8 /* Presentation */,
+				5B89E1682B89B15F00D9E6E8 /* Domain */,
+				5B89E1662B89AF6E00D9E6E8 /* ServiceErrors.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		5B89E15B2B89ADB700D9E6E8 /* System */ = {
+			isa = PBXGroup;
+			children = (
+				5B89E15C2B89ADCF00D9E6E8 /* ViperProtocols.swift */,
+				5B89E15E2B89AE0800D9E6E8 /* ViperExtensions.swift */,
+				5B89E1602B89AE9300D9E6E8 /* Api.swift */,
+				5B89E1622B89AF3B00D9E6E8 /* ApiClient.swift */,
+				5B89E1642B89AF5200D9E6E8 /* SystemErrors.swift */,
+				5B89E16C2B89B1AD00D9E6E8 /* Common.swift */,
+				5B89E16E2B89B34600D9E6E8 /* Alertable.swift */,
+				5B89E1992B8B3AC100D9E6E8 /* Extensions.swift */,
+			);
+			path = System;
+			sourceTree = "<group>";
+		};
+		5B89E1682B89B15F00D9E6E8 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				5B89E18E2B89F27500D9E6E8 /* Models */,
+				5B89E1872B89EF5800D9E6E8 /* Entities */,
+				5B89E1692B89B16900D9E6E8 /* Interfaces */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		5B89E1692B89B16900D9E6E8 /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				5B89E16A2B89B17500D9E6E8 /* ApiInterface.swift */,
+			);
+			path = Interfaces;
+			sourceTree = "<group>";
+		};
+		5B89E1702B89CF4100D9E6E8 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				5B89E1752B89D10900D9E6E8 /* Routers */,
+				5B89E1742B89D0FD00D9E6E8 /* Presenters */,
+				5B89E1732B89D0F700D9E6E8 /* Storyboards */,
+				5B89E1722B89D0EC00D9E6E8 /* ViewControllers */,
+				5B89E1A02B8C524F00D9E6E8 /* UIComponents */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		5B89E1712B89CF4A00D9E6E8 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				5B89E17E2B89D30C00D9E6E8 /* Usecases */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		5B89E1722B89D0EC00D9E6E8 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				5B89E1762B89D11C00D9E6E8 /* SignInViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		5B89E1732B89D0F700D9E6E8 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				5B89E1782B89D23100D9E6E8 /* SignIn.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		5B89E1742B89D0FD00D9E6E8 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				5B89E17A2B89D23D00D9E6E8 /* SignInPresenter.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		5B89E1752B89D10900D9E6E8 /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				5B89E17C2B89D24700D9E6E8 /* SignInRouter.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
+		5B89E17E2B89D30C00D9E6E8 /* Usecases */ = {
+			isa = PBXGroup;
+			children = (
+				5B89E17F2B89D31800D9E6E8 /* SignInInteractor.swift */,
+			);
+			path = Usecases;
+			sourceTree = "<group>";
+		};
+		5B89E1832B89DF3A00D9E6E8 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				5B89E1912B89F37000D9E6E8 /* DataStore */,
+				5B89E1842B89DF4E00D9E6E8 /* API */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		5B89E1842B89DF4E00D9E6E8 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				5B89E1852B89DF5600D9E6E8 /* Apis.swift */,
+				5B89E18A2B89F0C900D9E6E8 /* ApiService.swift */,
+				5B89E18C2B89F18000D9E6E8 /* AlamofireApiClient.swift */,
+				5B89E1A42B8C6A4200D9E6E8 /* MockApiClient.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		5B89E1872B89EF5800D9E6E8 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				5B89E1882B89EFFC00D9E6E8 /* SignInEntity.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		5B89E18E2B89F27500D9E6E8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5B89E18F2B89F27D00D9E6E8 /* Session.swift */,
+				5B89E1972B8A106400D9E6E8 /* QuakeTowerAccount.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5B89E1912B89F37000D9E6E8 /* DataStore */ = {
+			isa = PBXGroup;
+			children = (
+				5B89E1922B89F38300D9E6E8 /* Keychain.swift */,
+				5B89E1942B89F41000D9E6E8 /* StoredValue.swift */,
+			);
+			path = DataStore;
+			sourceTree = "<group>";
+		};
+		5B89E19B2B8C496800D9E6E8 /* Specs */ = {
+			isa = PBXGroup;
+			children = (
+				5B89E19E2B8C4C2600D9E6E8 /* SignInSpec.swift */,
+			);
+			path = Specs;
+			sourceTree = "<group>";
+		};
+		5B89E1A02B8C524F00D9E6E8 /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				5B89E1A12B8C526800D9E6E8 /* Common */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
+		5B89E1A12B8C526800D9E6E8 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		C636BC606C536BF1BB04A326 /* Frameworks */ = {
@@ -279,6 +513,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B89E1792B89D23100D9E6E8 /* SignIn.storyboard in Resources */,
 				5B89E1352B8999E900D9E6E8 /* LaunchScreen.storyboard in Resources */,
 				5B89E1322B8999E900D9E6E8 /* Assets.xcassets in Resources */,
 				5B89E1302B8999E900D9E6E8 /* Main.storyboard in Resources */,
@@ -462,9 +697,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B89E1632B89AF3B00D9E6E8 /* ApiClient.swift in Sources */,
+				5B89E1A82B8C6A7800D9E6E8 /* TestingError.swift in Sources */,
+				5B89E1672B89AF6E00D9E6E8 /* ServiceErrors.swift in Sources */,
+				5B89E18D2B89F18000D9E6E8 /* AlamofireApiClient.swift in Sources */,
+				5B89E1612B89AE9300D9E6E8 /* Api.swift in Sources */,
+				5B89E15F2B89AE0800D9E6E8 /* ViperExtensions.swift in Sources */,
+				5B89E1892B89EFFC00D9E6E8 /* SignInEntity.swift in Sources */,
+				5B89E1802B89D31800D9E6E8 /* SignInInteractor.swift in Sources */,
+				5B89E1982B8A106400D9E6E8 /* QuakeTowerAccount.swift in Sources */,
+				5B89E18B2B89F0C900D9E6E8 /* ApiService.swift in Sources */,
+				5B89E17B2B89D23D00D9E6E8 /* SignInPresenter.swift in Sources */,
+				5B89E1862B89DF5600D9E6E8 /* Apis.swift in Sources */,
+				5B89E16D2B89B1AD00D9E6E8 /* Common.swift in Sources */,
+				5B89E1932B89F38300D9E6E8 /* Keychain.swift in Sources */,
+				5B89E17D2B89D24700D9E6E8 /* SignInRouter.swift in Sources */,
+				5B89E1822B89D39800D9E6E8 /* R.generated.swift in Sources */,
+				5B89E1772B89D11C00D9E6E8 /* SignInViewController.swift in Sources */,
+				5B89E16B2B89B17500D9E6E8 /* ApiInterface.swift in Sources */,
+				5B89E16F2B89B34600D9E6E8 /* Alertable.swift in Sources */,
 				5B89E12D2B8999E900D9E6E8 /* ViewController.swift in Sources */,
+				5B89E1952B89F41000D9E6E8 /* StoredValue.swift in Sources */,
 				5B89E1292B8999E900D9E6E8 /* AppDelegate.swift in Sources */,
+				5B89E19A2B8B3AC100D9E6E8 /* Extensions.swift in Sources */,
+				5B89E1902B89F27D00D9E6E8 /* Session.swift in Sources */,
+				5B89E15D2B89ADCF00D9E6E8 /* ViperProtocols.swift in Sources */,
 				5B89E12B2B8999E900D9E6E8 /* SceneDelegate.swift in Sources */,
+				5B89E1A52B8C6A4200D9E6E8 /* MockApiClient.swift in Sources */,
+				5B89E1652B89AF5200D9E6E8 /* SystemErrors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,6 +732,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B89E1A72B8C6A6C00D9E6E8 /* TestingError.swift in Sources */,
+				5B89E19F2B8C4C2600D9E6E8 /* SignInSpec.swift in Sources */,
 				5B89E1402B8999E900D9E6E8 /* QuakeTowerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -645,6 +907,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BASE_API = "https://dev.saito.arch/";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -673,6 +936,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BASE_API = "https://saito.arch/";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;

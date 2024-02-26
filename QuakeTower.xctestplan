@@ -1,0 +1,43 @@
+{
+  "configurations" : [
+    {
+      "id" : "D2403096-3CF3-4412-BE64-44E6497A62DA",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "environmentVariableEntries" : [
+      {
+        "key" : "IS_TESTING",
+        "value" : "true"
+      }
+    ],
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:QuakeTower.xcodeproj",
+      "identifier" : "5B89E1242B8999E900D9E6E8",
+      "name" : "QuakeTower"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:QuakeTower.xcodeproj",
+        "identifier" : "5B89E13A2B8999E900D9E6E8",
+        "name" : "QuakeTowerTests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:QuakeTower.xcodeproj",
+        "identifier" : "5B89E1442B8999E900D9E6E8",
+        "name" : "QuakeTowerUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
