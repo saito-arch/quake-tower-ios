@@ -11,12 +11,12 @@ import RxSwift
 enum FetchPlayerInfo: Scenario {
     case idsRegistered(uuid: String, playerId: Int)
     case fetchPlayerInfoSuccess(playerInfo: PlayerInfo)
-    case idsMismatch(title: String?, message: String)
+    case idsMismatch
     case unexpectedError
 
     init?() {
         if let uuid = Session.shared.uuid,
-           let playerId = Session.shared.currentAccount.playerId {
+            let playerId = Session.shared.currentAccount.playerId {
             log("uuid: \(uuid), playerId: \(playerId)")
             self = .idsRegistered(uuid: uuid, playerId: playerId)
         } else {
@@ -34,7 +34,7 @@ enum FetchPlayerInfo: Scenario {
                 case .failure(let myError):
                     switch myError.code {
                     case ServiceErrors.Server.Ver1.idsMismatch.rawValue:
-                        return .idsMismatch(title: myError.errorTitle, message: myError.message)
+                        return .idsMismatch
                     default:
                         return .unexpectedError
                     }
