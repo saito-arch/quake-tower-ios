@@ -11,6 +11,7 @@ enum ServiceErrors: Error {
 
     enum Client: Error {
         case disconnection
+        case idsDoNotExist
     }
 
     enum Server: Error {
@@ -18,6 +19,7 @@ enum ServiceErrors: Error {
             case appNeedsToBeUpdated = 1_001
             case signInFailure = 1_002
             case alwaysRegistered = 1_003
+            case idsMismatch = 1_004
         }
     }
 
