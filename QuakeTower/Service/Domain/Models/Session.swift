@@ -50,8 +50,8 @@ class Session {
                 switch apiContext {
                 case .success(let entity):
                     self.uuid = uuid
-                    self.currentAccount.userId = entity.userId
-                    self.currentAccount.userName = entity.userName
+                    self.currentAccount.playerId = entity.playerId
+                    self.currentAccount.playerName = entity.playerName
 
                 default:
                     break
@@ -59,16 +59,16 @@ class Session {
             })
     }
 
-    func signUp(with uuid: String, userName: String, email: String, password: String)
+    func signUp(with uuid: String, playerName: String, email: String, password: String)
     -> Single<ApiContext<SignUpEntity, MyError>> {
-        ApiService.shared.signUp(with: uuid, userName: userName, email: email, password: password)
+        ApiService.shared.signUp(with: uuid, playerName: playerName, email: email, password: password)
             .do(onSuccess: { apiContext in
 
                 switch apiContext {
                 case .success(let entity):
                     self.uuid = uuid
-                    self.currentAccount.userId = entity.userId
-                    self.currentAccount.userName = userName
+                    self.currentAccount.playerId = entity.playerId
+                    self.currentAccount.playerName = playerName
 
                 default:
                     break

@@ -34,10 +34,10 @@ protocol ApiInterface {
     ///
     /// - Parameters:
     ///   - uuid: Terminal identification ID
-    ///   - userName: user's name
+    ///   - playerName: user's name
     ///   - email: user's email
     ///   - pass: user's password
     /// - Returns: Context of execution result
-    func signUp(with uuid: String, userName: String, email: String, password: String)
+    func signUp(with uuid: String, playerName: String, email: String, password: String)
     -> Single<ApiContext<SignUpEntity, MyError>>
 }

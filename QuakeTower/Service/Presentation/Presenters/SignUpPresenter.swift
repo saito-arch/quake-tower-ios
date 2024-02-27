@@ -10,7 +10,7 @@ import RxSwift
 
 protocol SignUpPresentation: Presentation
 where ViewController: SignUpUserInterface, Interactor: SignUpUsecase, Router: SignUpWireframe {
-    func onTouchSignUpButton(userName: String, email: String, password: String)
+    func onTouchSignUpButton(playerName: String, email: String, password: String)
 }
 
 class SignUpPresenter<T: SignUpUserInterface, U: SignUpUsecase, V: SignUpWireframe>: SignUpPresentation {
@@ -29,14 +29,14 @@ class SignUpPresenter<T: SignUpUserInterface, U: SignUpUsecase, V: SignUpWirefra
         self.router = router
     }
 
-    func onTouchSignUpButton(userName: String, email: String, password: String) {
-        signUp(userName: userName, email: email, password: password)
+    func onTouchSignUpButton(playerName: String, email: String, password: String) {
+        signUp(playerName: playerName, email: email, password: password)
     }
 
-    private func signUp(userName: String, email: String, password: String) {
+    private func signUp(playerName: String, email: String, password: String) {
         let uuid = UUID().uuidString
         vc?.showIndicator()
-        _ = self.interactor.signUp(uuid: uuid, userName: userName, email: email, password: password)
+        _ = self.interactor.signUp(uuid: uuid, playerName: playerName, email: email, password: password)
             .do(onSuccess: { _ in
                 self.vc?.hideIndicator()
             }, onError: { _ in

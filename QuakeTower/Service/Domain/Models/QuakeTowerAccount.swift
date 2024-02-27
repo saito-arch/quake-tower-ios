@@ -9,36 +9,36 @@ import Foundation
 import RxSwift
 
 class QuakeTowerAccount {
-    var userId: Int? {
+    var playerId: Int? {
         get {
-            if let userId = Stored.IntValue.userId.object() {
-                return userId
+            if let playerId = Stored.IntValue.playerId.object() {
+                return playerId
             } else {
                 return nil
             }
         }
         set {
-            if let userId = newValue {
-                Stored.IntValue.userId.set(userId)
+            if let playerId = newValue {
+                Stored.IntValue.playerId.set(playerId)
             } else {
-                Stored.IntValue.userId.removeObject()
+                Stored.IntValue.playerId.removeObject()
             }
         }
     }
 
-    var userName: String? {
+    var playerName: String? {
         get {
-            if let userName = Stored.StringValue.userName.object() {
-                return userName
+            if let playerName = Stored.StringValue.playerName.object() {
+                return playerName
             } else {
                 return nil
             }
         }
         set {
-            if let userName = newValue {
-                Stored.StringValue.userName.set(userName)
+            if let playerName = newValue {
+                Stored.StringValue.playerName.set(playerName)
             } else {
-                Stored.StringValue.userName.removeObject()
+                Stored.StringValue.playerName.removeObject()
             }
         }
     }

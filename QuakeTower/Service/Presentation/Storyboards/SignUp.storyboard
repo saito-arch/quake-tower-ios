@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="user name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zwg-Rp-DuP">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="player name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zwg-Rp-DuP">
                                 <rect key="frame" x="32" y="119" width="329" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="513-Id-sc2"/>
@@ -73,7 +73,7 @@
                         <outlet property="buttonSignUp" destination="1KF-Tp-WFM" id="t8X-b4-60b"/>
                         <outlet property="textFieldEmail" destination="2FY-B5-rGa" id="iyH-Et-Q1k"/>
                         <outlet property="textFieldPassword" destination="CUu-DX-EpA" id="9Yo-NL-ngf"/>
-                        <outlet property="textFieldUserName" destination="Zwg-Rp-DuP" id="i1X-eO-gyX"/>
+                        <outlet property="textFieldPlayerName" destination="Zwg-Rp-DuP" id="i1X-eO-gyX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WCF-fu-8I0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

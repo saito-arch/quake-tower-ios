@@ -21,11 +21,11 @@ enum Apis {
             struct SignInResult: Codable, JudgableVer1 {
                 typealias Context = SignInEntity
 
-                let userId: Int
-                let userName: String
+                let playerId: Int
+                let playerName: String
 
                 func getContext() -> SignInEntity {
-                    let entity = SignInEntity(userId: userId, userName: userName)
+                    let entity = SignInEntity(playerId: playerId, playerName: playerName)
 
                     return entity
                 }
@@ -47,10 +47,10 @@ enum Apis {
             struct SignUpResult: Codable, JudgableVer1 {
                 typealias Context = SignUpEntity
 
-                let userId: Int
+                let playerId: Int
 
                 func getContext() -> SignUpEntity {
-                    let entity = SignUpEntity(userId: userId)
+                    let entity = SignUpEntity(playerId: playerId)
 
                     return entity
                 }
@@ -61,8 +61,8 @@ enum Apis {
             var headers: HTTPHeaders? = DEFAULT_HEADERS
             let params: [String: Any]
 
-            init(uuid: String, userName: String, email: String, pass: String) {
-                self.params = ["uuid": "\(uuid)", "name": "\(userName)", "email": "\(email)", "pass": "\(pass)"]
+            init(uuid: String, playerName: String, email: String, pass: String) {
+                self.params = ["uuid": "\(uuid)", "name": "\(playerName)", "email": "\(email)", "pass": "\(pass)"]
             }
         }
     }

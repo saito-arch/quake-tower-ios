@@ -8,6 +8,6 @@
 import Foundation
 
 struct SignInEntity: Entity {
-    let userId: Int
-    let userName: String
+    let playerId: Int
+    let playerName: String
 }
