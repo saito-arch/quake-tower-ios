@@ -53,9 +53,9 @@ protocol Wireframe {
 extension Wireframe where ViewController: UIViewController {
     func toSignInVc() {
         let signInVc = SignInRouter.instantiate()
-        let nav = UINavigationController(rootViewController: signInVc)
-        nav.modalPresentationStyle = .fullScreen
-        vc?.present(nav, animated: true)
+        let navigationController = UINavigationController(rootViewController: signInVc)
+        navigationController.modalPresentationStyle = .fullScreen
+        vc?.present(navigationController, animated: true)
     }
 
     func assertErrorContext(error: Error) {
