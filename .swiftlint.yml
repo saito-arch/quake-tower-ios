@@ -8,6 +8,7 @@ disabled_rules:
   - sorted_imports
   - todo
   - trailing_whitespace
+  - cyclomatic_complexity
 
 opt_in_rules:
   - attributes
@@ -125,3 +126,4 @@ identifier_name:
     - idx
     - lhs
     - rhs
+    - mie
