@@ -51,7 +51,7 @@ class MainPresenter<T: MainUserInterface, U: MainUsecase, V: MainWireframe>: Mai
             // TODO: reflect info on the screen
             break
         case .some(.idsMismatch):
-            self.vc?.showAlert(of: .d003) { [weak self] action in
+            self.vc?.showAlert(of: .d003) { [weak self] _ in
                 self?.router.signOut()
             }
         case .some(.unexpectedError):
@@ -67,7 +67,7 @@ class MainPresenter<T: MainUserInterface, U: MainUsecase, V: MainWireframe>: Mai
             log("Unexpected error during usecase execution: \(String(describing: clientError))")
             switch clientError {
             case .idsDoNotExist:
-                self.vc?.showAlert(of: .d003) { [weak self] action in
+                self.vc?.showAlert(of: .d003) { [weak self] _ in
                     self?.router.signOut()
                 }
             default:
