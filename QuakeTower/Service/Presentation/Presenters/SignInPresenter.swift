@@ -69,7 +69,7 @@ class SignInPresenter<T: SignInUserInterface, U: SignInUsecase, V: SignInWirefra
             Session.shared.countSignInFailure += 1
             self.vc?.showAlert(title: title, message: message, pattern: .d1002, handler: nil)
         case .some(.unexpectedError):
-            self.vc?.showAlert(of: .d001, handler: nil)
+            self.vc?.showAlert(of: .d000, handler: nil)
         default:
             fatalError("\(contexts.last.debugDescription)")
         }
@@ -79,11 +79,7 @@ class SignInPresenter<T: SignInUserInterface, U: SignInUsecase, V: SignInWirefra
         switch error {
         case ServiceErrors.client(let clientError):
             log("Unexpected error during usecase execution: \(String(describing: clientError))")
-            switch clientError {
-            // not reachable
-            case .disconnection:
-                self.vc?.showAlert(of: .d001, handler: nil)
-            }
+            self.vc?.showAlert(of: .d001, handler: nil)
         /* Service Errors each API */
         case ErrorWrapper<Apis.Ver1.SignIn>.service(let serviceError, let api, let causedBy):
             log("Error on \(api) calling: \(String(describing: causedBy))")

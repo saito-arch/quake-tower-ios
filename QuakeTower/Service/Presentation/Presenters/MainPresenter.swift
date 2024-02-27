@@ -55,7 +55,7 @@ class MainPresenter<T: MainUserInterface, U: MainUsecase, V: MainWireframe>: Mai
                 // TODO: sign out
             }
         case .some(.unexpectedError):
-            self.vc?.showAlert(of: .d001, handler: nil)
+            self.vc?.showAlert(of: .d000, handler: nil)
         default:
             fatalError("\(contexts.last.debugDescription)")
         }

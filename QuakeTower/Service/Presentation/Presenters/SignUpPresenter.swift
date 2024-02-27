@@ -58,7 +58,7 @@ class SignUpPresenter<T: SignUpUserInterface, U: SignUpUsecase, V: SignUpWirefra
         case .some(.alwaysRegistered(let title, let message)):
             self.vc?.showAlert(title: title, message: message, pattern: .d1003, handler: nil)
         case .some(.unexpectedError):
-            self.vc?.showAlert(of: .d001, handler: nil)
+            self.vc?.showAlert(of: .d000, handler: nil)
         default:
             fatalError("\(contexts.last.debugDescription)")
         }
@@ -68,11 +68,7 @@ class SignUpPresenter<T: SignUpUserInterface, U: SignUpUsecase, V: SignUpWirefra
         switch error {
         case ServiceErrors.client(let clientError):
             log("Unexpected error during usecase execution: \(String(describing: clientError))")
-            switch clientError {
-            // not reachable
-            case .disconnection:
-                self.vc?.showAlert(of: .d001, handler: nil)
-            }
+            self.vc?.showAlert(of: .d001, handler: nil)
         /* Service Errors each API */
         case ErrorWrapper<Apis.Ver1.SignUp>.service(let serviceError, let api, let causedBy):
             log("Error on \(api) calling: \(String(describing: causedBy))")
