@@ -55,6 +55,9 @@
 		5B89E1BC2B8D7D5600D9E6E8 /* MainPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E1BB2B8D7D5600D9E6E8 /* MainPresenter.swift */; };
 		5B89E1BE2B8D7D5C00D9E6E8 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E1BD2B8D7D5C00D9E6E8 /* MainRouter.swift */; };
 		5B89E1C02B8D7D6500D9E6E8 /* MainInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E1BF2B8D7D6500D9E6E8 /* MainInteractor.swift */; };
+		5B89E1C22B8DE8E200D9E6E8 /* PlayerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E1C12B8DE8E200D9E6E8 /* PlayerInfo.swift */; };
+		5B89E1C42B8DEA1700D9E6E8 /* Tower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E1C32B8DEA1700D9E6E8 /* Tower.swift */; };
+		5B89E1C62B8DEA9500D9E6E8 /* GameInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E1C52B8DEA9500D9E6E8 /* GameInfo.swift */; };
 		B4A4246021BC4E4AAE874E83 /* Pods_QuakeTowerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8938223B9ACD63FF506D606 /* Pods_QuakeTowerTests.framework */; };
 		E1A69F1285C41AE2F534E4DC /* Pods_QuakeTower_QuakeTowerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0CA8F10A17F60A9711D8D75 /* Pods_QuakeTower_QuakeTowerUITests.framework */; };
 /* End PBXBuildFile section */
@@ -130,6 +133,9 @@
 		5B89E1BB2B8D7D5600D9E6E8 /* MainPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPresenter.swift; sourceTree = "<group>"; };
 		5B89E1BD2B8D7D5C00D9E6E8 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 		5B89E1BF2B8D7D6500D9E6E8 /* MainInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainInteractor.swift; sourceTree = "<group>"; };
+		5B89E1C12B8DE8E200D9E6E8 /* PlayerInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerInfo.swift; sourceTree = "<group>"; };
+		5B89E1C32B8DEA1700D9E6E8 /* Tower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tower.swift; sourceTree = "<group>"; };
+		5B89E1C52B8DEA9500D9E6E8 /* GameInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInfo.swift; sourceTree = "<group>"; };
 		6582F4CA4A8ADC8A108F7FE8 /* Pods-QuakeTower-QuakeTowerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuakeTower-QuakeTowerUITests.debug.xcconfig"; path = "Target Support Files/Pods-QuakeTower-QuakeTowerUITests/Pods-QuakeTower-QuakeTowerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7EFE7A18761178982EFA008D /* Pods-QuakeTower.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuakeTower.release.xcconfig"; path = "Target Support Files/Pods-QuakeTower/Pods-QuakeTower.release.xcconfig"; sourceTree = "<group>"; };
 		A0CA8F10A17F60A9711D8D75 /* Pods_QuakeTower_QuakeTowerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuakeTower_QuakeTowerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -375,6 +381,9 @@
 			children = (
 				5B89E1882B89EFFC00D9E6E8 /* SignInEntity.swift */,
 				5B89E1B32B8C9D9500D9E6E8 /* SignUpEntity.swift */,
+				5B89E1C12B8DE8E200D9E6E8 /* PlayerInfo.swift */,
+				5B89E1C32B8DEA1700D9E6E8 /* Tower.swift */,
+				5B89E1C52B8DEA9500D9E6E8 /* GameInfo.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -751,6 +760,7 @@
 				5B89E1BC2B8D7D5600D9E6E8 /* MainPresenter.swift in Sources */,
 				5B89E1AA2B8C764D00D9E6E8 /* SignUpViewController.swift in Sources */,
 				5B89E1772B89D11C00D9E6E8 /* SignInViewController.swift in Sources */,
+				5B89E1C42B8DEA1700D9E6E8 /* Tower.swift in Sources */,
 				5B89E1C02B8D7D6500D9E6E8 /* MainInteractor.swift in Sources */,
 				5B89E1AE2B8C766000D9E6E8 /* SignUpPresenter.swift in Sources */,
 				5B89E16B2B89B17500D9E6E8 /* ApiInterface.swift in Sources */,
@@ -759,11 +769,13 @@
 				5B89E1292B8999E900D9E6E8 /* AppDelegate.swift in Sources */,
 				5B89E19A2B8B3AC100D9E6E8 /* Extensions.swift in Sources */,
 				5B89E1902B89F27D00D9E6E8 /* Session.swift in Sources */,
+				5B89E1C22B8DE8E200D9E6E8 /* PlayerInfo.swift in Sources */,
 				5B89E15D2B89ADCF00D9E6E8 /* ViperProtocols.swift in Sources */,
 				5B89E12B2B8999E900D9E6E8 /* SceneDelegate.swift in Sources */,
 				5B89E1B02B8C766700D9E6E8 /* SignUpRouter.swift in Sources */,
 				5B89E1A52B8C6A4200D9E6E8 /* MockApiClient.swift in Sources */,
 				5B89E1652B89AF5200D9E6E8 /* SystemErrors.swift in Sources */,
+				5B89E1C62B8DEA9500D9E6E8 /* GameInfo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
