@@ -21,6 +21,7 @@ struct AlertContent {
 enum MessagePatternId {
     case d001
     case d002
+    case d003
 }
 
 let ERROR_ALERT_CONTENT_MAP: [MessagePatternId: AlertContent] = [
@@ -32,6 +33,11 @@ let ERROR_ALERT_CONTENT_MAP: [MessagePatternId: AlertContent] = [
     .d002: AlertContent(
         title: ERR_TITLE_LIMIT_SIGN_IN_FAILURE,
         message: ERR_MESSAGE_LIMIT_SIGN_IN_FAILURE,
+        actions: [(COMMON_OK, .default)]
+    ),
+    .d003: AlertContent(
+        title: ERR_TITLE_ID_PROBLEM,
+        message: ERR_MESSAGE_ID_PROBLEM,
         actions: [(COMMON_OK, .default)]
     )
 ]
@@ -110,3 +116,5 @@ let COMMON_OK = "OK"
 let ERR_TITLE_COMMUNICATION = "Network error"
 let ERR_TITLE_LIMIT_SIGN_IN_FAILURE = "Can't sign in"
 let ERR_MESSAGE_LIMIT_SIGN_IN_FAILURE = "The number of failed sign in attempts has reached the limit."
+let ERR_TITLE_ID_PROBLEM = "Unusual state"
+let ERR_MESSAGE_ID_PROBLEM = "There was a problem with your registration information. Sign out."
