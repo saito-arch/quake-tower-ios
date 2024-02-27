@@ -143,7 +143,7 @@ class SignUpSpec: QuickSpec {
                 }
             }
             context("when undefined error") {
-                it("show alert 001") {
+                it("show alert 000") {
                     waitUntil(timeout: TIMEOUT) { done in
                         let mock = MockApiClient<Apis.Ver1.SignUp>(
                             error: MyError(
@@ -156,7 +156,7 @@ class SignUpSpec: QuickSpec {
                         ApiService.set(apiClient: mock)
                         vc.embedAssertion4Alert { pattern in
                             expect({
-                                guard case .d001 = pattern else {
+                                guard case .d000 = pattern else {
                                     return .failed(reason: "wrong enum case: \(pattern)")
                                 }
                                 print(">>> success \(pattern)")
