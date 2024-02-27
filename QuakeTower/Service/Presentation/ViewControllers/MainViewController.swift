@@ -18,7 +18,14 @@ class MainViewController: UIViewController {
     
     var presenter: Presenter?
 
-    @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var mapView: MKMapView! {
+        didSet {
+            self.mapView.delegate = self
+            var region: MKCoordinateRegion = mapView.region
+            region.center = JAPAN_CENTER
+            mapView.setRegion(region, animated: false)
+        }
+    }
 
     lazy var indicator: UIActivityIndicatorView? = {
         UIActivityIndicatorView.instantiate(view: self.view)
@@ -48,4 +55,7 @@ extension MainViewController: MainUserInterface {
     func hideIndicator() {
         self.indicator?.stopAnimating()
     }
+}
+
+extension MainViewController: MKMapViewDelegate {
 }

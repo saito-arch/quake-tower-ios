@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import MapKit
 
 let IS_TESTING = { (isTesting: String?) -> Bool in
     if case let .some(value) = isTesting, value == "true" {
@@ -15,6 +16,8 @@ let IS_TESTING = { (isTesting: String?) -> Bool in
 }(ProcessInfo().environment["IS_TESTING"])
 
 let MAX_COUNT_SIGN_IN_FAILURE = 5
+
+let JAPAN_CENTER = CLLocationCoordinate2DMake(35, 137.5)
 
 func log(_ message: String, file: String = #file, line: Int = #line, function: String = #function) {
 
