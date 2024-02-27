@@ -41,6 +41,16 @@ class Session {
 
     var currentAccount = QuakeTowerAccount()
 
+    func generateUuid() -> String {
+        if let uuid = self.uuid {
+            return uuid
+        }
+        let newUuid = UUID().uuidString
+        self.uuid = newUuid
+
+        return newUuid
+    }
+
     private init() {}
 
     func signIn(with uuid: String, email: String, password: String) -> Single<ApiContext<SignInEntity, MyError>> {
@@ -49,7 +59,6 @@ class Session {
 
                 switch apiContext {
                 case .success(let entity):
-                    self.uuid = uuid
                     self.currentAccount.playerId = entity.playerId
                     self.currentAccount.playerName = entity.playerName
 
@@ -66,7 +75,6 @@ class Session {
 
                 switch apiContext {
                 case .success(let entity):
-                    self.uuid = uuid
                     self.currentAccount.playerId = entity.playerId
                     self.currentAccount.playerName = playerName
 

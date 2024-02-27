@@ -34,7 +34,7 @@ class SignUpPresenter<T: SignUpUserInterface, U: SignUpUsecase, V: SignUpWirefra
     }
 
     private func signUp(playerName: String, email: String, password: String) {
-        let uuid = UUID().uuidString
+        let uuid = Session.shared.generateUuid()
         vc?.showIndicator()
         _ = self.interactor.signUp(uuid: uuid, playerName: playerName, email: email, password: password)
             .do(onSuccess: { _ in

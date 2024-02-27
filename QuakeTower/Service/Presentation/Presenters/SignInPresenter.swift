@@ -43,7 +43,7 @@ class SignInPresenter<T: SignInUserInterface, U: SignInUsecase, V: SignInWirefra
     }
 
     private func signIn(email: String, password: String) {
-        let uuid = UUID().uuidString
+        let uuid = Session.shared.generateUuid()
         vc?.showIndicator()
         _ = self.interactor.signIn(uuid: uuid, email: email, password: password)
             .do(onSuccess: { _ in
