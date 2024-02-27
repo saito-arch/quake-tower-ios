@@ -83,25 +83,20 @@ struct _R {
             let bundle: Foundation.Bundle
             var uiSceneConfigurationName: String { bundle.infoDictionaryString(path: ["UIApplicationSceneManifest", "UISceneConfigurations", "UIWindowSceneSessionRoleApplication"], key: "UISceneConfigurationName") ?? "Default Configuration" }
             var uiSceneDelegateClassName: String { bundle.infoDictionaryString(path: ["UIApplicationSceneManifest", "UISceneConfigurations", "UIWindowSceneSessionRoleApplication"], key: "UISceneDelegateClassName") ?? "$(PRODUCT_MODULE_NAME).SceneDelegate" }
-            var uiSceneStoryboardFile: String { bundle.infoDictionaryString(path: ["UIApplicationSceneManifest", "UISceneConfigurations", "UIWindowSceneSessionRoleApplication"], key: "UISceneStoryboardFile") ?? "Main" }
           }
         }
       }
     }
   }
 
-  /// This `_R.storyboard` struct is generated, and contains static references to 4 storyboards.
+  /// This `_R.storyboard` struct is generated, and contains static references to 3 storyboards.
   struct storyboard {
     let bundle: Foundation.Bundle
     var launchScreen: launchScreen { .init(bundle: bundle) }
-    var main: main { .init(bundle: bundle) }
     var signIn: signIn { .init(bundle: bundle) }
     var signUp: signUp { .init(bundle: bundle) }
 
     func launchScreen(bundle: Foundation.Bundle) -> launchScreen {
-      .init(bundle: bundle)
-    }
-    func main(bundle: Foundation.Bundle) -> main {
       .init(bundle: bundle)
     }
     func signIn(bundle: Foundation.Bundle) -> signIn {
@@ -112,7 +107,6 @@ struct _R {
     }
     func validate() throws {
       try self.launchScreen.validate()
-      try self.main.validate()
       try self.signIn.validate()
       try self.signUp.validate()
     }
@@ -125,18 +119,6 @@ struct _R {
       let bundle: Foundation.Bundle
 
       let name = "LaunchScreen"
-      func validate() throws {
-
-      }
-    }
-
-    /// Storyboard `Main`.
-    struct main: RswiftResources.StoryboardReference, RswiftResources.InitialControllerContainer {
-      typealias InitialController = ViewController
-
-      let bundle: Foundation.Bundle
-
-      let name = "Main"
       func validate() throws {
 
       }
