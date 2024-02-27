@@ -65,5 +65,33 @@ enum Apis {
                 self.params = ["uuid": "\(uuid)", "name": "\(playerName)", "email": "\(email)", "pass": "\(pass)"]
             }
         }
+
+        struct FetchPlayerInfo: ApiVer1 {
+            typealias Response = FetchPlayerInfoResult
+
+            struct FetchPlayerInfoResult: Codable, JudgableVer1 {
+                typealias Context = PlayerInfo
+
+                let gold: Int
+                let goldHour: Int
+                let towers: [Tower]
+                let gameInfo: GameInfo
+
+                func getContext() -> PlayerInfo {
+                    let entity = PlayerInfo(gold: gold, goldHour: goldHour, towers: towers, gameInfo: gameInfo)
+
+                    return entity
+                }
+            }
+
+            let method = HTTPMethod.post
+            let url = baseUrl + "/v1/game/player-info"
+            var headers: HTTPHeaders? = DEFAULT_HEADERS
+            let params: [String: Any]
+
+            init(uuid: String, playerId: Int) {
+                self.params = ["uuid": "\(uuid)", "playerId": "\(playerId)"]
+            }
+        }
     }
 }
