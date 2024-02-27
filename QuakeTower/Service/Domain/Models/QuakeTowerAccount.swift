@@ -43,6 +43,11 @@ class QuakeTowerAccount {
         }
     }
 
+    func clear() {
+        self.playerId = nil
+        self.playerName = nil
+    }
+
     init() {}
 
     func fetchPlayerInfo(with uuid: String, playerId: Int)
