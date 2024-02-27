@@ -51,8 +51,7 @@ protocol Wireframe {
 }
 
 extension Wireframe where ViewController: UIViewController {
-    func signOut() {
-        Session.shared.currentAccount.clear()
+    func toSignInVc() {
         let signInVc = SignInRouter.instantiate()
         let nav = UINavigationController(rootViewController: signInVc)
         nav.modalPresentationStyle = .fullScreen

@@ -8,6 +8,7 @@
 import UIKit
 
 protocol MainWireframe: Wireframe where ViewController: MainUserInterface {
+    func signOut()
 }
 
 struct MainRouter {
@@ -35,4 +36,8 @@ struct MainRouter {
 }
 
 extension MainRouter: MainWireframe {
+    func signOut() {
+        Session.shared.currentAccount.clear()
+        toSignInVc()
+    }
 }

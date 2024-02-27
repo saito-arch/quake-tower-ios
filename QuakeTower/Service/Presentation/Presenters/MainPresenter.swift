@@ -52,7 +52,7 @@ class MainPresenter<T: MainUserInterface, U: MainUsecase, V: MainWireframe>: Mai
             break
         case .some(.idsMismatch):
             self.vc?.showAlert(of: .d003) { [weak self] action in
-                // TODO: sign out
+                self?.router.si
             }
         case .some(.unexpectedError):
             self.vc?.showAlert(of: .d000, handler: nil)
