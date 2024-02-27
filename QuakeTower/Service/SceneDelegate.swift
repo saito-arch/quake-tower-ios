@@ -18,13 +18,20 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let scene = (scene as? UIWindowScene) else { return }
 
-        // TODO: first screen is sign in or main
+        // TODO: remove this
+        Session.shared.currentAccount.playerId = 1
+
         let window = UIWindow(windowScene: scene)
         self.window = window
         window.makeKeyAndVisible()
         let navigationController = UINavigationController()
-        let signInViewController = SignInRouter.instantiate()
-        navigationController.viewControllers = [signInViewController]
+        if Session.shared.currentAccount.playerId == nil {
+            let signInViewController = SignInRouter.instantiate()
+            navigationController.viewControllers = [signInViewController]
+        } else {
+            let mainViewController = MainRouter.instantiate()
+            navigationController.viewControllers = [mainViewController]
+        }
         window.rootViewController = navigationController
     }
 
