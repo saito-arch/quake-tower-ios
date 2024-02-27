@@ -44,4 +44,9 @@ class QuakeTowerAccount {
     }
 
     init() {}
+
+    func fetchPlayerInfo(with uuid: String, playerId: Int)
+    -> Single<ApiContext<PlayerInfo, MyError>> {
+        ApiService.shared.fetchPlayerInfo(with: uuid, playerId: playerId)
+    }
 }
