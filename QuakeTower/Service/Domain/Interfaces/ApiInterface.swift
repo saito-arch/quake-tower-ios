@@ -25,8 +25,8 @@ protocol ApiInterface {
     ///
     /// - Parameters:
     ///   - uuid: Terminal identification ID
-    ///   - email: user's email
-    ///   - pass: user's password
+    ///   - email: player's email
+    ///   - pass: player's password
     /// - Returns: Context of execution result
     func signIn(with uuid: String, email: String, password: String) -> Single<ApiContext<SignInEntity, MyError>>
 
@@ -34,10 +34,19 @@ protocol ApiInterface {
     ///
     /// - Parameters:
     ///   - uuid: Terminal identification ID
-    ///   - playerName: user's name
-    ///   - email: user's email
-    ///   - pass: user's password
+    ///   - playerName: player's name
+    ///   - email: player's email
+    ///   - pass: player's password
     /// - Returns: Context of execution result
     func signUp(with uuid: String, playerName: String, email: String, password: String)
     -> Single<ApiContext<SignUpEntity, MyError>>
+
+    /// Fetch player info
+    ///
+    /// - Parameters:
+    ///   - uuid: Terminal identification ID
+    ///   - playerId: player's ID
+    /// - Returns: Context of execution result
+    func fetchPlayerInfo(with uuid: String, playerId: Int)
+    -> Single<ApiContext<PlayerInfo, MyError>>
 }

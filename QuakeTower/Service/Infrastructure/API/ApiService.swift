@@ -36,4 +36,10 @@ extension ApiService: ApiInterface {
         let api = Apis.Ver1.SignUp(uuid: uuid, playerName: playerName, email: email, pass: password)
         return self.apiClient.call(api: api)
     }
+
+    func fetchPlayerInfo(with uuid: String, playerId: Int)
+    -> Single<ApiContext<PlayerInfo, MyError>> {
+        let api = Apis.Ver1.FetchPlayerInfo(uuid: uuid, playerId: playerId)
+        return self.apiClient.call(api: api)
+    }
 }
