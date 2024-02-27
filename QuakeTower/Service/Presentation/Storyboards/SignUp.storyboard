@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Sign Up View Controller-->
+        <!--Sign up-->
         <scene sceneID="7v3-lP-lo8">
             <objects>
-                <viewController id="xBd-HV-Yyn" customClass="SignUpViewController" customModule="QuakeTower" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Sign up" id="xBd-HV-Yyn" customClass="SignUpViewController" customModule="QuakeTower" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="D9q-Hr-uNP">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
