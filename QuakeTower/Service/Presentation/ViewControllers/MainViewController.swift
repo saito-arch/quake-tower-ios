@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import MapKit
 
 protocol MainUserInterface: UserInterface, Alertable where Presenter: MainPresentation {
     func showIndicator()
@@ -16,7 +17,9 @@ protocol MainUserInterface: UserInterface, Alertable where Presenter: MainPresen
 class MainViewController: UIViewController {
     
     var presenter: Presenter?
-    
+
+    @IBOutlet weak var mapView: MKMapView!
+
     lazy var indicator: UIActivityIndicatorView? = {
         UIActivityIndicatorView.instantiate(view: self.view)
     }()

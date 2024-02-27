@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -15,9 +16,24 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cew-Na-QUx">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cew-Na-QUx" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="0cB-mK-uzJ"/>
+                            <constraint firstItem="cew-Na-QUx" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="B3O-BA-fiS"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="cew-Na-QUx" secondAttribute="bottom" id="ygr-8U-Bi9"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="cew-Na-QUx" secondAttribute="trailing" id="zPy-B5-Itt"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="cew-Na-QUx" id="uYg-MP-C5O"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
