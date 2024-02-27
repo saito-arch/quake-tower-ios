@@ -52,7 +52,7 @@ class MainPresenter<T: MainUserInterface, U: MainUsecase, V: MainWireframe>: Mai
             break
         case .some(.idsMismatch):
             self.vc?.showAlert(of: .d003) { [weak self] action in
-                self?.router.si
+                self?.router.signOut()
             }
         case .some(.unexpectedError):
             self.vc?.showAlert(of: .d000, handler: nil)
@@ -68,7 +68,7 @@ class MainPresenter<T: MainUserInterface, U: MainUsecase, V: MainWireframe>: Mai
             switch clientError {
             case .idsDoNotExist:
                 self.vc?.showAlert(of: .d003) { [weak self] action in
-                    // TODO: sign out
+                    self?.router.signOut()
                 }
             default:
                 self.vc?.showAlert(of: .d001, handler: nil)
