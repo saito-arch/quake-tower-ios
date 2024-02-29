@@ -245,9 +245,9 @@
 				5B89E1832B89DF3A00D9E6E8 /* Infrastructure */,
 				5B89E1712B89CF4A00D9E6E8 /* Application */,
 				5B89E1702B89CF4100D9E6E8 /* Presentation */,
+				5B89E1682B89B15F00D9E6E8 /* Domain */,
 				5B89E1282B8999E900D9E6E8 /* AppDelegate.swift */,
 				5B89E12A2B8999E900D9E6E8 /* SceneDelegate.swift */,
-				5B89E1682B89B15F00D9E6E8 /* Domain */,
 				5B89E1662B89AF6E00D9E6E8 /* ServiceErrors.swift */,
 			);
 			path = Service;
