@@ -116,32 +116,6 @@ class SignUpSpec: QuickSpec {
                     }
                 }
             }
-            context("when 2xxx error") {
-                it("show alert 2xxx") {
-                    waitUntil(timeout: TIMEOUT) { done in
-                        let mock = MockApiClient<Apis.Ver1.SignUp>(
-                            error: MyError(
-                                code: 2_001,
-                                message: "testErrorMessage",
-                                errorTitle: "testErrorTitle",
-                                retryable: false
-                            )
-                        )
-                        ApiService.set(apiClient: mock)
-                        vc.embedAssertion4AlertV2 { pattern in
-                            expect({
-                                guard case .d2xxx = pattern else {
-                                    return .failed(reason: "wrong enum case: \(pattern)")
-                                }
-                                print(">>> success \(pattern)")
-                                return .succeeded
-                            }).to(succeed())
-                            done()
-                        }
-                        presenter.onTouchSignUpButton(playerName: playerName, email: email, password: password)
-                    }
-                }
-            }
             context("when undefined error") {
                 it("show alert 000") {
                     waitUntil(timeout: TIMEOUT) { done in
@@ -169,11 +143,11 @@ class SignUpSpec: QuickSpec {
                 }
             }
             context("when already registered") {
-                it("show alert 1003") {
+                it("show alert 2xxx") {
                     waitUntil(timeout: TIMEOUT) { done in
                         let mock = MockApiClient<Apis.Ver1.SignUp>(
                             error: MyError(
-                                code: 1_003,
+                                code: 2_001,
                                 message: "testErrorMessage",
                                 errorTitle: "testErrorTitle",
                                 retryable: false
@@ -182,7 +156,7 @@ class SignUpSpec: QuickSpec {
                         ApiService.set(apiClient: mock)
                         vc.embedAssertion4AlertV2 { pattern in
                             expect({
-                                guard case .d1003 = pattern else {
+                                guard case .d2xxx = pattern else {
                                     return .failed(reason: "wrong enum case: \(pattern)")
                                 }
                                 print(">>> success \(pattern)")
