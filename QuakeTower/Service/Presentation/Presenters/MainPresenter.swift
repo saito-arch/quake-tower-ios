@@ -47,7 +47,7 @@ class MainPresenter<T: MainUserInterface, U: MainUsecase, V: MainWireframe>: Mai
         log(">>> contexts \(contexts)")
         let context = contexts.last
         switch context {
-        case .some(.fetchPlayerInfoSuccess):
+        case .some(.fetchPlayerInfoSuccess(let playerInfo)):
             // TODO: reflect info on the screen
             break
         case .some(.idsMismatch):
