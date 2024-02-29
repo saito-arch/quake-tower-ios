@@ -18,7 +18,7 @@ enum ServiceErrors: Error {
         enum Ver1: Int, Error {
             case appNeedsToBeUpdated = 1_001
             case signInFailure = 1_002
-            case alwaysRegistered = 1_003
+            case alreadyRegistered = 1_003
             case idsMismatch = 1_004
         }
     }

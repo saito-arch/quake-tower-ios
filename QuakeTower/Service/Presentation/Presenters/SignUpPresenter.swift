@@ -55,7 +55,7 @@ class SignUpPresenter<T: SignUpUserInterface, U: SignUpUsecase, V: SignUpWirefra
         switch context {
         case .some(.signUpSuccess):
             self.router.toMain()
-        case .some(.alwaysRegistered(let title, let message)):
+        case .some(.alreadyRegistered(let title, let message)):
             self.vc?.showAlert(title: title, message: message, pattern: .d1003, handler: nil)
         case .some(.unexpectedError):
             self.vc?.showAlert(of: .d000, handler: nil)

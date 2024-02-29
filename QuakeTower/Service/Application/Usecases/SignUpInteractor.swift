@@ -11,7 +11,7 @@ import RxSwift
 enum SignUp: Scenario {
     case signUpReady(uuid: String, playerName: String, email: String, password: String)
     case signUpSuccess
-    case alwaysRegistered(title: String?, message: String)
+    case alreadyRegistered(title: String?, message: String)
     case unexpectedError
 
     init(uuid: String, playerName: String, email: String, password: String) {
@@ -26,8 +26,8 @@ enum SignUp: Scenario {
                     return .signUpSuccess
                 case .failure(let myError):
                     switch myError.code {
-                    case ServiceErrors.Server.Ver1.alwaysRegistered.rawValue:
-                        return .alwaysRegistered(title: myError.errorTitle, message: myError.message)
+                    case ServiceErrors.Server.Ver1.alreadyRegistered.rawValue:
+                        return .alreadyRegistered(title: myError.errorTitle, message: myError.message)
                     default:
                         return .unexpectedError
                     }
@@ -41,7 +41,7 @@ enum SignUp: Scenario {
             return signUp(with: uuid, playerName: playerName, email: email, password: password)
 
         case .signUpSuccess,
-            .alwaysRegistered,
+            .alreadyRegistered,
             .unexpectedError:
             return nil
         }
