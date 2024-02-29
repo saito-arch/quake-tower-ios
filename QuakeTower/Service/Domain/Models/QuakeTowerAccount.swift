@@ -9,9 +9,9 @@ import Foundation
 import RxSwift
 
 class QuakeTowerAccount {
-    var playerId: Int? {
+    var playerId: Int64? {
         get {
-            if let playerId = Stored.IntValue.playerId.object() {
+            if let playerId = Stored.Int64Value.playerId.object() {
                 return playerId
             } else {
                 return nil
@@ -19,9 +19,9 @@ class QuakeTowerAccount {
         }
         set {
             if let playerId = newValue {
-                Stored.IntValue.playerId.set(playerId)
+                Stored.Int64Value.playerId.set(playerId)
             } else {
-                Stored.IntValue.playerId.removeObject()
+                Stored.Int64Value.playerId.removeObject()
             }
         }
     }
@@ -50,7 +50,7 @@ class QuakeTowerAccount {
 
     init() {}
 
-    func fetchPlayerInfo(with uuid: String, playerId: Int)
+    func fetchPlayerInfo(with uuid: String, playerId: Int64)
     -> Single<ApiContext<PlayerInfo, MyError>> {
         ApiService.shared.fetchPlayerInfo(with: uuid, playerId: playerId)
     }

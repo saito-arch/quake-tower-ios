@@ -21,7 +21,7 @@ enum Apis {
             struct SignInResult: Codable, JudgableVer1 {
                 typealias Context = SignInEntity
 
-                let playerId: Int
+                let playerId: Int64
                 let playerName: String
 
                 func getContext() -> SignInEntity {
@@ -47,7 +47,7 @@ enum Apis {
             struct SignUpResult: Codable, JudgableVer1 {
                 typealias Context = SignUpEntity
 
-                let playerId: Int
+                let playerId: Int64
 
                 func getContext() -> SignUpEntity {
                     let entity = SignUpEntity(playerId: playerId)
@@ -89,7 +89,7 @@ enum Apis {
             var headers: HTTPHeaders? = DEFAULT_HEADERS
             let params: [String: Any]
 
-            init(uuid: String, playerId: Int) {
+            init(uuid: String, playerId: Int64) {
                 self.params = ["uuid": "\(uuid)", "playerId": "\(playerId)"]
             }
         }

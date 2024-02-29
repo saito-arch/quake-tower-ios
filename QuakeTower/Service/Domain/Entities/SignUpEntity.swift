@@ -8,5 +8,5 @@
 import Foundation
 
 struct SignUpEntity: Entity {
-    let playerId: Int
+    let playerId: Int64
 }

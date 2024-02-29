@@ -9,10 +9,15 @@ import Foundation
 
 enum Stored {
 
+    enum Int64Value: String, UserDefaultsKey {
+        typealias ValueType = Int64
+
+        case playerId
+    }
+
     enum IntValue: String, UserDefaultsKey {
         typealias ValueType = Int
 
-        case playerId
         case countSignInFailure
     }
 

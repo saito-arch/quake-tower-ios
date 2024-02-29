@@ -9,7 +9,7 @@ import Foundation
 import RxSwift
 
 enum FetchPlayerInfo: Scenario {
-    case idsRegistered(uuid: String, playerId: Int)
+    case idsRegistered(uuid: String, playerId: Int64)
     case fetchPlayerInfoSuccess(playerInfo: PlayerInfo)
     case idsMismatch
     case unexpectedError
@@ -25,7 +25,7 @@ enum FetchPlayerInfo: Scenario {
         }
     }
 
-    func fetchPlayerInfo(with uuid: String, playerId: Int) -> Single<FetchPlayerInfo> {
+    func fetchPlayerInfo(with uuid: String, playerId: Int64) -> Single<FetchPlayerInfo> {
         Session.shared.currentAccount.fetchPlayerInfo(with: uuid, playerId: playerId)
             .map { apiContext -> FetchPlayerInfo in
                 switch apiContext {

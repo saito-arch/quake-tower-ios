@@ -47,6 +47,6 @@ protocol ApiInterface {
     ///   - uuid: Terminal identification ID
     ///   - playerId: player's ID
     /// - Returns: Context of execution result
-    func fetchPlayerInfo(with uuid: String, playerId: Int)
+    func fetchPlayerInfo(with uuid: String, playerId: Int64)
     -> Single<ApiContext<PlayerInfo, MyError>>
 }
