@@ -93,5 +93,33 @@ enum Apis {
                 self.params = ["uuid": "\(uuid)", "playerId": "\(playerId)"]
             }
         }
+
+        struct Command: ApiVer1 {
+            typealias Response = CommandResult
+
+            struct CommandResult: Codable, JudgableVer1 {
+                typealias Context = PlayerInfo
+
+                let gold: Int
+                let goldHour: Int
+                let towers: [Tower]
+                let gameInfo: GameInfo
+
+                func getContext() -> PlayerInfo {
+                    let entity = PlayerInfo(gold: gold, goldHour: goldHour, towers: towers, gameInfo: gameInfo)
+
+                    return entity
+                }
+            }
+
+            let method = HTTPMethod.post
+            let url = baseUrl + "/v1/game/command"
+            var headers: HTTPHeaders? = DEFAULT_HEADERS
+            let params: [String: Any]
+
+            init(uuid: String, playerId: Int64, towerId: Int64, number: Int, tower: Tower) {
+                self.params = ["uuid": "\(uuid)", "playerId": "\(playerId)", "towerId": "\(towerId)", "number": "\(number)", "tower": "\(tower)"]
+            }
+        }
     }
 }
