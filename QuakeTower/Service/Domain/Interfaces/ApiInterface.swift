@@ -49,4 +49,16 @@ protocol ApiInterface {
     /// - Returns: Context of execution result
     func fetchPlayerInfo(with uuid: String, playerId: Int64)
     -> Single<ApiContext<PlayerInfo, MyError>>
+
+    /// Command build, extend, reinforce, or repair
+    ///
+    /// - Parameters:
+    ///   - uuid: Terminal identification ID
+    ///   - playerId: player's ID
+    ///   - towerId: tower's ID
+    ///   - number: command's number
+    ///   - tower: (build only) building tower
+    /// - Returns: Context of execution result
+    func command(with uuid: String, playerId: Int64, towerId: Int64, number: Int, tower: Tower?)
+    -> Single<ApiContext<PlayerInfo, MyError>>
 }

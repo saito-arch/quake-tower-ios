@@ -42,4 +42,10 @@ extension ApiService: ApiInterface {
         let api = Apis.Ver1.FetchPlayerInfo(uuid: uuid, playerId: playerId)
         return self.apiClient.call(api: api)
     }
+
+    func command(with uuid: String, playerId: Int64, towerId: Int64, number: Int, tower: Tower? = nil)
+    -> Single<ApiContext<PlayerInfo, MyError>> {
+        let api = Apis.Ver1.Command(uuid: uuid, playerId: playerId, towerId: towerId, number: number, tower: tower)
+        return self.apiClient.call(api: api)
+    }
 }

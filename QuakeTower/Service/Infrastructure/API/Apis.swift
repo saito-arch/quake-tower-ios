@@ -117,8 +117,13 @@ enum Apis {
             var headers: HTTPHeaders? = DEFAULT_HEADERS
             let params: [String: Any]
 
-            init(uuid: String, playerId: Int64, towerId: Int64, number: Int, tower: Tower) {
-                self.params = ["uuid": "\(uuid)", "playerId": "\(playerId)", "towerId": "\(towerId)", "number": "\(number)", "tower": "\(tower)"]
+            init(uuid: String, playerId: Int64, towerId: Int64, number: Int, tower: Tower?) {
+                if let tower = tower {
+                    self.params = ["uuid": "\(uuid)", "playerId": "\(playerId)", "towerId": "\(towerId)", "number": "\(number)", "tower": "\(tower)"]
+                } else {
+                    self.params = ["uuid": "\(uuid)", "playerId": "\(playerId)", "towerId": "\(towerId)", "number": "\(number)"]
+                }
+
             }
         }
     }
