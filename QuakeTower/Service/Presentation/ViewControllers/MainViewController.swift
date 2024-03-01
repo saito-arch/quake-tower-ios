@@ -27,6 +27,8 @@ class MainViewController: UIViewController {
         }
     }
 
+    @IBOutlet weak var labelGold: UILabel!
+
     lazy var indicator: UIActivityIndicatorView? = {
         UIActivityIndicatorView.instantiate(view: self.view)
     }()

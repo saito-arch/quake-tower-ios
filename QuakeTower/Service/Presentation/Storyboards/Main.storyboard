@@ -21,17 +21,30 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-G" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lJ2-l4-hgo">
+                                <rect key="frame" x="16" y="75" width="100" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="8Rb-Nf-TVs"/>
+                                    <constraint firstAttribute="height" constant="21" id="aoT-1p-Yrd"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="cew-Na-QUx" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="0cB-mK-uzJ"/>
                             <constraint firstItem="cew-Na-QUx" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="B3O-BA-fiS"/>
+                            <constraint firstItem="lJ2-l4-hgo" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="16" id="bWj-AN-9x4"/>
+                            <constraint firstItem="lJ2-l4-hgo" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="iul-Yn-d31"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="cew-Na-QUx" secondAttribute="bottom" id="ygr-8U-Bi9"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="cew-Na-QUx" secondAttribute="trailing" id="zPy-B5-Itt"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="labelGold" destination="lJ2-l4-hgo" id="4qe-7w-f1y"/>
                         <outlet property="mapView" destination="cew-Na-QUx" id="uYg-MP-C5O"/>
                     </connections>
                 </viewController>
