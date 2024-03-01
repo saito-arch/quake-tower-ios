@@ -23,6 +23,8 @@ enum MessagePatternId {
     case d001
     case d002
     case d003
+    case d004
+    case d005
 }
 
 let ERROR_ALERT_CONTENT_MAP: [MessagePatternId: AlertContent] = [
@@ -44,6 +46,16 @@ let ERROR_ALERT_CONTENT_MAP: [MessagePatternId: AlertContent] = [
     .d003: AlertContent(
         title: ERR_TITLE_ID_PROBLEM,
         message: ERR_MESSAGE_ID_PROBLEM,
+        actions: [(COMMON_OK, .default)]
+    ),
+    .d004: AlertContent(
+        title: ERR_TITLE_NOT_ENOUGH_GOLD,
+        message: ERR_MESSAGE_NOT_ENOUGH_GOLD,
+        actions: [(COMMON_OK, .default)]
+    ),
+    .d005: AlertContent(
+        title: nil,
+        message: ERR_MESSAGE_TOWER_IS_COLLAPSED,
         actions: [(COMMON_OK, .default)]
     )
 ]
@@ -126,3 +138,6 @@ let ERR_TITLE_LIMIT_SIGN_IN_FAILURE = "Can't sign in"
 let ERR_MESSAGE_LIMIT_SIGN_IN_FAILURE = "The number of failed sign in attempts has reached the limit."
 let ERR_TITLE_ID_PROBLEM = "Unusual state"
 let ERR_MESSAGE_ID_PROBLEM = "There was a problem with your registration information. Sign out."
+let ERR_TITLE_NOT_ENOUGH_GOLD = "Not enough G"
+let ERR_MESSAGE_NOT_ENOUGH_GOLD = "G required for this command is missing."
+let ERR_MESSAGE_TOWER_IS_COLLAPSED = "This tower has already collapsed."

@@ -57,7 +57,7 @@ enum FetchPlayerInfo: Scenario {
 
 enum Command: Scenario {
     case idsRegistered(uuid: String, playerId: Int64, towerId: Int64, number: Int, tower: Tower?)
-    case fetchPlayerInfoSuccess(playerInfo: PlayerInfo)
+    case commandSuccess(playerInfo: PlayerInfo)
     case idsMismatch
     case notEnoughGold
     case towerIsCollapsed
@@ -79,7 +79,7 @@ enum Command: Scenario {
             .map { apiContext -> Command in
                 switch apiContext {
                 case .success(let playerInfo):
-                    return .fetchPlayerInfoSuccess(playerInfo: playerInfo)
+                    return .commandSuccess(playerInfo: playerInfo)
                 case .failure(let myError):
                     switch myError.code {
                     case ServiceErrors.Server.Ver1.idsMismatch.rawValue:
@@ -100,7 +100,7 @@ enum Command: Scenario {
         case .idsRegistered(let uuid, let playerId, let towerId, let number, let tower):
             return self.command(with: uuid, playerId: playerId, towerId: towerId, number: number, tower: tower)
 
-        case .fetchPlayerInfoSuccess,
+        case .commandSuccess,
             .idsMismatch,
             .notEnoughGold,
             .towerIsCollapsed,
@@ -135,7 +135,7 @@ struct MainInteractor: MainUsecase {
         }
     }
 
-    func command(towerId: Int64, number: Int, tower: Tower? = nil) -> Single<[Command]> {
+    func command(towerId: Int64, number: Int, tower: Tower?) -> Single<[Command]> {
         if let context = Command(towerId: towerId, number: number, tower: tower) {
             return self.interact(contexts: [context])
         } else {
