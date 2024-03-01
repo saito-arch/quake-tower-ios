@@ -55,12 +55,75 @@ enum FetchPlayerInfo: Scenario {
     }
 }
 
+enum Command: Scenario {
+    case idsRegistered(uuid: String, playerId: Int64, towerId: Int64, number: Int, tower: Tower?)
+    case fetchPlayerInfoSuccess(playerInfo: PlayerInfo)
+    case idsMismatch
+    case notEnoughGold
+    case towerIsCollapsed
+    case unexpectedError
+
+    init?(towerId: Int64, number: Int, tower: Tower?) {
+        if let uuid = Session.shared.uuid,
+            let playerId = Session.shared.currentAccount.playerId {
+            log("uuid: \(uuid), playerId: \(playerId)")
+            self = .idsRegistered(uuid: uuid, playerId: playerId, towerId: towerId, number: number, tower: tower)
+        } else {
+            log("ids doesn't exist")
+            return nil
+        }
+    }
+
+    func command(with uuid: String, playerId: Int64, towerId: Int64, number: Int, tower: Tower?) -> Single<Command> {
+        Session.shared.currentAccount.fetchPlayerInfo(with: uuid, playerId: playerId)
+            .map { apiContext -> Command in
+                switch apiContext {
+                case .success(let playerInfo):
+                    return .fetchPlayerInfoSuccess(playerInfo: playerInfo)
+                case .failure(let myError):
+                    switch myError.code {
+                    case ServiceErrors.Server.Ver1.idsMismatch.rawValue:
+                        return .idsMismatch
+                    case ServiceErrors.Server.Ver1.notEnoughGold.rawValue:
+                        return .notEnoughGold
+                    case ServiceErrors.Server.Ver1.towerIsCollapsed.rawValue:
+                        return .towerIsCollapsed
+                    default:
+                        return .unexpectedError
+                    }
+                }
+            }
+    }
+
+    func next() -> Single<Command>? {
+        switch self {
+        case .idsRegistered(let uuid, let playerId, let towerId, let number, let tower):
+            return self.command(with: uuid, playerId: playerId, towerId: towerId, number: number, tower: tower)
+
+        case .fetchPlayerInfoSuccess,
+            .idsMismatch,
+            .notEnoughGold,
+            .towerIsCollapsed,
+            .unexpectedError:
+            return nil
+        }
+    }
+}
+
 protocol MainUsecase: Usecase {
     /// usecase "FetchPlayerInfo"
     ///
     /// - Parameters:
     /// - Returns: Context of execution result
     func fetchPlayerInfo() -> Single<[FetchPlayerInfo]>
+    /// usecase "Command"
+    ///
+    /// - Parameters:
+    ///   - towerId: tower's ID
+    ///   - number: command's number
+    ///   - tower: (build only) building tower   
+    /// - Returns: Context of execution result
+    func command(towerId: Int64, number: Int, tower: Tower?) -> Single<[Command]>
 }
 
 struct MainInteractor: MainUsecase {
@@ -69,6 +132,14 @@ struct MainInteractor: MainUsecase {
             return self.interact(contexts: [context])
         } else {
             return Single<[FetchPlayerInfo]>.error(ServiceErrors.client(.idsDoNotExist))
+        }
+    }
+
+    func command(towerId: Int64, number: Int, tower: Tower? = nil) -> Single<[Command]> {
+        if let context = Command(towerId: towerId, number: number, tower: tower) {
+            return self.interact(contexts: [context])
+        } else {
+            return Single<[Command]>.error(ServiceErrors.client(.idsDoNotExist))
         }
     }
 }
