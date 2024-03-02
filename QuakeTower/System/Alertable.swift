@@ -27,7 +27,7 @@ enum MessagePatternId {
     case d005
 }
 
-let ERROR_ALERT_CONTENT_MAP: [MessagePatternId: AlertContent] = [
+let ALERT_CONTENT_MAP: [MessagePatternId: AlertContent] = [
     .d000: AlertContent(
         title: ERR_TITLE_UNEXPECTED,
         message: ERR_MESSAGE_UNEXPECTED,
@@ -67,7 +67,7 @@ enum AlertActionPatternV2 {
     case d2xxx
 }
 
-let ERROR_ALERT_CONTENT_MAP_V2: [AlertActionPatternV2: [(String, UIAlertAction.Style)]] = [
+let ALERT_CONTENT_MAP_V2: [AlertActionPatternV2: [(String, UIAlertAction.Style)]] = [
     .d1001: [(COMMON_OK, .default)],
     .d1002: [(COMMON_OK, .default)],
     .d1003: [(COMMON_OK, .default)],
@@ -115,14 +115,14 @@ extension Alertable {
     }
 
     private func getAlertContent(by pattern: MessagePatternId) -> AlertContent {
-        guard let content = ERROR_ALERT_CONTENT_MAP[pattern] else {
+        guard let content = ALERT_CONTENT_MAP[pattern] else {
             return AlertContent(title: "\(pattern)", message: "ERROR", actions: [(COMMON_OK, .default)])
         }
         return content
     }
 
     private func getAlertContentV2(by pattern: AlertActionPatternV2) -> [(String, UIAlertAction.Style)] {
-        guard let actions = ERROR_ALERT_CONTENT_MAP_V2[pattern] else {
+        guard let actions = ALERT_CONTENT_MAP_V2[pattern] else {
             return [(COMMON_OK, .default)]
         }
         return actions
