@@ -53,15 +53,15 @@ class MainViewController: UIViewController {
     // MARK: - User Actions
 
     @IBAction func onTouchExtendButton(_ sender: UIButton) {
-
+        // TODO: extend command
     }
 
     @IBAction func onTouchReinforceButton(_ sender: UIButton) {
-
+        // TODO: reinforce command
     }
 
     @IBAction func onTouchRepairButton(_ sender: UIButton) {
-
+        // TODO: repair command
     }
 }
 
@@ -90,4 +90,31 @@ extension MainViewController: MainUserInterface {
 }
 
 extension MainViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        switch view.annotation {
+        case let annotation as TowerAnnotation:
+            let tower = annotation.tower
+            if let prefecture = Prefecture(rawValue: tower.prefectureId) {
+                labelPrefecture.text = "\(prefecture)"
+            }
+            labelHeight.text = String(tower.height)
+            labelHp.text = "\(tower.hp)/\(tower.maxHp)"
+            // TODO: button enable/disable
+            viewTowerInfo.isHidden = false
+
+        case let annotation as BuildTowerAnnotation:
+            // TODO: build
+            break
+        default:
+            break
+        }
+    }
+
+    func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
+        viewTowerInfo.isHidden = true
+    }
+
+    func mapViewDidFinishLoadingMap(_ mapView: MKMapView) {
+        // TODO: fetchPlayerInfo
+    }
 }
