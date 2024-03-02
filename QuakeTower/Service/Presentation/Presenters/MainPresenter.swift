@@ -48,8 +48,11 @@ class MainPresenter<T: MainUserInterface, U: MainUsecase, V: MainWireframe>: Mai
         let context = contexts.last
         switch context {
         case .some(.fetchPlayerInfoSuccess(let playerInfo)):
-            // TODO: reflect info on the screen
-            break
+            self.vc?.updateGoldAndAnnotations(
+                gold: playerInfo.gold,
+                towerAnnotations: makeTowerAnnotations(towers: playerInfo.towers),
+                buildTowerAnnotations: makeBuildTowerAnnotations(isEnabled: playerInfo.towers.count < 100)
+            )
         case .some(.idsMismatch):
             self.vc?.showAlert(of: .d003) { [weak self] _ in
                 self?.router.signOut()
@@ -113,8 +116,11 @@ class MainPresenter<T: MainUserInterface, U: MainUsecase, V: MainWireframe>: Mai
         let context = contexts.last
         switch context {
         case .some(.commandSuccess(let playerInfo)):
-            // TODO: reflect info on the screen
-            break
+            self.vc?.updateGoldAndAnnotations(
+                gold: playerInfo.gold,
+                towerAnnotations: makeTowerAnnotations(towers: playerInfo.towers),
+                buildTowerAnnotations: makeBuildTowerAnnotations(isEnabled: playerInfo.towers.count < 100)
+            )
         case .some(.idsMismatch):
             self.vc?.showAlert(of: .d003) { [weak self] _ in
                 self?.router.signOut()
