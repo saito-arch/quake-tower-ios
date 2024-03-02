@@ -34,7 +34,7 @@ func log(_ message: String, file: String = #file, line: Int = #line, function: S
     print("\(file):\(line) [\(function)]: \(message)")
 }
 
-enum Prefecture: Int {
+enum Prefecture: Int, CaseIterable {
     case hokkaido = 1
     case aomori
     case iwate

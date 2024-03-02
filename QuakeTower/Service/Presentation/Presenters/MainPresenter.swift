@@ -174,4 +174,13 @@ class MainPresenter<T: MainUserInterface, U: MainUsecase, V: MainWireframe>: Mai
 
         return annotations
     }
+
+    private func makeBuildTowerAnnotations(isEnabled: Bool) -> [BuildTowerAnnotation] {
+        var annotations: [BuildTowerAnnotation] = []
+        for prefecture in Prefecture.allCases {
+            annotations.append(BuildTowerAnnotation(prefecture: prefecture, isEnabled: isEnabled))
+        }
+
+        return annotations
+    }
 }
