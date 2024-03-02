@@ -30,6 +30,14 @@ class MainViewController: UIViewController {
 
     @IBOutlet weak var labelGold: UILabel!
 
+    @IBOutlet weak var viewTowerInfo: UIView!
+    @IBOutlet weak var labelPrefecture: UILabel!
+    @IBOutlet weak var labelHeight: UILabel!
+    @IBOutlet weak var labelHp: UILabel!
+    @IBOutlet weak var buttonExtend: UIButton!
+    @IBOutlet weak var buttonReinforce: UIButton!
+    @IBOutlet weak var buttonRepair: UIButton!
+
     lazy var indicator: UIActivityIndicatorView? = {
         UIActivityIndicatorView.instantiate(view: self.view)
     }()
@@ -40,6 +48,20 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
         self.view.addSubview(indicator!)
+    }
+
+    // MARK: - User Actions
+
+    @IBAction func onTouchExtendButton(_ sender: UIButton) {
+
+    }
+
+    @IBAction func onTouchReinforceButton(_ sender: UIButton) {
+
+    }
+
+    @IBAction func onTouchRepairButton(_ sender: UIButton) {
+
     }
 }
 
