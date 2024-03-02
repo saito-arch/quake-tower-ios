@@ -55,7 +55,7 @@ enum FetchPlayerInfo: Scenario {
     }
 }
 
-enum Command: Scenario {
+enum ExecuteCommand: Scenario {
     case idsRegistered(uuid: String, playerId: Int64, towerId: Int64, number: Int, tower: Tower?)
     case commandSuccess(playerInfo: PlayerInfo)
     case idsMismatch
@@ -74,9 +74,9 @@ enum Command: Scenario {
         }
     }
 
-    func command(with uuid: String, playerId: Int64, towerId: Int64, number: Int, tower: Tower?) -> Single<Command> {
+    func command(with uuid: String, playerId: Int64, towerId: Int64, number: Int, tower: Tower?) -> Single<ExecuteCommand> {
         Session.shared.currentAccount.fetchPlayerInfo(with: uuid, playerId: playerId)
-            .map { apiContext -> Command in
+            .map { apiContext -> ExecuteCommand in
                 switch apiContext {
                 case .success(let playerInfo):
                     return .commandSuccess(playerInfo: playerInfo)
@@ -95,7 +95,7 @@ enum Command: Scenario {
             }
     }
 
-    func next() -> Single<Command>? {
+    func next() -> Single<ExecuteCommand>? {
         switch self {
         case .idsRegistered(let uuid, let playerId, let towerId, let number, let tower):
             return self.command(with: uuid, playerId: playerId, towerId: towerId, number: number, tower: tower)
@@ -123,7 +123,7 @@ protocol MainUsecase: Usecase {
     ///   - number: command's number
     ///   - tower: (build only) building tower   
     /// - Returns: Context of execution result
-    func command(towerId: Int64, number: Int, tower: Tower?) -> Single<[Command]>
+    func command(towerId: Int64, number: Int, tower: Tower?) -> Single<[ExecuteCommand]>
 }
 
 struct MainInteractor: MainUsecase {
@@ -135,11 +135,11 @@ struct MainInteractor: MainUsecase {
         }
     }
 
-    func command(towerId: Int64, number: Int, tower: Tower?) -> Single<[Command]> {
-        if let context = Command(towerId: towerId, number: number, tower: tower) {
+    func command(towerId: Int64, number: Int, tower: Tower?) -> Single<[ExecuteCommand]> {
+        if let context = ExecuteCommand(towerId: towerId, number: number, tower: tower) {
             return self.interact(contexts: [context])
         } else {
-            return Single<[Command]>.error(ServiceErrors.client(.idsDoNotExist))
+            return Single<[ExecuteCommand]>.error(ServiceErrors.client(.idsDoNotExist))
         }
     }
 }

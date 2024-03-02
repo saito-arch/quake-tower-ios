@@ -295,3 +295,39 @@ enum Prefecture: Int, CaseIterable {
         return CLLocationCoordinate2D(latitude: (self.getLatMin() + self.getLatMax()) / 2, longitude: (self.getLngMin() + self.getLngMax()) / 2)
     }
 }
+
+enum Command: Int {
+    case build = 1
+    case extend
+    case reinforce
+    case repair
+
+    func calculateGold(height: Int) -> Int? {
+        switch self {
+        case .build:
+            return Session.shared.currentAccount.goldBuildBase
+        case .extend:
+            if let goldExtendBase = Session.shared.currentAccount.goldExtendBase {
+                let level = calculateLevel(height: height)
+                return goldExtendBase * Int(powl(2.0, Double(level)))
+            }
+            return nil
+        case .reinforce:
+            if let goldReinforceBase = Session.shared.currentAccount.goldReinforceBase {
+                let level = calculateLevel(height: height)
+                return goldReinforceBase * Int(powl(2.0, Double(level)))
+            }
+            return nil
+        case .repair:
+            if let goldRepairBase = Session.shared.currentAccount.goldRepairBase {
+                let level = calculateLevel(height: height)
+                return goldRepairBase * Int(powl(2.0, Double(level)))
+            }
+            return nil
+        }
+    }
+
+    private func calculateLevel(height: Int) -> Int {
+        return height / 10
+    }
+}

@@ -99,7 +99,33 @@ extension MainViewController: MKMapViewDelegate {
             }
             labelHeight.text = String(tower.height)
             labelHp.text = "\(tower.hp)/\(tower.maxHp)"
-            // TODO: button enable/disable
+            if let pocket = presenter?.playerInfo?.gold {
+                if let cost = Command.extend.calculateGold(height: tower.height) {
+                    if pocket >= cost {
+                        buttonExtend.isEnabled = true
+                    } else {
+                        buttonExtend.isEnabled = false
+                    }
+                }
+                if let cost = Command.reinforce.calculateGold(height: tower.height) {
+                    if pocket >= cost {
+                        buttonReinforce.isEnabled = true
+                    } else {
+                        buttonReinforce.isEnabled = false
+                    }
+                }
+                if let cost = Command.repair.calculateGold(height: tower.height) {
+                    if pocket >= cost {
+                        buttonRepair.isEnabled = true
+                    } else {
+                        buttonRepair.isEnabled = false
+                    }
+                }
+            } else {
+                buttonExtend.isEnabled = false
+                buttonReinforce.isEnabled = false
+                buttonRepair.isEnabled = false
+            }
             viewTowerInfo.isHidden = false
 
         case let annotation as BuildTowerAnnotation:

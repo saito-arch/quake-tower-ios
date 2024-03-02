@@ -22,6 +22,8 @@ class MainPresenter<T: MainUserInterface, U: MainUsecase, V: MainWireframe>: Mai
     let interactor: Interactor
     let router: Router
 
+    var playerInfo: PlayerInfo?
+
     required init(vc: ViewController, interactor: Interactor, router: Router) {
         self.vc = vc
         self.interactor = interactor
@@ -48,6 +50,7 @@ class MainPresenter<T: MainUserInterface, U: MainUsecase, V: MainWireframe>: Mai
         let context = contexts.last
         switch context {
         case .some(.fetchPlayerInfoSuccess(let playerInfo)):
+            self.playerInfo = playerInfo
             self.vc?.updateGoldAndAnnotations(
                 gold: playerInfo.gold,
                 towerAnnotations: makeTowerAnnotations(towers: playerInfo.towers),
@@ -111,11 +114,12 @@ class MainPresenter<T: MainUserInterface, U: MainUsecase, V: MainWireframe>: Mai
             })
     }
 
-    private func onSuccessCommand(contexts: [Command]) {
+    private func onSuccessCommand(contexts: [ExecuteCommand]) {
         log(">>> contexts \(contexts)")
         let context = contexts.last
         switch context {
         case .some(.commandSuccess(let playerInfo)):
+            self.playerInfo = playerInfo
             self.vc?.updateGoldAndAnnotations(
                 gold: playerInfo.gold,
                 towerAnnotations: makeTowerAnnotations(towers: playerInfo.towers),

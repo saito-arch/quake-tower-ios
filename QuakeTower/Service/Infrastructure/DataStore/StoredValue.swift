@@ -19,6 +19,10 @@ enum Stored {
         typealias ValueType = Int
 
         case countSignInFailure
+        case goldBuildBase
+        case goldExtendBase
+        case goldReinforceBase
+        case goldRepairBase
     }
 
     enum StringValue: String, UserDefaultsKey {
@@ -71,6 +75,10 @@ fileprivate class MockUserDefaults {
         case playerId
         case countSignInFailure
         case playerName
+        case goldBuildBase
+        case goldExtendBase
+        case goldReinforceBase
+        case goldRepairBase
     }
 
     private func searchKey(forKey: String) -> Keys? {
