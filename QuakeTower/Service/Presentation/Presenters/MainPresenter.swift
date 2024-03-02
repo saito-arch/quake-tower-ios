@@ -165,4 +165,13 @@ class MainPresenter<T: MainUserInterface, U: MainUsecase, V: MainWireframe>: Mai
             fatalError("\(error)")
         }
     }
+
+    private func makeTowerAnnotations(towers: [Tower]) -> [TowerAnnotation] {
+        var annotations: [TowerAnnotation] = []
+        for tower in towers {
+            annotations.append(TowerAnnotation(tower: tower))
+        }
+
+        return annotations
+    }
 }
