@@ -152,6 +152,6 @@ extension MainViewController: MKMapViewDelegate {
     }
 
     func mapViewDidFinishLoadingMap(_ mapView: MKMapView) {
-        // TODO: fetchPlayerInfo
+        presenter?.fetchPlayerInfo()
     }
 }
