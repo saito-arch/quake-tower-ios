@@ -65,13 +65,15 @@ enum AlertActionPatternV2 {
     case d1002
     case d1003
     case d2xxx
+    case command
 }
 
 let ALERT_CONTENT_MAP_V2: [AlertActionPatternV2: [(String, UIAlertAction.Style)]] = [
     .d1001: [(COMMON_OK, .default)],
     .d1002: [(COMMON_OK, .default)],
     .d1003: [(COMMON_OK, .default)],
-    .d2xxx: [(COMMON_OK, .default)]
+    .d2xxx: [(COMMON_OK, .default)],
+    .command: [(COMMON_OK, .default), (COMMON_CANCEL, .cancel)]
 ]
 
 extension Alertable {
@@ -130,6 +132,7 @@ extension Alertable {
 }
 
 let COMMON_OK = "OK"
+let COMMON_CANCEL = "cancel"
 
 let ERR_TITLE_UNEXPECTED = "Unexpected error"
 let ERR_MESSAGE_UNEXPECTED = "An unexpected error has occurred."
@@ -141,3 +144,9 @@ let ERR_MESSAGE_ID_PROBLEM = "There was a problem with your registration informa
 let ERR_TITLE_NOT_ENOUGH_GOLD = "Not enough G"
 let ERR_MESSAGE_NOT_ENOUGH_GOLD = "G required for this command is missing."
 let ERR_MESSAGE_TOWER_IS_COLLAPSED = "This tower has already collapsed."
+
+let TITLE_COMMAND = "Confirmation"
+let MESSAGE_BUILD = "Build command needs %dG. Do you build tower in %@?"
+let MESSAGE_EXTEND = "Extend command needs %dG. Do you extend tower?"
+let MESSAGE_REINFORCE = "Reinforce command needs %dG. Do you reinforce tower?"
+let MESSAGE_REPAIR = "Repair command needs %dG. Do you repair tower?"
