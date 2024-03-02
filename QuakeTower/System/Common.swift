@@ -290,4 +290,8 @@ enum Prefecture: Int {
         case .okinawa: 128.297486
         }
     }
+
+    func calculateCenterCoordinate() -> CLLocationCoordinate2D {
+        return CLLocationCoordinate2D(latitude: (self.getLatMin() + self.getLatMax()) / 2, longitude: (self.getLngMin() + self.getLngMax()) / 2)
+    }
 }
