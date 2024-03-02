@@ -19,6 +19,8 @@ class MainViewController: UIViewController {
     
     var presenter: Presenter?
 
+    var selectedTower: Tower?
+
     @IBOutlet weak var mapView: MKMapView! {
         didSet {
             self.mapView.delegate = self
@@ -53,15 +55,21 @@ class MainViewController: UIViewController {
     // MARK: - User Actions
 
     @IBAction func onTouchExtendButton(_ sender: UIButton) {
-        // TODO: extend command
+        if let tower = selectedTower {
+            presenter?.onTouchExtendButton(tower: tower)
+        }
     }
 
     @IBAction func onTouchReinforceButton(_ sender: UIButton) {
-        // TODO: reinforce command
+        if let tower = selectedTower {
+            presenter?.onTouchReinforceButton(tower: tower)
+        }
     }
 
     @IBAction func onTouchRepairButton(_ sender: UIButton) {
-        // TODO: repair command
+        if let tower = selectedTower {
+            presenter?.onTouchRepairButton(tower: tower)
+        }
     }
 }
 
@@ -94,6 +102,7 @@ extension MainViewController: MKMapViewDelegate {
         switch view.annotation {
         case let annotation as TowerAnnotation:
             let tower = annotation.tower
+            selectedTower = tower
             if let prefecture = Prefecture(rawValue: tower.prefectureId) {
                 labelPrefecture.text = "\(prefecture)"
             }
@@ -129,8 +138,10 @@ extension MainViewController: MKMapViewDelegate {
             viewTowerInfo.isHidden = false
 
         case let annotation as BuildTowerAnnotation:
-            // TODO: build
-            break
+            if annotation.isEnabled {
+                presenter?.onTouchBuildButton(prefecture: annotation.prefecture)
+            }
+
         default:
             break
         }

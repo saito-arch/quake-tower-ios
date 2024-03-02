@@ -10,10 +10,12 @@ import MapKit
 
 class BuildTowerAnnotation: MKPointAnnotation {
     let prefecture: Prefecture
+    let isEnabled: Bool
     let image: UIImage?
 
     init(prefecture: Prefecture, isEnabled: Bool) {
         self.prefecture = prefecture
+        self.isEnabled = isEnabled
         if isEnabled {
             self.image = UIImage(named: "BuildTowerEnabled")
         } else {
