@@ -10,6 +10,11 @@ import RxSwift
 
 protocol MainPresentation: Presentation
 where ViewController: MainUserInterface, Interactor: MainUsecase, Router: MainWireframe {
+    func fetchPlayerInfo()
+    func onTouchBuildButton(prefecture: Prefecture)
+    func onTouchExtendButton(tower: Tower)
+    func onTouchReinforceButton(tower: Tower)
+    func onTouchRepairButton(tower: Tower)
 }
 
 class MainPresenter<T: MainUserInterface, U: MainUsecase, V: MainWireframe>: MainPresentation {
@@ -30,7 +35,23 @@ class MainPresenter<T: MainUserInterface, U: MainUsecase, V: MainWireframe>: Mai
         self.router = router
     }
 
-    private func fetchPlayerInfo() {
+    func onTouchBuildButton(prefecture: Prefecture) {
+        // TODO: alert and command
+    }
+
+    func onTouchExtendButton(tower: Tower) {
+        // TODO: alert and command
+    }
+
+    func onTouchReinforceButton(tower: Tower) {
+        // TODO: alert and command
+    }
+
+    func onTouchRepairButton(tower: Tower) {
+        // TODO: alert and command
+    }
+
+    func fetchPlayerInfo() {
         vc?.showIndicator()
         _ = self.interactor.fetchPlayerInfo()
             .do(onSuccess: { _ in
