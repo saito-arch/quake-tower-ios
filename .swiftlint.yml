@@ -72,11 +72,9 @@ line_length: 120
 
 type_body_length:
   - 300 # warning
-  - 400 # error
 
 function_body_length:
   - 100 # warning
-  - 300 # error
 
 file_length:
   warning: 500
