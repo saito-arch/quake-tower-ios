@@ -128,3 +128,5 @@ identifier_name:
     - rhs
     - mie
     - hp
+    - lat
+    - lng
