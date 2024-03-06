@@ -18,9 +18,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let scene = (scene as? UIWindowScene) else { return }
 
-        // TODO: remove this
-        Session.shared.currentAccount.playerId = 1
-
         let window = UIWindow(windowScene: scene)
         self.window = window
         window.makeKeyAndVisible()
