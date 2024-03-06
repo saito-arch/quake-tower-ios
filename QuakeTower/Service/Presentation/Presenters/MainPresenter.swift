@@ -198,7 +198,7 @@ class MainPresenter<T: MainUserInterface, U: MainUsecase, V: MainWireframe>: Mai
         }
     }
 
-    private func command(towerId: Int64, number: Int, tower: Tower?) {
+    func command(towerId: Int64, number: Int, tower: Tower?) {
         vc?.showIndicator()
         _ = self.interactor.command(towerId: towerId, number: number, tower: tower)
             .do(onSuccess: { _ in

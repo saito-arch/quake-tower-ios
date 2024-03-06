@@ -102,6 +102,7 @@ class MainSpec: QuickSpec {
         let tower = Tower(id: 0, prefectureId: 1, latitude: 35.0, longitude: 139.0, hp: 3, maxHp: 3, height: 1, goldHour: 1)
         let towers = [tower]
         let gameInfo = GameInfo(goldBuildBase: 100, goldExtendBase: 100, goldReinforceBase: 100, goldRepairBase: 100)
+        let towerId: Int64 = 0
 
         /* Scenario 1: fetch player info
          * Presenter method : fetchPlayerInfo
@@ -309,6 +310,271 @@ class MainSpec: QuickSpec {
                                     done()
                                 }
                                 presenter.fetchPlayerInfo()
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        /* Scenario 2: command
+         * Presenter method : command
+         * API              : Apis.Ver1.Command
+         */
+        describe("command") {
+            context("uuid is nil") {
+                beforeEach {
+                    Session.shared.uuid = nil
+                }
+                it("show alert 003") {
+                    waitUntil(timeout: TIMEOUT) { done in
+                        let mock = MockApiClient<Apis.Ver1.Command>(
+                            stub: Apis.Ver1.Command.Response(
+                                gold: gold,
+                                goldHour: goldHour,
+                                towers: towers,
+                                gameInfo: gameInfo
+                            )
+                        )
+                        ApiService.set(apiClient: mock)
+                        vc.embedAssertion4Alert { pattern in
+                            expect({
+                                guard case .d003 = pattern else {
+                                    return .failed(reason: "wrong enum case: \(pattern)")
+                                }
+                                print(">>> success \(pattern)")
+                                return .succeeded
+                            }).to(succeed())
+                            done()
+                        }
+                        presenter.command(towerId: towerId, number: Command.build.rawValue, tower: tower)
+                    }
+                }
+            }
+            context("uuid is NOT nil") {
+                beforeEach {
+                    Session.shared.uuid = uuid
+                }
+                context("playerId is nil") {
+                    beforeEach {
+                        Session.shared.currentAccount.playerId = nil
+                    }
+                    it("show alert 003") {
+                        waitUntil(timeout: TIMEOUT) { done in
+                            let mock = MockApiClient<Apis.Ver1.Command>(
+                                stub: Apis.Ver1.Command.Response(
+                                    gold: gold,
+                                    goldHour: goldHour,
+                                    towers: towers,
+                                    gameInfo: gameInfo
+                                )
+                            )
+                            ApiService.set(apiClient: mock)
+                            vc.embedAssertion4Alert { pattern in
+                                expect({
+                                    guard case .d003 = pattern else {
+                                        return .failed(reason: "wrong enum case: \(pattern)")
+                                    }
+                                    print(">>> success \(pattern)")
+                                    return .succeeded
+                                }).to(succeed())
+                                done()
+                            }
+                            presenter.command(towerId: towerId, number: Command.build.rawValue, tower: tower)
+                        }
+                    }
+                }
+                context("playerId is NOT nil") {
+                    beforeEach {
+                        Session.shared.currentAccount.playerId = playerId
+                    }
+                    context("when network error") {
+                        it("show alert 001") {
+                            waitUntil(timeout: TIMEOUT) { done in
+                                var mock = MockApiClient<Apis.Ver1.Command>(
+                                    stub: Apis.Ver1.Command.Response(
+                                        gold: gold,
+                                        goldHour: goldHour,
+                                        towers: towers,
+                                        gameInfo: gameInfo
+                                    )
+                                )
+                                mock.isReachable = false
+                                ApiService.set(apiClient: mock)
+                                vc.embedAssertion4Alert { pattern in
+                                    expect({
+                                        guard case .d001 = pattern else {
+                                            return .failed(reason: "wrong enum case: \(pattern)")
+                                        }
+                                        print(">>> success \(pattern)")
+                                        return .succeeded
+                                    }).to(succeed())
+                                    done()
+                                }
+                                presenter.command(towerId: towerId, number: Command.build.rawValue, tower: tower)
+                            }
+                        }
+                    }
+                    context("when 2xxx error") {
+                        it("show alert 2xxx") {
+                            waitUntil(timeout: TIMEOUT) { done in
+                                let mock = MockApiClient<Apis.Ver1.Command>(
+                                    error: MyError(
+                                        code: 2_000,
+                                        message: "testErrorMessage",
+                                        errorTitle: "testErrorTitle",
+                                        retryable: false
+                                    )
+                                )
+                                ApiService.set(apiClient: mock)
+                                vc.embedAssertion4AlertV2 { pattern in
+                                    expect({
+                                        guard case .d2xxx = pattern else {
+                                            return .failed(reason: "wrong enum case: \(pattern)")
+                                        }
+                                        print(">>> success \(pattern)")
+                                        return .succeeded
+                                    }).to(succeed())
+                                    done()
+                                }
+                                presenter.command(towerId: towerId, number: Command.build.rawValue, tower: tower)
+                            }
+                        }
+                    }
+                    context("ids mismatch") {
+                        it("show alert 003") {
+                            waitUntil(timeout: TIMEOUT) { done in
+                                let mock = MockApiClient<Apis.Ver1.Command>(
+                                    error: MyError(
+                                        code: 1_003,
+                                        message: "testErrorMessage",
+                                        errorTitle: "testErrorTitle",
+                                        retryable: false
+                                    )
+                                )
+                                ApiService.set(apiClient: mock)
+                                vc.embedAssertion4Alert { pattern in
+                                    expect({
+                                        guard case .d003 = pattern else {
+                                            return .failed(reason: "wrong enum case: \(pattern)")
+                                        }
+                                        print(">>> success \(pattern)")
+                                        return .succeeded
+                                    }).to(succeed())
+                                    done()
+                                }
+                                presenter.command(towerId: towerId, number: Command.build.rawValue, tower: tower)
+                            }
+                        }
+                    }
+                    context("not enough gold") {
+                        it("show alert 004") {
+                            waitUntil(timeout: TIMEOUT) { done in
+                                let mock = MockApiClient<Apis.Ver1.Command>(
+                                    error: MyError(
+                                        code: 1_004,
+                                        message: "testErrorMessage",
+                                        errorTitle: "testErrorTitle",
+                                        retryable: false
+                                    )
+                                )
+                                ApiService.set(apiClient: mock)
+                                vc.embedAssertion4Alert { pattern in
+                                    expect({
+                                        guard case .d004 = pattern else {
+                                            return .failed(reason: "wrong enum case: \(pattern)")
+                                        }
+                                        print(">>> success \(pattern)")
+                                        return .succeeded
+                                    }).to(succeed())
+                                    done()
+                                }
+                                presenter.command(towerId: towerId, number: Command.build.rawValue, tower: tower)
+                            }
+                        }
+                    }
+                    context("tower is collapsed") {
+                        it("show alert 005") {
+                            waitUntil(timeout: TIMEOUT) { done in
+                                let mock = MockApiClient<Apis.Ver1.Command>(
+                                    error: MyError(
+                                        code: 1_005,
+                                        message: "testErrorMessage",
+                                        errorTitle: "testErrorTitle",
+                                        retryable: false
+                                    )
+                                )
+                                ApiService.set(apiClient: mock)
+                                vc.embedAssertion4Alert { pattern in
+                                    expect({
+                                        guard case .d004 = pattern else {
+                                            return .failed(reason: "wrong enum case: \(pattern)")
+                                        }
+                                        print(">>> success \(pattern)")
+                                        return .succeeded
+                                    }).to(succeed())
+                                    done()
+                                }
+                                presenter.command(towerId: towerId, number: Command.build.rawValue, tower: tower)
+                            }
+                        }
+                    }
+                    context("unexpected error") {
+                        it("show alert 000") {
+                            waitUntil(timeout: TIMEOUT) { done in
+                                let mock = MockApiClient<Apis.Ver1.Command>(
+                                    error: MyError(
+                                        code: 1_999,
+                                        message: "testErrorMessage",
+                                        errorTitle: "testErrorTitle",
+                                        retryable: false
+                                    )
+                                )
+                                ApiService.set(apiClient: mock)
+                                vc.embedAssertion4Alert { pattern in
+                                    expect({
+                                        guard case .d000 = pattern else {
+                                            return .failed(reason: "wrong enum case: \(pattern)")
+                                        }
+                                        print(">>> success \(pattern)")
+                                        return .succeeded
+                                    }).to(succeed())
+                                    done()
+                                }
+                                presenter.command(towerId: towerId, number: Command.build.rawValue, tower: tower)
+                            }
+                        }
+                    }
+                    context("command success") {
+                        it("update gold and annotations") {
+                            waitUntil(timeout: TIMEOUT) { done in
+                                let mock = MockApiClient<Apis.Ver1.Command>(
+                                    stub: Apis.Ver1.Command.Response(
+                                        gold: gold,
+                                        goldHour: goldHour,
+                                        towers: towers,
+                                        gameInfo: gameInfo
+                                    )
+                                )
+                                ApiService.set(apiClient: mock)
+                                vc.embedAssertion4UpdateGoldAndAnnotations {
+                                    gold, towerAnnotations, buildTowerAnnotations in
+                                    expect({
+                                        guard case 100 = gold else {
+                                            return .failed(reason: "wrong enum case: \(gold)")
+                                        }
+                                        guard case 1 = towerAnnotations.count else {
+                                            return .failed(reason: "wrong enum case: \(gold)")
+                                        }
+                                        guard case 47 = buildTowerAnnotations.count else {
+                                            return .failed(reason: "wrong enum case: \(gold)")
+                                        }
+                                        print(">>> success \(gold) \(towerAnnotations) \(buildTowerAnnotations)")
+                                        return .succeeded
+                                    }).to(succeed())
+                                    done()
+                                }
+                                presenter.command(towerId: towerId, number: Command.build.rawValue, tower: tower)
                             }
                         }
                     }
