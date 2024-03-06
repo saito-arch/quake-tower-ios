@@ -81,7 +81,7 @@ enum ExecuteCommand: Scenario {
         number: Int,
         tower: Tower?
     ) -> Single<ExecuteCommand> {
-        Session.shared.currentAccount.fetchPlayerInfo(with: uuid, playerId: playerId)
+        Session.shared.currentAccount.command(with: uuid, playerId: playerId, towerId: towerId, number: number, tower: tower)
             .map { apiContext -> ExecuteCommand in
                 switch apiContext {
                 case .success(let playerInfo):

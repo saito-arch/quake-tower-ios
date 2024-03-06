@@ -507,7 +507,7 @@ class MainSpec: QuickSpec {
                                 ApiService.set(apiClient: mock)
                                 vc.embedAssertion4Alert { pattern in
                                     expect({
-                                        guard case .d004 = pattern else {
+                                        guard case .d005 = pattern else {
                                             return .failed(reason: "wrong enum case: \(pattern)")
                                         }
                                         print(">>> success \(pattern)")
