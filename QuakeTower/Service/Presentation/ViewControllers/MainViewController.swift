@@ -12,7 +12,11 @@ import MapKit
 protocol MainUserInterface: UserInterface, Alertable where Presenter: MainPresentation {
     func showIndicator()
     func hideIndicator()
-    func updateGoldAndAnnotations(gold: Int, towerAnnotations: [TowerAnnotation], buildTowerAnnotations: [BuildTowerAnnotation])
+    func updateGoldAndAnnotations(
+        gold: Int,
+        towerAnnotations: [TowerAnnotation],
+        buildTowerAnnotations: [BuildTowerAnnotation]
+    )
 }
 
 class MainViewController: UIViewController {
@@ -89,7 +93,11 @@ extension MainViewController: MainUserInterface {
         self.indicator?.stopAnimating()
     }
 
-    func updateGoldAndAnnotations(gold: Int, towerAnnotations: [TowerAnnotation], buildTowerAnnotations: [BuildTowerAnnotation]) {
+    func updateGoldAndAnnotations(
+        gold: Int,
+        towerAnnotations: [TowerAnnotation],
+        buildTowerAnnotations: [BuildTowerAnnotation]
+    ) {
         labelGold.text = "\(gold)G"
         mapView.removeAnnotations(mapView.annotations)
         mapView.addAnnotations(towerAnnotations)

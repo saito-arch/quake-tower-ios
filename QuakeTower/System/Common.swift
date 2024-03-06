@@ -297,7 +297,10 @@ enum Prefecture: Int, CaseIterable {
     }
 
     func calculateCenterLatLng() -> LatLng {
-        return LatLng(latitude: (self.getLatMin() + self.getLatMax()) / 2, longitude: (self.getLngMin() + self.getLngMax()) / 2)
+        LatLng(
+            latitude: (self.getLatMin() + self.getLatMax()) / 2,
+            longitude: (self.getLngMin() + self.getLngMax()) / 2
+        )
     }
 
     func getRandomLatLng() -> LatLng {
@@ -347,7 +350,7 @@ enum Command: Int {
     }
 
     private func calculateLevel(height: Int) -> Int {
-        return height / 10
+        height / 10
     }
 
     func getAlertMessage(gold: Int, prefectureName: String) -> String {

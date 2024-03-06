@@ -63,14 +63,21 @@ class MainPresenter<T: MainUserInterface, U: MainUsecase, V: MainWireframe>: Mai
             latLng = prefecture.getRandomLatLng()
         }
 
-        return Tower(id: 0, prefectureId: prefecture.rawValue, latitude: latLng.latitude, longitude: latLng.longitude, hp: 3, maxHp: 3, height: 1, goldHour: 0)
+        return Tower(
+            id: 0,
+            prefectureId: prefecture.rawValue,
+            latitude: latLng.latitude,
+            longitude: latLng.longitude,
+            hp: 3,
+            maxHp: 3,
+            height: 1,
+            goldHour: 0
+        )
     }
 
     private func isConflict(latLng: LatLng, towers: [Tower]) -> Bool {
-        for tower in towers {
-            if isNearby(latLng, LatLng(latitude: tower.latitude, longitude: tower.longitude)) {
-                return true
-            }
+        for tower in towers where isNearby(latLng, LatLng(latitude: tower.latitude, longitude: tower.longitude)) {
+            return true
         }
 
         return false
@@ -86,7 +93,7 @@ class MainPresenter<T: MainUserInterface, U: MainUsecase, V: MainWireframe>: Mai
 
     private func isNearby(_ double1: Double, _ double2: Double) -> Bool {
         let diff = double1 - double2
-        if (diff >= -0.001 && diff <= 0.001) {
+        if diff >= -0.001 && diff <= 0.001 {
             return true
         }
 

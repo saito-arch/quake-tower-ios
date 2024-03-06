@@ -119,11 +119,21 @@ enum Apis {
 
             init(uuid: String, playerId: Int64, towerId: Int64, number: Int, tower: Tower?) {
                 if let tower = tower {
-                    self.params = ["uuid": "\(uuid)", "playerId": "\(playerId)", "towerId": "\(towerId)", "number": "\(number)", "tower": "\(tower)"]
+                    self.params = [
+                        "uuid": "\(uuid)",
+                        "playerId": "\(playerId)",
+                        "towerId": "\(towerId)",
+                        "number": "\(number)",
+                        "tower": "\(tower)"
+                    ]
                 } else {
-                    self.params = ["uuid": "\(uuid)", "playerId": "\(playerId)", "towerId": "\(towerId)", "number": "\(number)"]
+                    self.params = [
+                        "uuid": "\(uuid)",
+                        "playerId": "\(playerId)",
+                        "towerId": "\(towerId)",
+                        "number": "\(number)"
+                    ]
                 }
-
             }
         }
     }

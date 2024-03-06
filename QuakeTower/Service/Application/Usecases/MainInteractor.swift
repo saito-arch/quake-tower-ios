@@ -74,7 +74,13 @@ enum ExecuteCommand: Scenario {
         }
     }
 
-    func command(with uuid: String, playerId: Int64, towerId: Int64, number: Int, tower: Tower?) -> Single<ExecuteCommand> {
+    func command(
+        with uuid: String,
+        playerId: Int64,
+        towerId: Int64,
+        number: Int,
+        tower: Tower?
+    ) -> Single<ExecuteCommand> {
         Session.shared.currentAccount.fetchPlayerInfo(with: uuid, playerId: playerId)
             .map { apiContext -> ExecuteCommand in
                 switch apiContext {
