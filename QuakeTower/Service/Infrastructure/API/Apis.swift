@@ -32,7 +32,7 @@ enum Apis {
             }
 
             let method = HTTPMethod.post
-            let url = baseUrl + "/v1/auth/sign-in"
+            let url = baseUrl + "/QuakeTowerWeb/api/SignIn"
             var headers: HTTPHeaders? = DEFAULT_HEADERS
             let params: [String: Any]
 
@@ -57,7 +57,7 @@ enum Apis {
             }
 
             let method = HTTPMethod.post
-            let url = baseUrl + "/v1/auth/sign-up"
+            let url = baseUrl + "/QuakeTowerWeb/api/SignUp"
             var headers: HTTPHeaders? = DEFAULT_HEADERS
             let params: [String: Any]
 
@@ -85,7 +85,7 @@ enum Apis {
             }
 
             let method = HTTPMethod.post
-            let url = baseUrl + "/v1/game/player-info"
+            let url = baseUrl + "/QuakeTowerWeb/api/FetchPlayerInfo"
             var headers: HTTPHeaders? = DEFAULT_HEADERS
             let params: [String: Any]
 
@@ -113,7 +113,7 @@ enum Apis {
             }
 
             let method = HTTPMethod.post
-            let url = baseUrl + "/v1/game/command"
+            let url = baseUrl + "/QuakeTowerWeb/api/Command"
             var headers: HTTPHeaders? = DEFAULT_HEADERS
             let params: [String: Any]
 
