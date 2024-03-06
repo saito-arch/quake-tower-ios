@@ -87,3 +87,123 @@ class MainRouterMock: MainWireframe {
     func signOut() {}
     func assertErrorContext(error: Error) {}
 }
+
+// MARK: - TestCases
+class MainSpec: QuickSpec {
+    override func spec() {
+
+        let vc = MainRouterMock.instantiate()
+        let presenter = vc.presenter!
+
+        let uuid = "uuid"
+        let playerId: Int64 = 0
+        let gold = 100
+        let goldHour = 1
+        let tower = Tower(id: 0, prefectureId: 1, latitude: 35.0, longitude: 139.0, hp: 3, maxHp: 3, height: 1, goldHour: 1)
+        let towers = [tower]
+        let gameInfo = GameInfo(goldBuildBase: 100, goldExtendBase: 100, goldReinforceBase: 100, goldRepairBase: 100)
+
+
+        /* Scenario 1: fetch player info
+         * Presenter method : fetchPlayerInfo
+         * API              : Apis.Ver1.FetchPlayerInfo
+         */
+        describe("fetch player info") {
+            context("uuid is nil") {
+                beforeEach {
+                    Session.shared.uuid = nil
+                }
+                it("show alert 003") {
+                    waitUntil(timeout: TIMEOUT) { done in
+                        let mock = MockApiClient<Apis.Ver1.FetchPlayerInfo>(
+                            stub: Apis.Ver1.FetchPlayerInfo.Response(
+                                gold: gold,
+                                goldHour: goldHour,
+                                towers: towers,
+                                gameInfo: gameInfo
+                            )
+                        )
+                        ApiService.set(apiClient: mock)
+                        vc.embedAssertion4Alert { pattern in
+                            expect({
+                                guard case .d003 = pattern else {
+                                    return .failed(reason: "wrong enum case: \(pattern)")
+                                }
+                                print(">>> success \(pattern)")
+                                return .succeeded
+                            }).to(succeed())
+                            done()
+                        }
+                        presenter.fetchPlayerInfo()
+                    }
+                }
+            }
+            context("uuid is NOT nil") {
+                beforeEach {
+                    Session.shared.uuid = uuid
+                }
+                context("playerId is nil") {
+                    beforeEach {
+                        Session.shared.currentAccount.playerId = nil
+                    }
+                    it("show alert 003") {
+                        waitUntil(timeout: TIMEOUT) { done in
+                            let mock = MockApiClient<Apis.Ver1.FetchPlayerInfo>(
+                                stub: Apis.Ver1.FetchPlayerInfo.Response(
+                                    gold: gold,
+                                    goldHour: goldHour,
+                                    towers: towers,
+                                    gameInfo: gameInfo
+                                )
+                            )
+                            ApiService.set(apiClient: mock)
+                            vc.embedAssertion4Alert { pattern in
+                                expect({
+                                    guard case .d003 = pattern else {
+                                        return .failed(reason: "wrong enum case: \(pattern)")
+                                    }
+                                    print(">>> success \(pattern)")
+                                    return .succeeded
+                                }).to(succeed())
+                                done()
+                            }
+                            presenter.fetchPlayerInfo()
+                        }
+                    }
+                }
+                context("playerId is NOT nil") {
+                    beforeEach {
+                        Session.shared.currentAccount.playerId = playerId
+                    }
+                    context("when network error") {
+                        it("show alert 001") {
+                            waitUntil(timeout: TIMEOUT) { done in
+                                var mock = MockApiClient<Apis.Ver1.FetchPlayerInfo>(
+                                    stub: Apis.Ver1.FetchPlayerInfo.Response(
+                                        gold: gold,
+                                        goldHour: goldHour,
+                                        towers: towers,
+                                        gameInfo: gameInfo
+                                    )
+                                )
+                                mock.isReachable = false
+                                ApiService.set(apiClient: mock)
+                                vc.embedAssertion4Alert { pattern in
+                                    expect({
+                                        guard case .d001 = pattern else {
+                                            return .failed(reason: "wrong enum case: \(pattern)")
+                                        }
+                                        print(">>> success \(pattern)")
+                                        return .succeeded
+                                    }).to(succeed())
+                                    done()
+                                }
+                                presenter.fetchPlayerInfo()
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
