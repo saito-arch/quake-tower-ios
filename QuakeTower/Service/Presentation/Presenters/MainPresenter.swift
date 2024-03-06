@@ -68,9 +68,9 @@ class MainPresenter<T: MainUserInterface, U: MainUsecase, V: MainWireframe>: Mai
             prefectureId: prefecture.rawValue,
             latitude: latLng.latitude,
             longitude: latLng.longitude,
-            hp: 3,
-            maxHp: 3,
-            height: 1,
+            hp: INIT_HP,
+            maxHp: INIT_HP,
+            height: INIT_HEIGHT,
             goldHour: 0
         )
     }

@@ -19,6 +19,9 @@ let MAX_COUNT_SIGN_IN_FAILURE = 5
 
 let JAPAN_CENTER = CLLocationCoordinate2DMake(35, 137.5)
 
+let INIT_HP = 3
+let INIT_HEIGHT = 1
+
 func log(_ message: String, file: String = #file, line: Int = #line, function: String = #function) {
 
     var file = "NONE"
