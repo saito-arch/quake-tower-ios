@@ -8,7 +8,7 @@
 import Foundation
 
 struct Tower: Entity {
-    let id: Int
+    let id: Int64
     let prefectureId: Int
     let latitude: Double
     let longitude: Double

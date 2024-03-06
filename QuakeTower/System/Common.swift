@@ -292,8 +292,27 @@ enum Prefecture: Int, CaseIterable {
     }
 
     func calculateCenterCoordinate() -> CLLocationCoordinate2D {
-        return CLLocationCoordinate2D(latitude: (self.getLatMin() + self.getLatMax()) / 2, longitude: (self.getLngMin() + self.getLngMax()) / 2)
+        let latLng = calculateCenterLatLng()
+        return CLLocationCoordinate2D(latitude: latLng.latitude, longitude: latLng.longitude)
     }
+
+    func calculateCenterLatLng() -> LatLng {
+        return LatLng(latitude: (self.getLatMin() + self.getLatMax()) / 2, longitude: (self.getLngMin() + self.getLngMax()) / 2)
+    }
+
+    func getRandomLatLng() -> LatLng {
+        let latUnit = (getLatMax() - getLatMin()) / 100
+        let lngUnit = (getLngMax() - getLngMin()) / 100
+        let lat = getLatMin() + latUnit * (Double)(Int.random(in: 0...100))
+        let lng = getLngMin() + lngUnit * (Double)(Int.random(in: 0...100))
+        
+        return LatLng(latitude: lat, longitude: lng)
+    }
+}
+
+struct LatLng {
+    let latitude: Double
+    let longitude: Double
 }
 
 enum Command: Int {
@@ -329,5 +348,18 @@ enum Command: Int {
 
     private func calculateLevel(height: Int) -> Int {
         return height / 10
+    }
+
+    func getAlertMessage(gold: Int, prefectureName: String) -> String {
+        switch self {
+        case .build:
+            return String(format: MESSAGE_BUILD, gold, prefectureName)
+        case .extend:
+            return String(format: MESSAGE_EXTEND, gold)
+        case .reinforce:
+            return String(format: MESSAGE_REINFORCE, gold)
+        case .repair:
+            return String(format: MESSAGE_REPAIR, gold)
+        }
     }
 }

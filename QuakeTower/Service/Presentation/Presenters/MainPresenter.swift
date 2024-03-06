@@ -36,19 +36,90 @@ class MainPresenter<T: MainUserInterface, U: MainUsecase, V: MainWireframe>: Mai
     }
 
     func onTouchBuildButton(prefecture: Prefecture) {
-        // TODO: alert and command
+        let command = Command.build
+        if let cost = command.calculateGold(height: 0) {
+            self.vc?.showAlert(
+                title: TITLE_COMMAND,
+                message: command.getAlertMessage(gold: cost, prefectureName: "\(prefecture)"),
+                pattern: .command
+            ) { [weak self] action in
+                switch action.title {
+                case COMMON_OK:
+                    if let towers = self?.playerInfo?.towers {
+                        let tower = self?.generateTower(prefecture: prefecture, buildedTowers: towers)
+                        self?.command(towerId: 0, number: command.rawValue, tower: tower)
+                    }
+                default:
+                    break
+                }
+            }
+        }
+    }
+
+    private func generateTower(prefecture: Prefecture, buildedTowers: [Tower]) -> Tower {
+        let towers = buildedTowers.filter { $0.prefectureId == prefecture.rawValue }
+        var latLng = prefecture.getRandomLatLng()
+        while isConflict(latLng: latLng, towers: towers) {
+            latLng = prefecture.getRandomLatLng()
+        }
+
+        return Tower(id: 0, prefectureId: prefecture.rawValue, latitude: latLng.latitude, longitude: latLng.longitude, hp: 3, maxHp: 3, height: 1, goldHour: 0)
+    }
+
+    private func isConflict(latLng: LatLng, towers: [Tower]) -> Bool {
+        for tower in towers {
+            if isNearby(latLng, LatLng(latitude: tower.latitude, longitude: tower.longitude)) {
+                return true
+            }
+        }
+
+        return false
+    }
+
+    private func isNearby(_ latLng1: LatLng, _ latLng2: LatLng) -> Bool {
+        if isNearby(latLng1.latitude, latLng2.latitude) && isNearby(latLng1.longitude, latLng2.longitude) {
+            return true
+        }
+
+        return false
+    }
+
+    private func isNearby(_ double1: Double, _ double2: Double) -> Bool {
+        let diff = double1 - double2
+        if (diff >= -0.001 && diff <= 0.001) {
+            return true
+        }
+
+        return false
     }
 
     func onTouchExtendButton(tower: Tower) {
-        // TODO: alert and command
+        onTouchCommandButtonExceptBuild(command: Command.extend, tower: tower)
     }
 
     func onTouchReinforceButton(tower: Tower) {
-        // TODO: alert and command
+        onTouchCommandButtonExceptBuild(command: Command.reinforce, tower: tower)
     }
 
     func onTouchRepairButton(tower: Tower) {
-        // TODO: alert and command
+        onTouchCommandButtonExceptBuild(command: Command.repair, tower: tower)
+    }
+
+    private func onTouchCommandButtonExceptBuild(command: Command, tower: Tower) {
+        if let cost = command.calculateGold(height: tower.height) {
+            self.vc?.showAlert(
+                title: TITLE_COMMAND,
+                message: command.getAlertMessage(gold: cost, prefectureName: ""),
+                pattern: .command
+            ) { [weak self] action in
+                switch action.title {
+                case COMMON_OK:
+                    self?.command(towerId: tower.id, number: command.rawValue, tower: tower)
+                default:
+                    break
+                }
+            }
+        }
     }
 
     func fetchPlayerInfo() {
