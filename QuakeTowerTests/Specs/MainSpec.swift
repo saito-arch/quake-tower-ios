@@ -103,7 +103,6 @@ class MainSpec: QuickSpec {
         let towers = [tower]
         let gameInfo = GameInfo(goldBuildBase: 100, goldExtendBase: 100, goldReinforceBase: 100, goldRepairBase: 100)
 
-
         /* Scenario 1: fetch player info
          * Presenter method : fetchPlayerInfo
          * API              : Apis.Ver1.FetchPlayerInfo
