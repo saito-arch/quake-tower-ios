@@ -34,14 +34,14 @@ enum ValidationError: ValidationErrorProtocol {
 
     case empty
     case length(min: Int, max: Int)
-    case userNameFormat
+    case playerNameFormat
     case emailFormat
 
     var errorDescription: String? {
         switch self {
         case .empty: return "Please enter some characters"
         case .length(let min, let max): return "Please enter between \(min) and \(max) characters"
-        case .userNameFormat: return "Please enter letters or numbers"
+        case .playerNameFormat: return "Please enter letters or numbers"
         case .emailFormat: return "Please enter a valid email address"
         }
     }
@@ -99,7 +99,7 @@ struct LengthValidator: Validator {
     }
 }
 
-struct UserNameFormatValidator: Validator {
+struct PlayerNameFormatValidator: Validator {
 
     let regExpression = "^[a-zA-Z0-9]+$"
 
@@ -109,7 +109,7 @@ struct UserNameFormatValidator: Validator {
 
         switch result {
         case true: return .valid
-        case false: return .invalid(.userNameFormat)
+        case false: return .invalid(.playerNameFormat)
         }
     }
 }
@@ -124,15 +124,15 @@ struct EmailFormatValidator: Validator {
 
         switch result {
         case true: return .valid
-        case false: return .invalid(.userNameFormat)
+        case false: return .invalid(.playerNameFormat)
         }
     }
 }
 
-struct UserNameValidator: CompositeValidator {
+struct PlayerNameValidator: CompositeValidator {
     var validators: [Validator] = [
         LengthValidator(min: 1, max: 8),
-        UserNameFormatValidator()
+        PlayerNameFormatValidator()
     ]
 }
 
@@ -150,7 +150,7 @@ struct PasswordValidator: CompositeValidator {
 
 extension UITextField {
     enum ValidateType {
-        case userName
+        case playerName
         case email
         case password
     }
@@ -158,8 +158,8 @@ extension UITextField {
     @discardableResult
     func validate(type: ValidateType) -> ValidationResult {
         switch type {
-        case .userName:
-            return UserNameValidator().validate(text ?? "")
+        case .playerName:
+            return PlayerNameValidator().validate(text ?? "")
         case .email:
             return EmailValidator().validate(text ?? "")
         case .password:

@@ -85,7 +85,7 @@ class SignUpSpec: QuickSpec {
         let vc = SignUpRouterMock.instantiate()
         let presenter = vc.presenter!
 
-        let userName = "saito"
+        let playerName = "saito"
         let email = "foo@bar.com"
         let password = "aA1234"
 
@@ -98,7 +98,7 @@ class SignUpSpec: QuickSpec {
                 it("show alert 001") {
                     waitUntil(timeout: TIMEOUT) { done in
                         var mock = MockApiClient<Apis.Ver1.SignUp>(
-                            stub: Apis.Ver1.SignUp.Response(userId: 1)
+                            stub: Apis.Ver1.SignUp.Response(playerId: 1)
                         )
                         mock.isReachable = false
                         ApiService.set(apiClient: mock)
@@ -112,11 +112,37 @@ class SignUpSpec: QuickSpec {
                             }).to(succeed())
                             done()
                         }
-                        presenter.onTouchSignUpButton(userName: userName, email: email, password: password)
+                        presenter.onTouchSignUpButton(playerName: playerName, email: email, password: password)
                     }
                 }
             }
-            context("when 2xxx error") {
+            context("when undefined error") {
+                it("show alert 000") {
+                    waitUntil(timeout: TIMEOUT) { done in
+                        let mock = MockApiClient<Apis.Ver1.SignUp>(
+                            error: MyError(
+                                code: 1_999,
+                                message: "testErrorMessage",
+                                errorTitle: "testErrorTitle",
+                                retryable: false
+                            )
+                        )
+                        ApiService.set(apiClient: mock)
+                        vc.embedAssertion4Alert { pattern in
+                            expect({
+                                guard case .d000 = pattern else {
+                                    return .failed(reason: "wrong enum case: \(pattern)")
+                                }
+                                print(">>> success \(pattern)")
+                                return .succeeded
+                            }).to(succeed())
+                            done()
+                        }
+                        presenter.onTouchSignUpButton(playerName: playerName, email: email, password: password)
+                    }
+                }
+            }
+            context("when already registered") {
                 it("show alert 2xxx") {
                     waitUntil(timeout: TIMEOUT) { done in
                         let mock = MockApiClient<Apis.Ver1.SignUp>(
@@ -138,59 +164,7 @@ class SignUpSpec: QuickSpec {
                             }).to(succeed())
                             done()
                         }
-                        presenter.onTouchSignUpButton(userName: userName, email: email, password: password)
-                    }
-                }
-            }
-            context("when undefined error") {
-                it("show alert 001") {
-                    waitUntil(timeout: TIMEOUT) { done in
-                        let mock = MockApiClient<Apis.Ver1.SignUp>(
-                            error: MyError(
-                                code: 1_999,
-                                message: "testErrorMessage",
-                                errorTitle: "testErrorTitle",
-                                retryable: false
-                            )
-                        )
-                        ApiService.set(apiClient: mock)
-                        vc.embedAssertion4Alert { pattern in
-                            expect({
-                                guard case .d001 = pattern else {
-                                    return .failed(reason: "wrong enum case: \(pattern)")
-                                }
-                                print(">>> success \(pattern)")
-                                return .succeeded
-                            }).to(succeed())
-                            done()
-                        }
-                        presenter.onTouchSignUpButton(userName: userName, email: email, password: password)
-                    }
-                }
-            }
-            context("when already registered") {
-                it("show alert 1003") {
-                    waitUntil(timeout: TIMEOUT) { done in
-                        let mock = MockApiClient<Apis.Ver1.SignUp>(
-                            error: MyError(
-                                code: 1_003,
-                                message: "testErrorMessage",
-                                errorTitle: "testErrorTitle",
-                                retryable: false
-                            )
-                        )
-                        ApiService.set(apiClient: mock)
-                        vc.embedAssertion4AlertV2 { pattern in
-                            expect({
-                                guard case .d1003 = pattern else {
-                                    return .failed(reason: "wrong enum case: \(pattern)")
-                                }
-                                print(">>> success \(pattern)")
-                                return .succeeded
-                            }).to(succeed())
-                            done()
-                        }
-                        presenter.onTouchSignUpButton(userName: userName, email: email, password: password)
+                        presenter.onTouchSignUpButton(playerName: playerName, email: email, password: password)
                     }
                 }
             }
@@ -198,7 +172,7 @@ class SignUpSpec: QuickSpec {
                 it("move to main screen") {
                     waitUntil(timeout: TIMEOUT) { done in
                         let mock = MockApiClient<Apis.Ver1.SignUp>(
-                            stub: Apis.Ver1.SignUp.Response(userId: 1)
+                            stub: Apis.Ver1.SignUp.Response(playerId: 1)
                         )
                         ApiService.set(apiClient: mock)
                         presenter.router.embedAssertion4ToMain {
@@ -207,7 +181,7 @@ class SignUpSpec: QuickSpec {
                             }).to(succeed())
                             done()
                         }
-                        presenter.onTouchSignUpButton(userName: userName, email: email, password: password)
+                        presenter.onTouchSignUpButton(playerName: playerName, email: email, password: password)
                     }
                 }
             }

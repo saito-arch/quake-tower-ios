@@ -17,9 +17,9 @@ class SignUpViewController: UIViewController {
 
     var presenter: Presenter?
 
-    @IBOutlet weak var textFieldUserName: UITextField! {
+    @IBOutlet weak var textFieldPlayerName: UITextField! {
         didSet {
-            self.textFieldUserName.delegate = self
+            self.textFieldPlayerName.delegate = self
         }
     }
 
@@ -53,10 +53,10 @@ class SignUpViewController: UIViewController {
     // MARK: - User Actions
 
     @IBAction func onTouchSignUpButton(_ sender: UIButton) {
-        if let userName = textFieldUserName.text,
+        if let playerName = textFieldPlayerName.text,
             let email = textFieldEmail.text,
             let password = textFieldPassword.text {
-            presenter?.onTouchSignUpButton(userName: userName, email: email, password: password)
+            presenter?.onTouchSignUpButton(playerName: playerName, email: email, password: password)
         }
     }
 }
@@ -80,7 +80,7 @@ extension SignUpViewController: SignUpUserInterface {
 
 extension SignUpViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
-        if textFieldUserName.validate(type: .userName) == .valid &&
+        if textFieldPlayerName.validate(type: .playerName) == .valid &&
             textFieldEmail.validate(type: .email) == .valid &&
             textFieldPassword.validate(type: .password) == .valid {
             buttonSignUp.isEnabled = true

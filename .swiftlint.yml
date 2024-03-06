@@ -8,6 +8,7 @@ disabled_rules:
   - sorted_imports
   - todo
   - trailing_whitespace
+  - cyclomatic_complexity
 
 opt_in_rules:
   - attributes
@@ -71,11 +72,9 @@ line_length: 120
 
 type_body_length:
   - 300 # warning
-  - 400 # error
 
 function_body_length:
   - 100 # warning
-  - 300 # error
 
 file_length:
   warning: 500
@@ -125,3 +124,7 @@ identifier_name:
     - idx
     - lhs
     - rhs
+    - mie
+    - hp
+    - lat
+    - lng

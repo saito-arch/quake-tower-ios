@@ -10,7 +10,7 @@ import RxSwift
 
 protocol SignUpPresentation: Presentation
 where ViewController: SignUpUserInterface, Interactor: SignUpUsecase, Router: SignUpWireframe {
-    func onTouchSignUpButton(userName: String, email: String, password: String)
+    func onTouchSignUpButton(playerName: String, email: String, password: String)
 }
 
 class SignUpPresenter<T: SignUpUserInterface, U: SignUpUsecase, V: SignUpWireframe>: SignUpPresentation {
@@ -29,14 +29,14 @@ class SignUpPresenter<T: SignUpUserInterface, U: SignUpUsecase, V: SignUpWirefra
         self.router = router
     }
 
-    func onTouchSignUpButton(userName: String, email: String, password: String) {
-        signUp(userName: userName, email: email, password: password)
+    func onTouchSignUpButton(playerName: String, email: String, password: String) {
+        signUp(playerName: playerName, email: email, password: password)
     }
 
-    private func signUp(userName: String, email: String, password: String) {
-        let uuid = UUID().uuidString
+    private func signUp(playerName: String, email: String, password: String) {
+        let uuid = Session.shared.generateUuid()
         vc?.showIndicator()
-        _ = self.interactor.signUp(uuid: uuid, userName: userName, email: email, password: password)
+        _ = self.interactor.signUp(uuid: uuid, playerName: playerName, email: email, password: password)
             .do(onSuccess: { _ in
                 self.vc?.hideIndicator()
             }, onError: { _ in
@@ -55,10 +55,8 @@ class SignUpPresenter<T: SignUpUserInterface, U: SignUpUsecase, V: SignUpWirefra
         switch context {
         case .some(.signUpSuccess):
             self.router.toMain()
-        case .some(.alwaysRegistered(let title, let message)):
-            self.vc?.showAlert(title: title, message: message, pattern: .d1003, handler: nil)
         case .some(.unexpectedError):
-            self.vc?.showAlert(of: .d001, handler: nil)
+            self.vc?.showAlert(of: .d000, handler: nil)
         default:
             fatalError("\(contexts.last.debugDescription)")
         }
@@ -68,11 +66,7 @@ class SignUpPresenter<T: SignUpUserInterface, U: SignUpUsecase, V: SignUpWirefra
         switch error {
         case ServiceErrors.client(let clientError):
             log("Unexpected error during usecase execution: \(String(describing: clientError))")
-            switch clientError {
-            // not reachable
-            case .disconnection:
-                self.vc?.showAlert(of: .d001, handler: nil)
-            }
+            self.vc?.showAlert(of: .d001, handler: nil)
         /* Service Errors each API */
         case ErrorWrapper<Apis.Ver1.SignUp>.service(let serviceError, let api, let causedBy):
             log("Error on \(api) calling: \(String(describing: causedBy))")

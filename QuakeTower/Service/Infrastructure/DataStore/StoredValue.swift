@@ -9,17 +9,26 @@ import Foundation
 
 enum Stored {
 
+    enum Int64Value: String, UserDefaultsKey {
+        typealias ValueType = Int64
+
+        case playerId
+    }
+
     enum IntValue: String, UserDefaultsKey {
         typealias ValueType = Int
 
-        case userId
         case countSignInFailure
+        case goldBuildBase
+        case goldExtendBase
+        case goldReinforceBase
+        case goldRepairBase
     }
 
     enum StringValue: String, UserDefaultsKey {
         typealias ValueType = String
 
-        case userName
+        case playerName
     }
 }
 
@@ -63,9 +72,13 @@ fileprivate class MockUserDefaults {
     var storedValues = [Keys: Any?]()
 
     enum Keys: String {
-        case userId
+        case playerId
         case countSignInFailure
-        case userName
+        case playerName
+        case goldBuildBase
+        case goldExtendBase
+        case goldReinforceBase
+        case goldRepairBase
     }
 
     private func searchKey(forKey: String) -> Keys? {

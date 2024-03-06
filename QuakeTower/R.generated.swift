@@ -13,10 +13,14 @@ let R = _R(bundle: Bundle(for: BundleFinder.self))
 struct _R {
   let bundle: Foundation.Bundle
   var color: color { .init(bundle: bundle) }
+  var image: image { .init(bundle: bundle) }
   var info: info { .init(bundle: bundle) }
   var storyboard: storyboard { .init(bundle: bundle) }
 
   func color(bundle: Foundation.Bundle) -> color {
+    .init(bundle: bundle)
+  }
+  func image(bundle: Foundation.Bundle) -> image {
     .init(bundle: bundle)
   }
   func info(bundle: Foundation.Bundle) -> info {
@@ -39,6 +43,23 @@ struct _R {
 
     /// Color `AccentColor`.
     var accentColor: RswiftResources.ColorResource { .init(name: "AccentColor", path: [], bundle: bundle) }
+  }
+
+  /// This `_R.image` struct is generated, and contains static references to 4 images.
+  struct image {
+    let bundle: Foundation.Bundle
+
+    /// Image `BuildTowerDisabled`.
+    var buildTowerDisabled: RswiftResources.ImageResource { .init(name: "BuildTowerDisabled", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `BuildTowerEnabled`.
+    var buildTowerEnabled: RswiftResources.ImageResource { .init(name: "BuildTowerEnabled", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `TowerDamaged`.
+    var towerDamaged: RswiftResources.ImageResource { .init(name: "TowerDamaged", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
+
+    /// Image `TowerNormal`.
+    var towerNormal: RswiftResources.ImageResource { .init(name: "TowerNormal", path: [], bundle: bundle, locale: nil, onDemandResourceTags: nil) }
   }
 
   /// This `_R.info` struct is generated, and contains static references to 1 properties.
@@ -89,14 +110,18 @@ struct _R {
     }
   }
 
-  /// This `_R.storyboard` struct is generated, and contains static references to 3 storyboards.
+  /// This `_R.storyboard` struct is generated, and contains static references to 4 storyboards.
   struct storyboard {
     let bundle: Foundation.Bundle
     var launchScreen: launchScreen { .init(bundle: bundle) }
+    var main: main { .init(bundle: bundle) }
     var signIn: signIn { .init(bundle: bundle) }
     var signUp: signUp { .init(bundle: bundle) }
 
     func launchScreen(bundle: Foundation.Bundle) -> launchScreen {
+      .init(bundle: bundle)
+    }
+    func main(bundle: Foundation.Bundle) -> main {
       .init(bundle: bundle)
     }
     func signIn(bundle: Foundation.Bundle) -> signIn {
@@ -107,6 +132,7 @@ struct _R {
     }
     func validate() throws {
       try self.launchScreen.validate()
+      try self.main.validate()
       try self.signIn.validate()
       try self.signUp.validate()
     }
@@ -119,6 +145,18 @@ struct _R {
       let bundle: Foundation.Bundle
 
       let name = "LaunchScreen"
+      func validate() throws {
+
+      }
+    }
+
+    /// Storyboard `Main`.
+    struct main: RswiftResources.StoryboardReference, RswiftResources.InitialControllerContainer {
+      typealias InitialController = MainViewController
+
+      let bundle: Foundation.Bundle
+
+      let name = "Main"
       func validate() throws {
 
       }

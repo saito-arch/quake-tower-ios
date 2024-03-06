@@ -126,7 +126,7 @@ class SignInSpec: QuickSpec {
                     it("show alert 001") {
                         waitUntil(timeout: TIMEOUT) { done in
                             var mock = MockApiClient<Apis.Ver1.SignIn>(
-                                stub: Apis.Ver1.SignIn.Response(userId: 1, userName: "saito")
+                                stub: Apis.Ver1.SignIn.Response(playerId: 1, playerName: "saito")
                             )
                             mock.isReachable = false
                             ApiService.set(apiClient: mock)
@@ -171,7 +171,7 @@ class SignInSpec: QuickSpec {
                     }
                 }
                 context("when undefined error") {
-                    it("show alert 001") {
+                    it("show alert 000") {
                         waitUntil(timeout: TIMEOUT) { done in
                             let mock = MockApiClient<Apis.Ver1.SignIn>(
                                 error: MyError(
@@ -184,7 +184,7 @@ class SignInSpec: QuickSpec {
                             ApiService.set(apiClient: mock)
                             vc.embedAssertion4Alert { pattern in
                                 expect({
-                                    guard case .d001 = pattern else {
+                                    guard case .d000 = pattern else {
                                         return .failed(reason: "wrong enum case: \(pattern)")
                                     }
                                     print(">>> success \(pattern)")
@@ -226,7 +226,7 @@ class SignInSpec: QuickSpec {
                     it("move to main screen") {
                         waitUntil(timeout: TIMEOUT) { done in
                             let mock = MockApiClient<Apis.Ver1.SignIn>(
-                                stub: Apis.Ver1.SignIn.Response(userId: 1, userName: "saito")
+                                stub: Apis.Ver1.SignIn.Response(playerId: 1, playerName: "saito")
                             )
                             ApiService.set(apiClient: mock)
                             presenter.router.embedAssertion4ToMain {

@@ -21,11 +21,11 @@ enum Apis {
             struct SignInResult: Codable, JudgableVer1 {
                 typealias Context = SignInEntity
 
-                let userId: Int
-                let userName: String
+                let playerId: Int64
+                let playerName: String
 
                 func getContext() -> SignInEntity {
-                    let entity = SignInEntity(userId: userId, userName: userName)
+                    let entity = SignInEntity(playerId: playerId, playerName: playerName)
 
                     return entity
                 }
@@ -47,10 +47,10 @@ enum Apis {
             struct SignUpResult: Codable, JudgableVer1 {
                 typealias Context = SignUpEntity
 
-                let userId: Int
+                let playerId: Int64
 
                 func getContext() -> SignUpEntity {
-                    let entity = SignUpEntity(userId: userId)
+                    let entity = SignUpEntity(playerId: playerId)
 
                     return entity
                 }
@@ -61,8 +61,79 @@ enum Apis {
             var headers: HTTPHeaders? = DEFAULT_HEADERS
             let params: [String: Any]
 
-            init(uuid: String, userName: String, email: String, pass: String) {
-                self.params = ["uuid": "\(uuid)", "name": "\(userName)", "email": "\(email)", "pass": "\(pass)"]
+            init(uuid: String, playerName: String, email: String, pass: String) {
+                self.params = ["uuid": "\(uuid)", "name": "\(playerName)", "email": "\(email)", "pass": "\(pass)"]
+            }
+        }
+
+        struct FetchPlayerInfo: ApiVer1 {
+            typealias Response = FetchPlayerInfoResult
+
+            struct FetchPlayerInfoResult: Codable, JudgableVer1 {
+                typealias Context = PlayerInfo
+
+                let gold: Int
+                let goldHour: Int
+                let towers: [Tower]
+                let gameInfo: GameInfo
+
+                func getContext() -> PlayerInfo {
+                    let entity = PlayerInfo(gold: gold, goldHour: goldHour, towers: towers, gameInfo: gameInfo)
+
+                    return entity
+                }
+            }
+
+            let method = HTTPMethod.post
+            let url = baseUrl + "/v1/game/player-info"
+            var headers: HTTPHeaders? = DEFAULT_HEADERS
+            let params: [String: Any]
+
+            init(uuid: String, playerId: Int64) {
+                self.params = ["uuid": "\(uuid)", "playerId": "\(playerId)"]
+            }
+        }
+
+        struct Command: ApiVer1 {
+            typealias Response = CommandResult
+
+            struct CommandResult: Codable, JudgableVer1 {
+                typealias Context = PlayerInfo
+
+                let gold: Int
+                let goldHour: Int
+                let towers: [Tower]
+                let gameInfo: GameInfo
+
+                func getContext() -> PlayerInfo {
+                    let entity = PlayerInfo(gold: gold, goldHour: goldHour, towers: towers, gameInfo: gameInfo)
+
+                    return entity
+                }
+            }
+
+            let method = HTTPMethod.post
+            let url = baseUrl + "/v1/game/command"
+            var headers: HTTPHeaders? = DEFAULT_HEADERS
+            let params: [String: Any]
+
+            init(uuid: String, playerId: Int64, towerId: Int64, number: Int, tower: Tower?) {
+                if let tower = tower {
+                    self.params = [
+                        "uuid": "\(uuid)",
+                        "playerId": "\(playerId)",
+                        "towerId": "\(towerId)",
+                        "number": "\(number)",
+                        "tower": "\(tower)"
+                    ]
+                } else {
+                    self.params = [
+                        "uuid": "\(uuid)",
+                        "playerId": "\(playerId)",
+                        "towerId": "\(towerId)",
+                        "number": "\(number)"
+                    ]
+                }
             }
         }
     }
