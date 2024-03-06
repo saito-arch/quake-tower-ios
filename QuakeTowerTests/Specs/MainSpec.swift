@@ -202,6 +202,117 @@ class MainSpec: QuickSpec {
                             }
                         }
                     }
+                    context("when 2xxx error") {
+                        it("show alert 2xxx") {
+                            waitUntil(timeout: TIMEOUT) { done in
+                                let mock = MockApiClient<Apis.Ver1.FetchPlayerInfo>(
+                                    error: MyError(
+                                        code: 2_000,
+                                        message: "testErrorMessage",
+                                        errorTitle: "testErrorTitle",
+                                        retryable: false
+                                    )
+                                )
+                                ApiService.set(apiClient: mock)
+                                vc.embedAssertion4AlertV2 { pattern in
+                                    expect({
+                                        guard case .d2xxx = pattern else {
+                                            return .failed(reason: "wrong enum case: \(pattern)")
+                                        }
+                                        print(">>> success \(pattern)")
+                                        return .succeeded
+                                    }).to(succeed())
+                                    done()
+                                }
+                                presenter.fetchPlayerInfo()
+                            }
+                        }
+                    }
+                    context("ids mismatch") {
+                        it("show alert 003") {
+                            waitUntil(timeout: TIMEOUT) { done in
+                                let mock = MockApiClient<Apis.Ver1.FetchPlayerInfo>(
+                                    error: MyError(
+                                        code: 1_003,
+                                        message: "testErrorMessage",
+                                        errorTitle: "testErrorTitle",
+                                        retryable: false
+                                    )
+                                )
+                                ApiService.set(apiClient: mock)
+                                vc.embedAssertion4Alert { pattern in
+                                    expect({
+                                        guard case .d003 = pattern else {
+                                            return .failed(reason: "wrong enum case: \(pattern)")
+                                        }
+                                        print(">>> success \(pattern)")
+                                        return .succeeded
+                                    }).to(succeed())
+                                    done()
+                                }
+                                presenter.fetchPlayerInfo()
+                            }
+                        }
+                    }
+                    context("unexpected error") {
+                        it("show alert 000") {
+                            waitUntil(timeout: TIMEOUT) { done in
+                                let mock = MockApiClient<Apis.Ver1.FetchPlayerInfo>(
+                                    error: MyError(
+                                        code: 1_999,
+                                        message: "testErrorMessage",
+                                        errorTitle: "testErrorTitle",
+                                        retryable: false
+                                    )
+                                )
+                                ApiService.set(apiClient: mock)
+                                vc.embedAssertion4Alert { pattern in
+                                    expect({
+                                        guard case .d000 = pattern else {
+                                            return .failed(reason: "wrong enum case: \(pattern)")
+                                        }
+                                        print(">>> success \(pattern)")
+                                        return .succeeded
+                                    }).to(succeed())
+                                    done()
+                                }
+                                presenter.fetchPlayerInfo()
+                            }
+                        }
+                    }
+                    context("fetch player info success") {
+                        it("update gold and annotations") {
+                            waitUntil(timeout: TIMEOUT) { done in
+                                let mock = MockApiClient<Apis.Ver1.FetchPlayerInfo>(
+                                    stub: Apis.Ver1.FetchPlayerInfo.Response(
+                                        gold: gold,
+                                        goldHour: goldHour,
+                                        towers: towers,
+                                        gameInfo: gameInfo
+                                    )
+                                )
+                                ApiService.set(apiClient: mock)
+                                vc.embedAssertion4UpdateGoldAndAnnotations {
+                                    gold, towerAnnotations, buildTowerAnnotations in
+                                    expect({
+                                        guard case 100 = gold else {
+                                            return .failed(reason: "wrong enum case: \(gold)")
+                                        }
+                                        guard case 1 = towerAnnotations.count else {
+                                            return .failed(reason: "wrong enum case: \(gold)")
+                                        }
+                                        guard case 47 = buildTowerAnnotations.count else {
+                                            return .failed(reason: "wrong enum case: \(gold)")
+                                        }
+                                        print(">>> success \(gold) \(towerAnnotations) \(buildTowerAnnotations)")
+                                        return .succeeded
+                                    }).to(succeed())
+                                    done()
+                                }
+                                presenter.fetchPlayerInfo()
+                            }
+                        }
+                    }
                 }
             }
         }
