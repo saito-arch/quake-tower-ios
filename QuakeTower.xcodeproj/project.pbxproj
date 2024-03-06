@@ -60,6 +60,7 @@
 		5B89E1C62B8DEA9500D9E6E8 /* GameInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E1C52B8DEA9500D9E6E8 /* GameInfo.swift */; };
 		5B89E1C92B91DD2E00D9E6E8 /* TowerAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E1C82B91DD2E00D9E6E8 /* TowerAnnotation.swift */; };
 		5B89E1CB2B930D6500D9E6E8 /* BuildTowerAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E1CA2B930D6500D9E6E8 /* BuildTowerAnnotation.swift */; };
+		5B89E1CD2B983CAD00D9E6E8 /* MainSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E1CC2B983CAD00D9E6E8 /* MainSpec.swift */; };
 		B4A4246021BC4E4AAE874E83 /* Pods_QuakeTowerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8938223B9ACD63FF506D606 /* Pods_QuakeTowerTests.framework */; };
 		E1A69F1285C41AE2F534E4DC /* Pods_QuakeTower_QuakeTowerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0CA8F10A17F60A9711D8D75 /* Pods_QuakeTower_QuakeTowerUITests.framework */; };
 /* End PBXBuildFile section */
@@ -140,6 +141,7 @@
 		5B89E1C52B8DEA9500D9E6E8 /* GameInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInfo.swift; sourceTree = "<group>"; };
 		5B89E1C82B91DD2E00D9E6E8 /* TowerAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TowerAnnotation.swift; sourceTree = "<group>"; };
 		5B89E1CA2B930D6500D9E6E8 /* BuildTowerAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildTowerAnnotation.swift; sourceTree = "<group>"; };
+		5B89E1CC2B983CAD00D9E6E8 /* MainSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSpec.swift; sourceTree = "<group>"; };
 		6582F4CA4A8ADC8A108F7FE8 /* Pods-QuakeTower-QuakeTowerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuakeTower-QuakeTowerUITests.debug.xcconfig"; path = "Target Support Files/Pods-QuakeTower-QuakeTowerUITests/Pods-QuakeTower-QuakeTowerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7EFE7A18761178982EFA008D /* Pods-QuakeTower.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuakeTower.release.xcconfig"; path = "Target Support Files/Pods-QuakeTower/Pods-QuakeTower.release.xcconfig"; sourceTree = "<group>"; };
 		A0CA8F10A17F60A9711D8D75 /* Pods_QuakeTower_QuakeTowerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuakeTower_QuakeTowerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -415,6 +417,7 @@
 			children = (
 				5B89E19E2B8C4C2600D9E6E8 /* SignInSpec.swift */,
 				5B89E1B52B8CB93E00D9E6E8 /* SignUpSpec.swift */,
+				5B89E1CC2B983CAD00D9E6E8 /* MainSpec.swift */,
 			);
 			path = Specs;
 			sourceTree = "<group>";
@@ -800,6 +803,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B89E1B62B8CB93E00D9E6E8 /* SignUpSpec.swift in Sources */,
+				5B89E1CD2B983CAD00D9E6E8 /* MainSpec.swift in Sources */,
 				5B89E1A72B8C6A6C00D9E6E8 /* TestingError.swift in Sources */,
 				5B89E19F2B8C4C2600D9E6E8 /* SignInSpec.swift in Sources */,
 				5B89E1402B8999E900D9E6E8 /* QuakeTowerTests.swift in Sources */,
