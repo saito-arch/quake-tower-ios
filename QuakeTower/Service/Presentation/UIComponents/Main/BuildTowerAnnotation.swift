@@ -12,6 +12,7 @@ class BuildTowerAnnotation: MKPointAnnotation {
     let prefecture: Prefecture
     let isEnabled: Bool
     let image: UIImage?
+    let identifier = "buildTower"
 
     init(prefecture: Prefecture, isEnabled: Bool) {
         self.prefecture = prefecture

@@ -162,4 +162,34 @@ extension MainViewController: MKMapViewDelegate {
     func mapViewDidFinishLoadingMap(_ mapView: MKMapView) {
         presenter?.fetchPlayerInfo()
     }
+
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        let identifier: String
+        let image: UIImage?
+        switch annotation {
+        case let annotation as TowerAnnotation:
+            identifier = annotation.identifier
+            image = annotation.image
+
+        case let annotation as BuildTowerAnnotation:
+            identifier = annotation.identifier
+            image = annotation.image
+
+        default:
+            return nil
+        }
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+        if annotationView == nil {
+            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            let size = CGSize(width: 50, height: 50)
+            UIGraphicsBeginImageContext(size)
+            image!.draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height))
+            let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
+            annotationView?.image = resizedImage
+        } else {
+            annotationView?.annotation = annotation
+        }
+
+        return annotationView
+    }
 }
