@@ -37,6 +37,6 @@ struct SignUpRouter {
 
 extension SignUpRouter: SignUpWireframe {
     func toMain() {
-        // TODO: to main screen
+        toMainVc()
     }
 }
