@@ -19,19 +19,19 @@ class SignUpViewController: UIViewController {
 
     @IBOutlet weak var textFieldPlayerName: UITextField! {
         didSet {
-            self.textFieldPlayerName.delegate = self
+            self.textFieldPlayerName.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         }
     }
 
     @IBOutlet weak var textFieldEmail: UITextField! {
         didSet {
-            self.textFieldEmail.delegate = self
+            self.textFieldEmail.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         }
     }
 
     @IBOutlet weak var textFieldPassword: UITextField! {
         didSet {
-            self.textFieldPassword.delegate = self
+            self.textFieldPassword.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
             self.textFieldPassword.isSecureTextEntry = true
         }
     }
@@ -78,8 +78,9 @@ extension SignUpViewController: SignUpUserInterface {
     }
 }
 
-extension SignUpViewController: UITextFieldDelegate {
-    func textFieldDidEndEditing(_ textField: UITextField) {
+extension SignUpViewController {
+    @objc
+    func textFieldDidChange(sender: UITextField) {
         if textFieldPlayerName.validate(type: .playerName) == .valid &&
             textFieldEmail.validate(type: .email) == .valid &&
             textFieldPassword.validate(type: .password) == .valid {

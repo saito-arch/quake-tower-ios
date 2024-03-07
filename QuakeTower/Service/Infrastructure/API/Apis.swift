@@ -32,12 +32,12 @@ enum Apis {
             }
 
             let method = HTTPMethod.post
-            let url = baseUrl + "/v1/auth/sign-in"
+            let url = baseUrl + "/QuakeTowerWeb/api/SignIn"
             var headers: HTTPHeaders? = DEFAULT_HEADERS
             let params: [String: Any]
 
-            init(uuid: String, email: String, pass: String) {
-                self.params = ["uuid": "\(uuid)", "email": "\(email)", "pass": "\(pass)"]
+            init(uuid: String, email: String, password: String) {
+                self.params = ["uuid": "\(uuid)", "email": "\(email)", "password": "\(password)"]
             }
         }
 
@@ -57,12 +57,17 @@ enum Apis {
             }
 
             let method = HTTPMethod.post
-            let url = baseUrl + "/v1/auth/sign-up"
+            let url = baseUrl + "/QuakeTowerWeb/api/SignUp"
             var headers: HTTPHeaders? = DEFAULT_HEADERS
             let params: [String: Any]
 
-            init(uuid: String, playerName: String, email: String, pass: String) {
-                self.params = ["uuid": "\(uuid)", "name": "\(playerName)", "email": "\(email)", "pass": "\(pass)"]
+            init(uuid: String, playerName: String, email: String, password: String) {
+                self.params = [
+                    "uuid": "\(uuid)",
+                    "name": "\(playerName)",
+                    "email": "\(email)",
+                    "password": "\(password)"
+                ]
             }
         }
 
@@ -85,7 +90,7 @@ enum Apis {
             }
 
             let method = HTTPMethod.post
-            let url = baseUrl + "/v1/game/player-info"
+            let url = baseUrl + "/QuakeTowerWeb/api/FetchPlayerInfo"
             var headers: HTTPHeaders? = DEFAULT_HEADERS
             let params: [String: Any]
 
@@ -113,18 +118,18 @@ enum Apis {
             }
 
             let method = HTTPMethod.post
-            let url = baseUrl + "/v1/game/command"
+            let url = baseUrl + "/QuakeTowerWeb/api/Command"
             var headers: HTTPHeaders? = DEFAULT_HEADERS
             let params: [String: Any]
 
-            init(uuid: String, playerId: Int64, towerId: Int64, number: Int, tower: Tower?) {
+            init(uuid: String, playerId: Int64, towerId: Int64, number: Int, tower: TowerForBuild?) {
                 if let tower = tower {
                     self.params = [
                         "uuid": "\(uuid)",
                         "playerId": "\(playerId)",
                         "towerId": "\(towerId)",
                         "number": "\(number)",
-                        "tower": "\(tower)"
+                        "tower": tower.toDictionary()
                     ]
                 } else {
                     self.params = [

@@ -53,7 +53,16 @@ protocol Wireframe {
 extension Wireframe where ViewController: UIViewController {
     func toSignInVc() {
         let signInVc = SignInRouter.instantiate()
-        let navigationController = UINavigationController(rootViewController: signInVc)
+        toVc(presentedVc: signInVc)
+    }
+
+    func toMainVc() {
+        let mainVc = MainRouter.instantiate()
+        toVc(presentedVc: mainVc)
+    }
+
+    func toVc(presentedVc: UIViewController) {
+        let navigationController = UINavigationController(rootViewController: presentedVc)
         navigationController.modalPresentationStyle = .fullScreen
         vc?.present(navigationController, animated: true)
     }

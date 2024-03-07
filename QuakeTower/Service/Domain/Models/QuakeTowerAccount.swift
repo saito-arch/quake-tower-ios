@@ -137,7 +137,7 @@ class QuakeTowerAccount {
             })
     }
 
-    func command(with uuid: String, playerId: Int64, towerId: Int64, number: Int, tower: Tower?)
+    func command(with uuid: String, playerId: Int64, towerId: Int64, number: Int, tower: TowerForBuild?)
     -> Single<ApiContext<PlayerInfo, MyError>> {
         ApiService.shared.command(with: uuid, playerId: playerId, towerId: towerId, number: number, tower: tower)
             .do(onSuccess: { apiContext in

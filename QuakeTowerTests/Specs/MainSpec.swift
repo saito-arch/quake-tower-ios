@@ -103,6 +103,7 @@ class MainSpec: QuickSpec {
         let towers = [tower]
         let gameInfo = GameInfo(goldBuildBase: 100, goldExtendBase: 100, goldReinforceBase: 100, goldRepairBase: 100)
         let towerId: Int64 = 0
+        let towerForBuild = TowerForBuild(prefectureId: 1, latitude: 35.0, longitude: 139.0)
 
         /* Scenario 1: fetch player info
          * Presenter method : fetchPlayerInfo
@@ -347,7 +348,7 @@ class MainSpec: QuickSpec {
                             }).to(succeed())
                             done()
                         }
-                        presenter.command(towerId: towerId, number: Command.build.rawValue, tower: tower)
+                        presenter.command(towerId: towerId, number: Command.build.rawValue, tower: towerForBuild)
                     }
                 }
             }
@@ -380,7 +381,11 @@ class MainSpec: QuickSpec {
                                 }).to(succeed())
                                 done()
                             }
-                            presenter.command(towerId: towerId, number: Command.build.rawValue, tower: tower)
+                            presenter.command(
+                                towerId: towerId,
+                                number: Command.build.rawValue,
+                                tower: towerForBuild
+                            )
                         }
                     }
                 }
@@ -411,7 +416,11 @@ class MainSpec: QuickSpec {
                                     }).to(succeed())
                                     done()
                                 }
-                                presenter.command(towerId: towerId, number: Command.build.rawValue, tower: tower)
+                                presenter.command(
+                                    towerId: towerId,
+                                    number: Command.build.rawValue,
+                                    tower: towerForBuild
+                                )
                             }
                         }
                     }
@@ -437,7 +446,11 @@ class MainSpec: QuickSpec {
                                     }).to(succeed())
                                     done()
                                 }
-                                presenter.command(towerId: towerId, number: Command.build.rawValue, tower: tower)
+                                presenter.command(
+                                    towerId: towerId,
+                                    number: Command.build.rawValue,
+                                    tower: towerForBuild
+                                )
                             }
                         }
                     }
@@ -463,7 +476,11 @@ class MainSpec: QuickSpec {
                                     }).to(succeed())
                                     done()
                                 }
-                                presenter.command(towerId: towerId, number: Command.build.rawValue, tower: tower)
+                                presenter.command(
+                                    towerId: towerId,
+                                    number: Command.build.rawValue,
+                                    tower: towerForBuild
+                                )
                             }
                         }
                     }
@@ -489,7 +506,11 @@ class MainSpec: QuickSpec {
                                     }).to(succeed())
                                     done()
                                 }
-                                presenter.command(towerId: towerId, number: Command.build.rawValue, tower: tower)
+                                presenter.command(
+                                    towerId: towerId,
+                                    number: Command.build.rawValue,
+                                    tower: towerForBuild
+                                )
                             }
                         }
                     }
@@ -515,7 +536,11 @@ class MainSpec: QuickSpec {
                                     }).to(succeed())
                                     done()
                                 }
-                                presenter.command(towerId: towerId, number: Command.build.rawValue, tower: tower)
+                                presenter.command(
+                                    towerId: towerId,
+                                    number: Command.build.rawValue,
+                                    tower: towerForBuild
+                                )
                             }
                         }
                     }
@@ -541,7 +566,11 @@ class MainSpec: QuickSpec {
                                     }).to(succeed())
                                     done()
                                 }
-                                presenter.command(towerId: towerId, number: Command.build.rawValue, tower: tower)
+                                presenter.command(
+                                    towerId: towerId,
+                                    number: Command.build.rawValue,
+                                    tower: towerForBuild
+                                )
                             }
                         }
                     }
@@ -574,7 +603,11 @@ class MainSpec: QuickSpec {
                                     }).to(succeed())
                                     done()
                                 }
-                                presenter.command(towerId: towerId, number: Command.build.rawValue, tower: tower)
+                                presenter.command(
+                                    towerId: towerId,
+                                    number: Command.build.rawValue,
+                                    tower: towerForBuild
+                                )
                             }
                         }
                     }

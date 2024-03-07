@@ -59,6 +59,6 @@ protocol ApiInterface {
     ///   - number: command's number
     ///   - tower: (build only) building tower
     /// - Returns: Context of execution result
-    func command(with uuid: String, playerId: Int64, towerId: Int64, number: Int, tower: Tower?)
+    func command(with uuid: String, playerId: Int64, towerId: Int64, number: Int, tower: TowerForBuild?)
     -> Single<ApiContext<PlayerInfo, MyError>>
 }

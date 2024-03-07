@@ -11,6 +11,7 @@ import MapKit
 class TowerAnnotation: MKPointAnnotation {
     let tower: Tower
     let image: UIImage?
+    let identifier = "tower"
 
     init(tower: Tower) {
         self.tower = tower

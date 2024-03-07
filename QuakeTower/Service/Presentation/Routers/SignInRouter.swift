@@ -43,6 +43,6 @@ extension SignInRouter: SignInWireframe {
     }
     
     func toMain() {
-        // TODO: to main screen
+        toMainVc()
     }
 }

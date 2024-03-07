@@ -56,22 +56,17 @@ class MainPresenter<T: MainUserInterface, U: MainUsecase, V: MainWireframe>: Mai
         }
     }
 
-    private func generateTower(prefecture: Prefecture, buildedTowers: [Tower]) -> Tower {
+    private func generateTower(prefecture: Prefecture, buildedTowers: [Tower]) -> TowerForBuild {
         let towers = buildedTowers.filter { $0.prefectureId == prefecture.rawValue }
         var latLng = prefecture.getRandomLatLng()
         while isConflict(latLng: latLng, towers: towers) {
             latLng = prefecture.getRandomLatLng()
         }
 
-        return Tower(
-            id: 0,
+        return TowerForBuild(
             prefectureId: prefecture.rawValue,
             latitude: latLng.latitude,
-            longitude: latLng.longitude,
-            hp: INIT_HP,
-            maxHp: INIT_HP,
-            height: INIT_HEIGHT,
-            goldHour: 0
+            longitude: latLng.longitude
         )
     }
 
@@ -121,7 +116,7 @@ class MainPresenter<T: MainUserInterface, U: MainUsecase, V: MainWireframe>: Mai
             ) { [weak self] action in
                 switch action.title {
                 case COMMON_OK:
-                    self?.command(towerId: tower.id, number: command.rawValue, tower: tower)
+                    self?.command(towerId: tower.id, number: command.rawValue)
                 default:
                     break
                 }
@@ -198,7 +193,7 @@ class MainPresenter<T: MainUserInterface, U: MainUsecase, V: MainWireframe>: Mai
         }
     }
 
-    func command(towerId: Int64, number: Int, tower: Tower?) {
+    func command(towerId: Int64, number: Int, tower: TowerForBuild? = nil) {
         vc?.showIndicator()
         _ = self.interactor.command(towerId: towerId, number: number, tower: tower)
             .do(onSuccess: { _ in
