@@ -12,7 +12,6 @@
 		5B89E12B2B8999E900D9E6E8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E12A2B8999E900D9E6E8 /* SceneDelegate.swift */; };
 		5B89E1322B8999E900D9E6E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B89E1312B8999E900D9E6E8 /* Assets.xcassets */; };
 		5B89E1352B8999E900D9E6E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B89E1332B8999E900D9E6E8 /* LaunchScreen.storyboard */; };
-		5B89E1402B8999E900D9E6E8 /* QuakeTowerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E13F2B8999E900D9E6E8 /* QuakeTowerTests.swift */; };
 		5B89E14A2B8999E900D9E6E8 /* QuakeTowerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E1492B8999E900D9E6E8 /* QuakeTowerUITests.swift */; };
 		5B89E14C2B8999E900D9E6E8 /* QuakeTowerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E14B2B8999E900D9E6E8 /* QuakeTowerUITestsLaunchTests.swift */; };
 		5B89E15D2B89ADCF00D9E6E8 /* ViperProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B89E15C2B89ADCF00D9E6E8 /* ViperProtocols.swift */; };
@@ -94,7 +93,6 @@
 		5B89E1342B8999E900D9E6E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B89E1362B8999E900D9E6E8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B89E13B2B8999E900D9E6E8 /* QuakeTowerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuakeTowerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5B89E13F2B8999E900D9E6E8 /* QuakeTowerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuakeTowerTests.swift; sourceTree = "<group>"; };
 		5B89E1452B8999E900D9E6E8 /* QuakeTowerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuakeTowerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B89E1492B8999E900D9E6E8 /* QuakeTowerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuakeTowerUITests.swift; sourceTree = "<group>"; };
 		5B89E14B2B8999E900D9E6E8 /* QuakeTowerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuakeTowerUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -232,7 +230,6 @@
 			isa = PBXGroup;
 			children = (
 				5B89E19B2B8C496800D9E6E8 /* Specs */,
-				5B89E13F2B8999E900D9E6E8 /* QuakeTowerTests.swift */,
 				5B89E1A62B8C6A6C00D9E6E8 /* TestingError.swift */,
 			);
 			path = QuakeTowerTests;
@@ -810,7 +807,6 @@
 				5B89E1CD2B983CAD00D9E6E8 /* MainSpec.swift in Sources */,
 				5B89E1A72B8C6A6C00D9E6E8 /* TestingError.swift in Sources */,
 				5B89E19F2B8C4C2600D9E6E8 /* SignInSpec.swift in Sources */,
-				5B89E1402B8999E900D9E6E8 /* QuakeTowerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
