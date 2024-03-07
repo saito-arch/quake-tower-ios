@@ -67,7 +67,13 @@ enum ExecuteCommand: Scenario {
         if let uuid = Session.shared.uuid,
             let playerId = Session.shared.currentAccount.playerId {
             log("uuid: \(uuid), playerId: \(playerId)")
-            self = .idsRegistered(uuid: uuid, playerId: playerId, towerId: towerId, number: number, tower: tower)
+            self = .idsRegistered(
+                uuid: uuid,
+                playerId: playerId,
+                towerId: towerId,
+                number: number,
+                tower: tower
+            )
         } else {
             log("ids doesn't exist")
             return nil
@@ -81,7 +87,13 @@ enum ExecuteCommand: Scenario {
         number: Int,
         tower: TowerForBuild?
     ) -> Single<ExecuteCommand> {
-        Session.shared.currentAccount.command(with: uuid, playerId: playerId, towerId: towerId, number: number, tower: tower)
+        Session.shared.currentAccount.command(
+            with: uuid,
+            playerId: playerId,
+            towerId: towerId,
+            number: number,
+            tower: tower
+        )
             .map { apiContext -> ExecuteCommand in
                 switch apiContext {
                 case .success(let playerInfo):
