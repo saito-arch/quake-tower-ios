@@ -18,13 +18,13 @@ class SignInViewController: UIViewController {
 
     @IBOutlet weak var textFieldEmail: UITextField! {
         didSet {
-            self.textFieldEmail.delegate = self
+            self.textFieldEmail.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
         }
     }
 
     @IBOutlet weak var textFieldPassword: UITextField! {
         didSet {
-            self.textFieldPassword.delegate = self
+            self.textFieldPassword.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
             self.textFieldPassword.isSecureTextEntry = true
         }
     }
@@ -73,8 +73,9 @@ extension SignInViewController: SignInUserInterface {
     }
 }
 
-extension SignInViewController: UITextFieldDelegate {
-    func textFieldDidEndEditing(_ textField: UITextField) {
+extension SignInViewController {
+    @objc
+    func textFieldDidChange(sender: UITextField) {
         if textFieldEmail.validate(type: .email) == .valid &&
             textFieldPassword.validate(type: .password) == .valid {
             buttonSignIn.isEnabled = true
