@@ -27,13 +27,13 @@ class ApiService {
 
 extension ApiService: ApiInterface {
     func signIn(with uuid: String, email: String, password: String) -> Single<ApiContext<SignInEntity, MyError>> {
-        let api = Apis.Ver1.SignIn(uuid: uuid, email: email, pass: password)
+        let api = Apis.Ver1.SignIn(uuid: uuid, email: email, password: password)
         return self.apiClient.call(api: api)
     }
 
     func signUp(with uuid: String, playerName: String, email: String, password: String)
     -> Single<ApiContext<SignUpEntity, MyError>> {
-        let api = Apis.Ver1.SignUp(uuid: uuid, playerName: playerName, email: email, pass: password)
+        let api = Apis.Ver1.SignUp(uuid: uuid, playerName: playerName, email: email, password: password)
         return self.apiClient.call(api: api)
     }
 
