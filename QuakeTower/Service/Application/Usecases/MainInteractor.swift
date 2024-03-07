@@ -56,14 +56,14 @@ enum FetchPlayerInfo: Scenario {
 }
 
 enum ExecuteCommand: Scenario {
-    case idsRegistered(uuid: String, playerId: Int64, towerId: Int64, number: Int, tower: Tower?)
+    case idsRegistered(uuid: String, playerId: Int64, towerId: Int64, number: Int, tower: TowerForBuild?)
     case commandSuccess(playerInfo: PlayerInfo)
     case idsMismatch
     case notEnoughGold
     case towerIsCollapsed
     case unexpectedError
 
-    init?(towerId: Int64, number: Int, tower: Tower?) {
+    init?(towerId: Int64, number: Int, tower: TowerForBuild?) {
         if let uuid = Session.shared.uuid,
             let playerId = Session.shared.currentAccount.playerId {
             log("uuid: \(uuid), playerId: \(playerId)")
@@ -79,7 +79,7 @@ enum ExecuteCommand: Scenario {
         playerId: Int64,
         towerId: Int64,
         number: Int,
-        tower: Tower?
+        tower: TowerForBuild?
     ) -> Single<ExecuteCommand> {
         Session.shared.currentAccount.command(with: uuid, playerId: playerId, towerId: towerId, number: number, tower: tower)
             .map { apiContext -> ExecuteCommand in
@@ -129,7 +129,7 @@ protocol MainUsecase: Usecase {
     ///   - number: command's number
     ///   - tower: (build only) building tower   
     /// - Returns: Context of execution result
-    func command(towerId: Int64, number: Int, tower: Tower?) -> Single<[ExecuteCommand]>
+    func command(towerId: Int64, number: Int, tower: TowerForBuild?) -> Single<[ExecuteCommand]>
 }
 
 struct MainInteractor: MainUsecase {
@@ -141,7 +141,7 @@ struct MainInteractor: MainUsecase {
         }
     }
 
-    func command(towerId: Int64, number: Int, tower: Tower?) -> Single<[ExecuteCommand]> {
+    func command(towerId: Int64, number: Int, tower: TowerForBuild?) -> Single<[ExecuteCommand]> {
         if let context = ExecuteCommand(towerId: towerId, number: number, tower: tower) {
             return self.interact(contexts: [context])
         } else {
