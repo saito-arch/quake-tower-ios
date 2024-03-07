@@ -62,7 +62,12 @@ enum Apis {
             let params: [String: Any]
 
             init(uuid: String, playerName: String, email: String, password: String) {
-                self.params = ["uuid": "\(uuid)", "name": "\(playerName)", "email": "\(email)", "password": "\(password)"]
+                self.params = [
+                    "uuid": "\(uuid)",
+                    "name": "\(playerName)",
+                    "email": "\(email)",
+                    "password": "\(password)"
+                ]
             }
         }
 
